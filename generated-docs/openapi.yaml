@@ -1,0 +1,992 @@
+openapi: 3.0.0
+info:
+  title: tomo-idv-sdk
+  version: 0.1.0.0
+servers:
+- url: /
+paths:
+  /v1/idv/ca/health:
+    get:
+      responses:
+        "200":
+          content:
+            application/json;charset=utf-8:
+              schema:
+                type: string
+          description: ""
+      x-accepts:
+      - application/json;charset=utf-8
+  /v1/idv/ca/kyc/get:
+    post:
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: false
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json;charset=utf-8:
+            schema:
+              $ref: "#/components/schemas/PlaidGetKycReq"
+      responses:
+        "200":
+          content:
+            application/json;charset=utf-8:
+              schema:
+                $ref: "#/components/schemas/PlaidGetResultRes"
+          description: ""
+        "400":
+          description: Invalid `body` or `Authorization`
+      x-content-type: application/json;charset=utf-8
+      x-accepts:
+      - application/json;charset=utf-8
+  /v1/idv/ca/start:
+    post:
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: false
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json;charset=utf-8:
+            schema:
+              $ref: "#/components/schemas/PlaidStartIdvReq"
+      responses:
+        "200":
+          content:
+            application/json;charset=utf-8:
+              schema:
+                $ref: "#/components/schemas/PlaidStartIdvRes"
+          description: ""
+        "400":
+          description: Invalid `body` or `Authorization`
+      x-content-type: application/json;charset=utf-8
+      x-accepts:
+      - application/json;charset=utf-8
+  /v1/idv/cn/cookie/start:
+    post:
+      requestBody:
+        content:
+          application/json;charset=utf-8:
+            schema:
+              $ref: "#/components/schemas/TencentStartReq"
+      responses:
+        "200":
+          content:
+            application/json;charset=utf-8:
+              schema:
+                $ref: "#/components/schemas/TencentStartIdvRes"
+          description: ""
+          headers:
+            Set-Cookie:
+              explode: false
+              schema:
+                type: string
+              style: simple
+        "400":
+          description: Invalid `body`
+      x-content-type: application/json;charset=utf-8
+      x-accepts:
+      - application/json;charset=utf-8
+  /v1/idv/cn/health:
+    get:
+      responses:
+        "200":
+          content:
+            application/json;charset=utf-8:
+              schema:
+                type: string
+          description: ""
+      x-accepts:
+      - application/json;charset=utf-8
+  /v1/idv/cn/kyc/get:
+    post:
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: false
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json;charset=utf-8:
+            schema:
+              $ref: "#/components/schemas/TencentGetKycReq"
+      responses:
+        "200":
+          content:
+            application/json;charset=utf-8:
+              schema:
+                $ref: "#/components/schemas/TencentGetUnionResultRes"
+          description: ""
+        "400":
+          description: Invalid `body` or `Authorization`
+      x-content-type: application/json;charset=utf-8
+      x-accepts:
+      - application/json;charset=utf-8
+  /v1/idv/cn/result/web:
+    post:
+      responses:
+        "200":
+          content:
+            application/json;charset=utf-8:
+              schema:
+                $ref: "#/components/schemas/JsonValue"
+          description: ""
+      x-accepts:
+      - application/json;charset=utf-8
+  /v1/idv/cn/start:
+    post:
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: false
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json;charset=utf-8:
+            schema:
+              $ref: "#/components/schemas/TencentStartReq"
+      responses:
+        "200":
+          content:
+            application/json;charset=utf-8:
+              schema:
+                $ref: "#/components/schemas/TencentStartIdvRes"
+          description: ""
+        "400":
+          description: Invalid `body` or `Authorization`
+      x-content-type: application/json;charset=utf-8
+      x-accepts:
+      - application/json;charset=utf-8
+  /v1/idv/cn/token:
+    post:
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: false
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json;charset=utf-8:
+            schema:
+              $ref: "#/components/schemas/TomoIdvIssueTokenReq"
+      responses:
+        "200":
+          content:
+            application/json;charset=utf-8:
+              schema:
+                $ref: "#/components/schemas/TomoIdvIssueTokenRes"
+          description: ""
+        "400":
+          description: Invalid `body` or `Authorization`
+      x-content-type: application/json;charset=utf-8
+      x-accepts:
+      - application/json;charset=utf-8
+  /v1/idv/jp/health:
+    get:
+      responses:
+        "200":
+          content:
+            application/json;charset=utf-8:
+              schema:
+                type: string
+          description: ""
+      x-accepts:
+      - application/json;charset=utf-8
+  /v1/idv/jp/kyc/get:
+    post:
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: false
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json;charset=utf-8:
+            schema:
+              $ref: "#/components/schemas/LiquidGetKycReq"
+      responses:
+        "200":
+          content:
+            application/json;charset=utf-8:
+              schema:
+                $ref: "#/components/schemas/LiquidGetUnionResultRes"
+          description: ""
+        "400":
+          description: Invalid `body` or `Authorization`
+      x-content-type: application/json;charset=utf-8
+      x-accepts:
+      - application/json;charset=utf-8
+  /v1/idv/jp/start:
+    post:
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: false
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json;charset=utf-8:
+            schema:
+              $ref: "#/components/schemas/LiquidStartIdvReq"
+      responses:
+        "200":
+          content:
+            application/json;charset=utf-8:
+              schema:
+                $ref: "#/components/schemas/LiquidIntegratedAppRes"
+          description: ""
+        "400":
+          description: Invalid `body` or `Authorization`
+      x-content-type: application/json;charset=utf-8
+      x-accepts:
+      - application/json;charset=utf-8
+  /v1/idv/kyc/get:
+    post:
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: false
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json;charset=utf-8:
+            schema:
+              $ref: "#/components/schemas/GetKycReq"
+      responses:
+        "200":
+          content:
+            application/json;charset=utf-8:
+              schema:
+                $ref: "#/components/schemas/GetKycRes"
+          description: ""
+        "400":
+          description: Invalid `body` or `Authorization`
+      x-content-type: application/json;charset=utf-8
+      x-accepts:
+      - application/json;charset=utf-8
+  /v1/idv/sessions/start:
+    post:
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: false
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json;charset=utf-8:
+            schema:
+              $ref: "#/components/schemas/SessionStartReq"
+      responses:
+        "200":
+          content:
+            application/json;charset=utf-8:
+              schema:
+                $ref: "#/components/schemas/SessionStartRes"
+          description: ""
+        "400":
+          description: Invalid `body` or `Authorization`
+      x-content-type: application/json;charset=utf-8
+      x-accepts:
+      - application/json;charset=utf-8
+  /v1/idv/start:
+    post:
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: false
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json;charset=utf-8:
+            schema:
+              $ref: "#/components/schemas/StartIdvReq"
+      responses:
+        "200":
+          content:
+            application/json;charset=utf-8:
+              schema:
+                $ref: "#/components/schemas/StartIdvRes"
+          description: ""
+        "400":
+          description: Invalid `body` or `Authorization`
+      x-content-type: application/json;charset=utf-8
+      x-accepts:
+      - application/json;charset=utf-8
+  /v1/idv/uk/health:
+    get:
+      responses:
+        "200":
+          content:
+            application/json;charset=utf-8:
+              schema:
+                type: string
+          description: ""
+      x-accepts:
+      - application/json;charset=utf-8
+  /v1/idv/uk/kyc/get:
+    post:
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: false
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json;charset=utf-8:
+            schema:
+              $ref: "#/components/schemas/PlaidGetKycReq"
+      responses:
+        "200":
+          content:
+            application/json;charset=utf-8:
+              schema:
+                $ref: "#/components/schemas/PlaidGetResultRes"
+          description: ""
+        "400":
+          description: Invalid `body` or `Authorization`
+      x-content-type: application/json;charset=utf-8
+      x-accepts:
+      - application/json;charset=utf-8
+  /v1/idv/uk/start:
+    post:
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: false
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json;charset=utf-8:
+            schema:
+              $ref: "#/components/schemas/PlaidStartIdvReq"
+      responses:
+        "200":
+          content:
+            application/json;charset=utf-8:
+              schema:
+                $ref: "#/components/schemas/PlaidStartIdvRes"
+          description: ""
+        "400":
+          description: Invalid `body` or `Authorization`
+      x-content-type: application/json;charset=utf-8
+      x-accepts:
+      - application/json;charset=utf-8
+  /v1/idv/us/health:
+    get:
+      responses:
+        "200":
+          content:
+            application/json;charset=utf-8:
+              schema:
+                type: string
+          description: ""
+      x-accepts:
+      - application/json;charset=utf-8
+  /v1/idv/us/kyc/get:
+    post:
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: false
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json;charset=utf-8:
+            schema:
+              $ref: "#/components/schemas/PlaidGetKycReq"
+      responses:
+        "200":
+          content:
+            application/json;charset=utf-8:
+              schema:
+                $ref: "#/components/schemas/PlaidGetResultRes"
+          description: ""
+        "400":
+          description: Invalid `body` or `Authorization`
+      x-content-type: application/json;charset=utf-8
+      x-accepts:
+      - application/json;charset=utf-8
+  /v1/idv/us/start:
+    post:
+      parameters:
+      - explode: false
+        in: header
+        name: Authorization
+        required: false
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json;charset=utf-8:
+            schema:
+              $ref: "#/components/schemas/PlaidStartIdvReq"
+      responses:
+        "200":
+          content:
+            application/json;charset=utf-8:
+              schema:
+                $ref: "#/components/schemas/PlaidStartIdvRes"
+          description: ""
+        "400":
+          description: Invalid `body` or `Authorization`
+      x-content-type: application/json;charset=utf-8
+      x-accepts:
+      - application/json;charset=utf-8
+  /v1/oauth2/token:
+    post:
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: "#/components/schemas/TokenRequestForm"
+      responses:
+        "200":
+          content:
+            application/json;charset=utf-8:
+              schema:
+                $ref: "#/components/schemas/TokenRes"
+          description: ""
+        "400":
+          description: Invalid `body`
+      x-content-type: application/x-www-form-urlencoded
+      x-accepts:
+      - application/json;charset=utf-8
+components:
+  schemas:
+    Country:
+      enum:
+      - us
+      - uk
+      - ca
+      - jp
+      - cn
+      - unknown
+      type: string
+    GetKycReq:
+      example:
+        country: us
+        user_id: user_id
+      properties:
+        country:
+          $ref: "#/components/schemas/Country"
+        user_id:
+          type: string
+      required:
+      - country
+      - user_id
+      type: object
+    GetKycRes:
+      example:
+        country: country
+        city: city
+        date_of_birth: date_of_birth
+        sex: sex
+        full_address: full_address
+        given_name: given_name
+        email_address: email_address
+        full_name: full_name
+        street: street
+        phone_number: phone_number
+        postal_code: postal_code
+        region: region
+        family_name: family_name
+      properties:
+        city:
+          type: string
+        country:
+          type: string
+        date_of_birth:
+          type: string
+        email_address:
+          type: string
+        family_name:
+          type: string
+        full_address:
+          type: string
+        full_name:
+          type: string
+        given_name:
+          type: string
+        phone_number:
+          type: string
+        postal_code:
+          type: string
+        region:
+          type: string
+        sex:
+          type: string
+        street:
+          type: string
+      required:
+      - country
+      - date_of_birth
+      - full_address
+      - full_name
+      type: object
+    JsonValue:
+      description: Arbitrary JSON value
+    LaunchKind:
+      example:
+        session_token: session_token
+        data: data
+        fallback_url: fallback_url
+        type: type
+        config: "{}"
+        url: url
+      properties:
+        config:
+          type: object
+        data:
+          type: string
+        fallback_url:
+          type: string
+        session_token:
+          type: string
+        type:
+          type: string
+        url:
+          type: string
+      required:
+      - type
+      type: object
+    LiquidGetKycReq:
+      example:
+        user_id: user_id
+        fields:
+        - name
+        - name
+      properties:
+        fields:
+          items:
+            $ref: "#/components/schemas/LiquidIdvField"
+          type: array
+        user_id:
+          type: string
+      required:
+      - user_id
+      type: object
+    LiquidGetResultRes:
+      example:
+        address: address
+        date_of_birth: date_of_birth
+        sex: sex
+        name: name
+        postal_code: postal_code
+      properties:
+        address:
+          type: string
+        date_of_birth:
+          type: string
+        name:
+          type: string
+        postal_code:
+          type: string
+        sex:
+          type: string
+      required:
+      - address
+      - date_of_birth
+      - name
+      - sex
+      type: object
+    LiquidGetUnionResultRes:
+      oneOf:
+      - $ref: "#/components/schemas/LiquidGetResultRes"
+      - $ref: "#/components/schemas/LiquidGetUnionResultResStringMap"
+    LiquidIdvField:
+      enum:
+      - name
+      - date_of_birth
+      - sex
+      - address
+      - postal_code
+      type: string
+    LiquidIntegratedAppRes:
+      example:
+        start_idv_uri: start_idv_uri
+      properties:
+        start_idv_uri:
+          type: string
+      required:
+      - start_idv_uri
+      type: object
+    LiquidStartIdvReq:
+      example:
+        callback_url: callback_url
+        user_id: user_id
+      properties:
+        callback_url:
+          type: string
+        user_id:
+          type: string
+      required:
+      - callback_url
+      - user_id
+      type: object
+    PlaidGetKycReq:
+      example:
+        user_id: user_id
+        fields:
+        - date_of_birth
+        - date_of_birth
+      properties:
+        fields:
+          items:
+            $ref: "#/components/schemas/PlaidIdvField"
+          type: array
+        user_id:
+          type: string
+      required:
+      - user_id
+      type: object
+    PlaidGetResultRes:
+      additionalProperties:
+        type: string
+      title: PlaidGetResultRes
+      type: object
+    PlaidIdvField:
+      enum:
+      - date_of_birth
+      - email_address
+      - phone_number
+      - family_name
+      - given_name
+      - city
+      - country
+      - postal_code
+      - region
+      - street
+      type: string
+    PlaidStartIdvReq:
+      example:
+        callback_url: callback_url
+        user_id: user_id
+        kyc_policy_id: kyc_policy_id
+        email: email
+      properties:
+        callback_url:
+          type: string
+        email:
+          type: string
+        kyc_policy_id:
+          type: string
+        user_id:
+          type: string
+      required:
+      - callback_url
+      - user_id
+      type: object
+    PlaidStartIdvRes:
+      example:
+        start_idv_uri: start_idv_uri
+      properties:
+        start_idv_uri:
+          type: string
+      required:
+      - start_idv_uri
+      type: object
+    SessionStartReq:
+      example:
+        callback_url: callback_url
+        country: us
+        policy_id: policy_id
+        user_id: user_id
+        email: email
+      properties:
+        callback_url:
+          type: string
+        country:
+          $ref: "#/components/schemas/Country"
+        email:
+          type: string
+        policy_id:
+          type: string
+        user_id:
+          type: string
+      required:
+      - user_id
+      type: object
+    SessionStartRes:
+      example:
+        session_id: session_id
+        launch:
+          session_token: session_token
+          data: data
+          fallback_url: fallback_url
+          type: type
+          config: "{}"
+          url: url
+      properties:
+        launch:
+          $ref: "#/components/schemas/LaunchKind"
+        session_id:
+          type: string
+      required:
+      - launch
+      - session_id
+      type: object
+    StartIdvReq:
+      example:
+        callback_url: callback_url
+        country: us
+        user_id: user_id
+        kyc_policy_id: kyc_policy_id
+        email: email
+      properties:
+        callback_url:
+          type: string
+        country:
+          $ref: "#/components/schemas/Country"
+        email:
+          type: string
+        kyc_policy_id:
+          type: string
+        user_id:
+          type: string
+      required:
+      - user_id
+      type: object
+    StartIdvRes:
+      example:
+        start_idv_uri: start_idv_uri
+      properties:
+        start_idv_uri:
+          type: string
+      required:
+      - start_idv_uri
+      type: object
+    TencentGetKycReq:
+      example:
+        user_id: user_id
+        fields:
+        - full_name
+        - full_name
+      properties:
+        fields:
+          items:
+            $ref: "#/components/schemas/TencentIdvField"
+          type: array
+        user_id:
+          type: string
+      required:
+      - user_id
+      type: object
+    TencentGetKycRes:
+      example:
+        ocr_passed: true
+        id_number: id_number
+        address: address
+        date_of_birth: date_of_birth
+        sex: sex
+        given_name: given_name
+        liveness_passed: true
+        full_name: full_name
+        nationality: nationality
+        face_compare_passed: true
+        issuing_country: issuing_country
+        similarity: 0.8008281904610115
+        family_name: family_name
+        document_type: document_type
+        status: status
+      properties:
+        address:
+          type: string
+        date_of_birth:
+          type: string
+        document_type:
+          type: string
+        face_compare_passed:
+          type: boolean
+        family_name:
+          type: string
+        full_name:
+          type: string
+        given_name:
+          type: string
+        id_number:
+          type: string
+        issuing_country:
+          type: string
+        liveness_passed:
+          type: boolean
+        nationality:
+          type: string
+        ocr_passed:
+          type: boolean
+        sex:
+          type: string
+        similarity:
+          type: number
+        status:
+          type: string
+      required:
+      - status
+      type: object
+    TencentGetUnionResultRes:
+      oneOf:
+      - $ref: "#/components/schemas/TencentGetKycRes"
+      - $ref: "#/components/schemas/TencentGetUnionResultResStringMap"
+    TencentIdvField:
+      enum:
+      - full_name
+      - date_of_birth
+      - sex
+      - address
+      - id_number
+      - nationality
+      type: string
+    TencentStartIdvRes:
+      example:
+        start_idv_uri: start_idv_uri
+      properties:
+        start_idv_uri:
+          type: string
+      required:
+      - start_idv_uri
+      type: object
+    TencentStartReq:
+      example:
+        callback_url: callback_url
+        user_id: user_id
+        card_image_base64: card_image_base64
+        kyc_policy_id: kyc_policy_id
+        best_frame_base64: best_frame_base64
+      properties:
+        best_frame_base64:
+          type: string
+        callback_url:
+          type: string
+        card_image_base64:
+          type: string
+        kyc_policy_id:
+          type: string
+        user_id:
+          type: string
+      required:
+      - user_id
+      type: object
+    TokenRequestForm:
+      properties:
+        client_assertion:
+          type: string
+        client_assertion_type:
+          type: string
+        grant_type:
+          type: string
+        resource:
+          type: string
+        scope:
+          type: string
+      required:
+      - client_assertion
+      - client_assertion_type
+      - grant_type
+      type: object
+    TokenRes:
+      example:
+        access_token: access_token
+        scope: scope
+        token_type: token_type
+        expires_in: -2147483648
+      properties:
+        access_token:
+          type: string
+        expires_in:
+          maximum: 9223372036854776000
+          minimum: -9223372036854776000
+          type: integer
+        scope:
+          type: string
+        token_type:
+          type: string
+      required:
+      - access_token
+      - expires_in
+      - token_type
+      type: object
+    TomoIdvIssueTokenReq:
+      example:
+        user_id: user_id
+      properties:
+        user_id:
+          type: string
+      required:
+      - user_id
+      type: object
+    TomoIdvIssueTokenRes:
+      example:
+        session_token: session_token
+        expires_in: -2147483648
+        key: key
+      properties:
+        expires_in:
+          maximum: 9223372036854776000
+          minimum: -9223372036854776000
+          type: integer
+        key:
+          type: string
+        session_token:
+          type: string
+      required:
+      - expires_in
+      - key
+      - session_token
+      type: object
+    LiquidGetUnionResultResStringMap:
+      additionalProperties:
+        type: string
+      title: LiquidGetUnionResultResStringMap
+      type: object
+    PlaidGetResultResStringMap:
+      additionalProperties:
+        type: string
+      title: PlaidGetResultResStringMap
+      type: object
+    TencentGetUnionResultResStringMap:
+      additionalProperties:
+        type: string
+      title: TencentGetUnionResultResStringMap
+      type: object
+
