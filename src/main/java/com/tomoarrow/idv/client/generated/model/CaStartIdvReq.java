@@ -24,49 +24,42 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.tomoarrow.idv.client.generated.model.Country;
-import com.tomoarrow.idv.client.generated.model.KycPolicy;
 import java.util.Arrays;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
 import com.tomoarrow.idv.client.generated.ApiClient;
 /**
- * StartIdvReq
+ * CaStartIdvReq
  */
 @JsonPropertyOrder({
-  StartIdvReq.JSON_PROPERTY_CALLBACK_URL,
-  StartIdvReq.JSON_PROPERTY_COUNTRY,
-  StartIdvReq.JSON_PROPERTY_EMAIL,
-  StartIdvReq.JSON_PROPERTY_KYC_POLICY,
-  StartIdvReq.JSON_PROPERTY_USER_ID
+  CaStartIdvReq.JSON_PROPERTY_CALLBACK_URL,
+  CaStartIdvReq.JSON_PROPERTY_EMAIL,
+  CaStartIdvReq.JSON_PROPERTY_KYC_POLICY_ID,
+  CaStartIdvReq.JSON_PROPERTY_USER_ID
 })
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
-public class StartIdvReq {
+public class CaStartIdvReq {
   public static final String JSON_PROPERTY_CALLBACK_URL = "callback_url";
   @javax.annotation.Nonnull
   private String callbackUrl;
-
-  public static final String JSON_PROPERTY_COUNTRY = "country";
-  @javax.annotation.Nullable
-  private Country country;
 
   public static final String JSON_PROPERTY_EMAIL = "email";
   @javax.annotation.Nullable
   private String email;
 
-  public static final String JSON_PROPERTY_KYC_POLICY = "kyc_policy";
+  public static final String JSON_PROPERTY_KYC_POLICY_ID = "kyc_policy_id";
   @javax.annotation.Nullable
-  private KycPolicy kycPolicy;
+  private String kycPolicyId;
 
   public static final String JSON_PROPERTY_USER_ID = "user_id";
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private String userId;
 
-  public StartIdvReq() { 
+  public CaStartIdvReq() { 
   }
 
-  public StartIdvReq callbackUrl(@javax.annotation.Nonnull String callbackUrl) {
+  public CaStartIdvReq callbackUrl(@javax.annotation.Nonnull String callbackUrl) {
     this.callbackUrl = callbackUrl;
     return this;
   }
@@ -90,31 +83,7 @@ public class StartIdvReq {
   }
 
 
-  public StartIdvReq country(@javax.annotation.Nullable Country country) {
-    this.country = country;
-    return this;
-  }
-
-  /**
-   * Get country
-   * @return country
-   */
-  @javax.annotation.Nullable
-  @JsonProperty(value = JSON_PROPERTY_COUNTRY, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public Country getCountry() {
-    return country;
-  }
-
-
-  @JsonProperty(value = JSON_PROPERTY_COUNTRY, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCountry(@javax.annotation.Nullable Country country) {
-    this.country = country;
-  }
-
-
-  public StartIdvReq email(@javax.annotation.Nullable String email) {
+  public CaStartIdvReq email(@javax.annotation.Nullable String email) {
     this.email = email;
     return this;
   }
@@ -138,31 +107,31 @@ public class StartIdvReq {
   }
 
 
-  public StartIdvReq kycPolicy(@javax.annotation.Nullable KycPolicy kycPolicy) {
-    this.kycPolicy = kycPolicy;
+  public CaStartIdvReq kycPolicyId(@javax.annotation.Nullable String kycPolicyId) {
+    this.kycPolicyId = kycPolicyId;
     return this;
   }
 
   /**
-   * Get kycPolicy
-   * @return kycPolicy
+   * Get kycPolicyId
+   * @return kycPolicyId
    */
   @javax.annotation.Nullable
-  @JsonProperty(value = JSON_PROPERTY_KYC_POLICY, required = false)
+  @JsonProperty(value = JSON_PROPERTY_KYC_POLICY_ID, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public KycPolicy getKycPolicy() {
-    return kycPolicy;
+  public String getKycPolicyId() {
+    return kycPolicyId;
   }
 
 
-  @JsonProperty(value = JSON_PROPERTY_KYC_POLICY, required = false)
+  @JsonProperty(value = JSON_PROPERTY_KYC_POLICY_ID, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setKycPolicy(@javax.annotation.Nullable KycPolicy kycPolicy) {
-    this.kycPolicy = kycPolicy;
+  public void setKycPolicyId(@javax.annotation.Nullable String kycPolicyId) {
+    this.kycPolicyId = kycPolicyId;
   }
 
 
-  public StartIdvReq userId(@javax.annotation.Nullable String userId) {
+  public CaStartIdvReq userId(@javax.annotation.Nonnull String userId) {
     this.userId = userId;
     return this;
   }
@@ -171,23 +140,23 @@ public class StartIdvReq {
    * Get userId
    * @return userId
    */
-  @javax.annotation.Nullable
-  @JsonProperty(value = JSON_PROPERTY_USER_ID, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @javax.annotation.Nonnull
+  @JsonProperty(value = JSON_PROPERTY_USER_ID, required = true)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public String getUserId() {
     return userId;
   }
 
 
-  @JsonProperty(value = JSON_PROPERTY_USER_ID, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setUserId(@javax.annotation.Nullable String userId) {
+  @JsonProperty(value = JSON_PROPERTY_USER_ID, required = true)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setUserId(@javax.annotation.Nonnull String userId) {
     this.userId = userId;
   }
 
 
   /**
-   * Return true if this StartIdvReq object is equal to o.
+   * Return true if this CaStartIdvReq object is equal to o.
    */
   @Override
   public boolean equals(Object o) {
@@ -197,27 +166,25 @@ public class StartIdvReq {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    StartIdvReq startIdvReq = (StartIdvReq) o;
-    return Objects.equals(this.callbackUrl, startIdvReq.callbackUrl) &&
-        Objects.equals(this.country, startIdvReq.country) &&
-        Objects.equals(this.email, startIdvReq.email) &&
-        Objects.equals(this.kycPolicy, startIdvReq.kycPolicy) &&
-        Objects.equals(this.userId, startIdvReq.userId);
+    CaStartIdvReq caStartIdvReq = (CaStartIdvReq) o;
+    return Objects.equals(this.callbackUrl, caStartIdvReq.callbackUrl) &&
+        Objects.equals(this.email, caStartIdvReq.email) &&
+        Objects.equals(this.kycPolicyId, caStartIdvReq.kycPolicyId) &&
+        Objects.equals(this.userId, caStartIdvReq.userId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(callbackUrl, country, email, kycPolicy, userId);
+    return Objects.hash(callbackUrl, email, kycPolicyId, userId);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class StartIdvReq {\n");
+    sb.append("class CaStartIdvReq {\n");
     sb.append("    callbackUrl: ").append(toIndentedString(callbackUrl)).append("\n");
-    sb.append("    country: ").append(toIndentedString(country)).append("\n");
     sb.append("    email: ").append(toIndentedString(email)).append("\n");
-    sb.append("    kycPolicy: ").append(toIndentedString(kycPolicy)).append("\n");
+    sb.append("    kycPolicyId: ").append(toIndentedString(kycPolicyId)).append("\n");
     sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -268,19 +235,14 @@ public class StartIdvReq {
       joiner.add(String.format(java.util.Locale.ROOT, "%scallback_url%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCallbackUrl()))));
     }
 
-    // add `country` to the URL query string
-    if (getCountry() != null) {
-      joiner.add(String.format(java.util.Locale.ROOT, "%scountry%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCountry()))));
-    }
-
     // add `email` to the URL query string
     if (getEmail() != null) {
       joiner.add(String.format(java.util.Locale.ROOT, "%semail%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getEmail()))));
     }
 
-    // add `kyc_policy` to the URL query string
-    if (getKycPolicy() != null) {
-      joiner.add(getKycPolicy().toUrlQueryString(prefix + "kyc_policy" + suffix));
+    // add `kyc_policy_id` to the URL query string
+    if (getKycPolicyId() != null) {
+      joiner.add(String.format(java.util.Locale.ROOT, "%skyc_policy_id%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getKycPolicyId()))));
     }
 
     // add `user_id` to the URL query string

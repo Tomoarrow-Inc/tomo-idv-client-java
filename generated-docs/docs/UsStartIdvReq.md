@@ -1,16 +1,15 @@
 
 
-# SessionStartReq
+# UsStartIdvReq
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**callbackUrl** | **String** |  |  [optional] |
-|**country** | **Country** |  |  [optional] |
+|**callbackUrl** | **String** |  |  |
 |**email** | **String** |  |  [optional] |
-|**kycPolicy** | [**KycPolicy**](KycPolicy.md) |  |  [optional] |
+|**kycPolicyId** | **String** |  |  [optional] |
 |**userId** | **String** |  |  |
 
 

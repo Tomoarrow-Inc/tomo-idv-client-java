@@ -26,25 +26,33 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * Gets or Sets Country
+ * Gets or Sets UsIdvField
  */
-public enum Country {
+public enum UsIdvField {
   
-  US("us"),
+  DATE_OF_BIRTH("date_of_birth"),
   
-  UK("uk"),
+  EMAIL_ADDRESS("email_address"),
   
-  CA("ca"),
+  PHONE_NUMBER("phone_number"),
   
-  JP("jp"),
+  FAMILY_NAME("family_name"),
   
-  CN("cn"),
+  GIVEN_NAME("given_name"),
   
-  UNKNOWN("unknown");
+  CITY("city"),
+  
+  COUNTRY("country"),
+  
+  POSTAL_CODE("postal_code"),
+  
+  REGION("region"),
+  
+  STREET("street");
 
   private String value;
 
-  Country(String value) {
+  UsIdvField(String value) {
     this.value = value;
   }
 
@@ -59,8 +67,8 @@ public enum Country {
   }
 
   @JsonCreator
-  public static Country fromValue(String value) {
-    for (Country b : Country.values()) {
+  public static UsIdvField fromValue(String value) {
+    for (UsIdvField b : UsIdvField.values()) {
       if (b.value.equals(value)) {
         return b;
       }

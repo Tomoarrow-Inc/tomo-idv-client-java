@@ -13,8 +13,6 @@
 
 package com.tomoarrow.idv.client.generated.model;
 
-import org.apache.commons.lang3.builder.EqualsBuilder;
-import org.apache.commons.lang3.builder.HashCodeBuilder;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 import java.util.StringJoiner;
@@ -105,12 +103,20 @@ public class SessionStartRes {
    */
   @Override
   public boolean equals(Object o) {
-    return EqualsBuilder.reflectionEquals(this, o, false, null, true);
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+    SessionStartRes sessionStartRes = (SessionStartRes) o;
+    return Objects.equals(this.launch, sessionStartRes.launch) &&
+        Objects.equals(this.sessionId, sessionStartRes.sessionId);
   }
 
   @Override
   public int hashCode() {
-    return HashCodeBuilder.reflectionHashCode(this);
+    return Objects.hash(launch, sessionId);
   }
 
   @Override

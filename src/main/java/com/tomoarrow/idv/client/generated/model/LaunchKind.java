@@ -13,8 +13,6 @@
 
 package com.tomoarrow.idv.client.generated.model;
 
-import org.apache.commons.lang3.builder.EqualsBuilder;
-import org.apache.commons.lang3.builder.HashCodeBuilder;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 import java.util.StringJoiner;
@@ -220,12 +218,24 @@ public class LaunchKind {
    */
   @Override
   public boolean equals(Object o) {
-    return EqualsBuilder.reflectionEquals(this, o, false, null, true);
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+    LaunchKind launchKind = (LaunchKind) o;
+    return Objects.equals(this.config, launchKind.config) &&
+        Objects.equals(this.data, launchKind.data) &&
+        Objects.equals(this.fallbackUrl, launchKind.fallbackUrl) &&
+        Objects.equals(this.sessionToken, launchKind.sessionToken) &&
+        Objects.equals(this.type, launchKind.type) &&
+        Objects.equals(this.url, launchKind.url);
   }
 
   @Override
   public int hashCode() {
-    return HashCodeBuilder.reflectionHashCode(this);
+    return Objects.hash(config, data, fallbackUrl, sessionToken, type, url);
   }
 
   @Override

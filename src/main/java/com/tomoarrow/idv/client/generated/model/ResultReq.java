@@ -24,82 +24,82 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.tomoarrow.idv.client.generated.model.Country;
+import com.tomoarrow.idv.client.generated.model.KycPolicy;
 import java.util.Arrays;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
 import com.tomoarrow.idv.client.generated.ApiClient;
 /**
- * GetKycReq
+ * ResultReq
  */
 @JsonPropertyOrder({
-  GetKycReq.JSON_PROPERTY_COUNTRY,
-  GetKycReq.JSON_PROPERTY_USER_ID
+  ResultReq.JSON_PROPERTY_POLICY,
+  ResultReq.JSON_PROPERTY_PPID
 })
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
-public class GetKycReq {
-  public static final String JSON_PROPERTY_COUNTRY = "country";
-  @javax.annotation.Nonnull
-  private Country country;
+public class ResultReq {
+  public static final String JSON_PROPERTY_POLICY = "policy";
+  @javax.annotation.Nullable
+  private KycPolicy policy;
 
-  public static final String JSON_PROPERTY_USER_ID = "user_id";
+  public static final String JSON_PROPERTY_PPID = "ppid";
   @javax.annotation.Nonnull
-  private String userId;
+  private String ppid;
 
-  public GetKycReq() { 
+  public ResultReq() { 
   }
 
-  public GetKycReq country(@javax.annotation.Nonnull Country country) {
-    this.country = country;
+  public ResultReq policy(@javax.annotation.Nullable KycPolicy policy) {
+    this.policy = policy;
     return this;
   }
 
   /**
-   * Get country
-   * @return country
+   * Get policy
+   * @return policy
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_COUNTRY, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public Country getCountry() {
-    return country;
+  @javax.annotation.Nullable
+  @JsonProperty(value = JSON_PROPERTY_POLICY, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public KycPolicy getPolicy() {
+    return policy;
   }
 
 
-  @JsonProperty(value = JSON_PROPERTY_COUNTRY, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setCountry(@javax.annotation.Nonnull Country country) {
-    this.country = country;
+  @JsonProperty(value = JSON_PROPERTY_POLICY, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setPolicy(@javax.annotation.Nullable KycPolicy policy) {
+    this.policy = policy;
   }
 
 
-  public GetKycReq userId(@javax.annotation.Nonnull String userId) {
-    this.userId = userId;
+  public ResultReq ppid(@javax.annotation.Nonnull String ppid) {
+    this.ppid = ppid;
     return this;
   }
 
   /**
-   * Get userId
-   * @return userId
+   * Get ppid
+   * @return ppid
    */
   @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_USER_ID, required = true)
+  @JsonProperty(value = JSON_PROPERTY_PPID, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public String getUserId() {
-    return userId;
+  public String getPpid() {
+    return ppid;
   }
 
 
-  @JsonProperty(value = JSON_PROPERTY_USER_ID, required = true)
+  @JsonProperty(value = JSON_PROPERTY_PPID, required = true)
   @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setUserId(@javax.annotation.Nonnull String userId) {
-    this.userId = userId;
+  public void setPpid(@javax.annotation.Nonnull String ppid) {
+    this.ppid = ppid;
   }
 
 
   /**
-   * Return true if this GetKycReq object is equal to o.
+   * Return true if this ResultReq object is equal to o.
    */
   @Override
   public boolean equals(Object o) {
@@ -109,22 +109,22 @@ public class GetKycReq {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    GetKycReq getKycReq = (GetKycReq) o;
-    return Objects.equals(this.country, getKycReq.country) &&
-        Objects.equals(this.userId, getKycReq.userId);
+    ResultReq resultReq = (ResultReq) o;
+    return Objects.equals(this.policy, resultReq.policy) &&
+        Objects.equals(this.ppid, resultReq.ppid);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(country, userId);
+    return Objects.hash(policy, ppid);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class GetKycReq {\n");
-    sb.append("    country: ").append(toIndentedString(country)).append("\n");
-    sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
+    sb.append("class ResultReq {\n");
+    sb.append("    policy: ").append(toIndentedString(policy)).append("\n");
+    sb.append("    ppid: ").append(toIndentedString(ppid)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -169,14 +169,14 @@ public class GetKycReq {
 
     StringJoiner joiner = new StringJoiner("&");
 
-    // add `country` to the URL query string
-    if (getCountry() != null) {
-      joiner.add(String.format(java.util.Locale.ROOT, "%scountry%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCountry()))));
+    // add `policy` to the URL query string
+    if (getPolicy() != null) {
+      joiner.add(getPolicy().toUrlQueryString(prefix + "policy" + suffix));
     }
 
-    // add `user_id` to the URL query string
-    if (getUserId() != null) {
-      joiner.add(String.format(java.util.Locale.ROOT, "%suser_id%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getUserId()))));
+    // add `ppid` to the URL query string
+    if (getPpid() != null) {
+      joiner.add(String.format(java.util.Locale.ROOT, "%sppid%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPpid()))));
     }
 
     return joiner.toString();

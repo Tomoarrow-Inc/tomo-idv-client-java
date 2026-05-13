@@ -7,7 +7,11 @@ import {
   cpSync,
   existsSync,
   mkdirSync,
+  readFileSync,
+  readdirSync,
   rmSync,
+  statSync,
+  writeFileSync,
 } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -49,6 +53,7 @@ mkdirSync(join(repoRoot, 'src', 'main', 'java', 'com', 'tomoarrow', 'idv', 'clie
   recursive: true,
 });
 cpSync(generatedSource, generatedDest, { recursive: true });
+fixJavaGeneratorMapAliasHashCode(generatedDest);
 console.log(`Copied generated package to ${generatedDest}`);
 
 rmSync(docsDest, { recursive: true, force: true });
@@ -62,3 +67,25 @@ if (existsSync(openapiSource)) {
 console.log(`Copied generated docs to ${docsDest}`);
 
 rmSync(tempRoot, { recursive: true, force: true });
+
+function fixJavaGeneratorMapAliasHashCode(dir) {
+  for (const entry of readdirSync(dir)) {
+    const path = join(dir, entry);
+    if (statSync(path).isDirectory()) {
+      fixJavaGeneratorMapAliasHashCode(path);
+      continue;
+    }
+    if (!entry.endsWith('.java')) {
+      continue;
+    }
+
+    const original = readFileSync(path, 'utf8');
+    const fixed = original.replaceAll(
+      'Objects.hash(, additionalProperties)',
+      'Objects.hash(additionalProperties)',
+    );
+    if (fixed !== original) {
+      writeFileSync(path, fixed);
+    }
+  }
+}

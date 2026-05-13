@@ -30,27 +30,24 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 import com.tomoarrow.idv.client.generated.ApiClient;
 /**
- * GetKycRes
+ * UsGetResultRes
  */
 @JsonPropertyOrder({
-  GetKycRes.JSON_PROPERTY_CITY,
-  GetKycRes.JSON_PROPERTY_COUNTRY,
-  GetKycRes.JSON_PROPERTY_DATE_OF_BIRTH,
-  GetKycRes.JSON_PROPERTY_EMAIL_ADDRESS,
-  GetKycRes.JSON_PROPERTY_FAMILY_NAME,
-  GetKycRes.JSON_PROPERTY_FULL_ADDRESS,
-  GetKycRes.JSON_PROPERTY_FULL_NAME,
-  GetKycRes.JSON_PROPERTY_GIVEN_NAME,
-  GetKycRes.JSON_PROPERTY_PHONE_NUMBER,
-  GetKycRes.JSON_PROPERTY_POSTAL_CODE,
-  GetKycRes.JSON_PROPERTY_REGION,
-  GetKycRes.JSON_PROPERTY_SEX,
-  GetKycRes.JSON_PROPERTY_STREET
+  UsGetResultRes.JSON_PROPERTY_CITY,
+  UsGetResultRes.JSON_PROPERTY_COUNTRY,
+  UsGetResultRes.JSON_PROPERTY_DATE_OF_BIRTH,
+  UsGetResultRes.JSON_PROPERTY_EMAIL_ADDRESS,
+  UsGetResultRes.JSON_PROPERTY_FAMILY_NAME,
+  UsGetResultRes.JSON_PROPERTY_GIVEN_NAME,
+  UsGetResultRes.JSON_PROPERTY_PHONE_NUMBER,
+  UsGetResultRes.JSON_PROPERTY_POSTAL_CODE,
+  UsGetResultRes.JSON_PROPERTY_REGION,
+  UsGetResultRes.JSON_PROPERTY_STREET
 })
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
-public class GetKycRes {
+public class UsGetResultRes {
   public static final String JSON_PROPERTY_CITY = "city";
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private String city;
 
   public static final String JSON_PROPERTY_COUNTRY = "country";
@@ -62,49 +59,37 @@ public class GetKycRes {
   private String dateOfBirth;
 
   public static final String JSON_PROPERTY_EMAIL_ADDRESS = "email_address";
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private String emailAddress;
 
   public static final String JSON_PROPERTY_FAMILY_NAME = "family_name";
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private String familyName;
 
-  public static final String JSON_PROPERTY_FULL_ADDRESS = "full_address";
-  @javax.annotation.Nonnull
-  private String fullAddress;
-
-  public static final String JSON_PROPERTY_FULL_NAME = "full_name";
-  @javax.annotation.Nonnull
-  private String fullName;
-
   public static final String JSON_PROPERTY_GIVEN_NAME = "given_name";
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private String givenName;
 
   public static final String JSON_PROPERTY_PHONE_NUMBER = "phone_number";
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private String phoneNumber;
 
   public static final String JSON_PROPERTY_POSTAL_CODE = "postal_code";
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private String postalCode;
 
   public static final String JSON_PROPERTY_REGION = "region";
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private String region;
 
-  public static final String JSON_PROPERTY_SEX = "sex";
-  @javax.annotation.Nullable
-  private String sex;
-
   public static final String JSON_PROPERTY_STREET = "street";
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private String street;
 
-  public GetKycRes() { 
+  public UsGetResultRes() { 
   }
 
-  public GetKycRes city(@javax.annotation.Nullable String city) {
+  public UsGetResultRes city(@javax.annotation.Nonnull String city) {
     this.city = city;
     return this;
   }
@@ -113,22 +98,22 @@ public class GetKycRes {
    * Get city
    * @return city
    */
-  @javax.annotation.Nullable
-  @JsonProperty(value = JSON_PROPERTY_CITY, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @javax.annotation.Nonnull
+  @JsonProperty(value = JSON_PROPERTY_CITY, required = true)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public String getCity() {
     return city;
   }
 
 
-  @JsonProperty(value = JSON_PROPERTY_CITY, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCity(@javax.annotation.Nullable String city) {
+  @JsonProperty(value = JSON_PROPERTY_CITY, required = true)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setCity(@javax.annotation.Nonnull String city) {
     this.city = city;
   }
 
 
-  public GetKycRes country(@javax.annotation.Nonnull String country) {
+  public UsGetResultRes country(@javax.annotation.Nonnull String country) {
     this.country = country;
     return this;
   }
@@ -152,7 +137,7 @@ public class GetKycRes {
   }
 
 
-  public GetKycRes dateOfBirth(@javax.annotation.Nonnull String dateOfBirth) {
+  public UsGetResultRes dateOfBirth(@javax.annotation.Nonnull String dateOfBirth) {
     this.dateOfBirth = dateOfBirth;
     return this;
   }
@@ -176,7 +161,7 @@ public class GetKycRes {
   }
 
 
-  public GetKycRes emailAddress(@javax.annotation.Nullable String emailAddress) {
+  public UsGetResultRes emailAddress(@javax.annotation.Nonnull String emailAddress) {
     this.emailAddress = emailAddress;
     return this;
   }
@@ -185,22 +170,22 @@ public class GetKycRes {
    * Get emailAddress
    * @return emailAddress
    */
-  @javax.annotation.Nullable
-  @JsonProperty(value = JSON_PROPERTY_EMAIL_ADDRESS, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @javax.annotation.Nonnull
+  @JsonProperty(value = JSON_PROPERTY_EMAIL_ADDRESS, required = true)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public String getEmailAddress() {
     return emailAddress;
   }
 
 
-  @JsonProperty(value = JSON_PROPERTY_EMAIL_ADDRESS, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setEmailAddress(@javax.annotation.Nullable String emailAddress) {
+  @JsonProperty(value = JSON_PROPERTY_EMAIL_ADDRESS, required = true)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setEmailAddress(@javax.annotation.Nonnull String emailAddress) {
     this.emailAddress = emailAddress;
   }
 
 
-  public GetKycRes familyName(@javax.annotation.Nullable String familyName) {
+  public UsGetResultRes familyName(@javax.annotation.Nonnull String familyName) {
     this.familyName = familyName;
     return this;
   }
@@ -209,70 +194,22 @@ public class GetKycRes {
    * Get familyName
    * @return familyName
    */
-  @javax.annotation.Nullable
-  @JsonProperty(value = JSON_PROPERTY_FAMILY_NAME, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @javax.annotation.Nonnull
+  @JsonProperty(value = JSON_PROPERTY_FAMILY_NAME, required = true)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public String getFamilyName() {
     return familyName;
   }
 
 
-  @JsonProperty(value = JSON_PROPERTY_FAMILY_NAME, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setFamilyName(@javax.annotation.Nullable String familyName) {
+  @JsonProperty(value = JSON_PROPERTY_FAMILY_NAME, required = true)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setFamilyName(@javax.annotation.Nonnull String familyName) {
     this.familyName = familyName;
   }
 
 
-  public GetKycRes fullAddress(@javax.annotation.Nonnull String fullAddress) {
-    this.fullAddress = fullAddress;
-    return this;
-  }
-
-  /**
-   * Get fullAddress
-   * @return fullAddress
-   */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_FULL_ADDRESS, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public String getFullAddress() {
-    return fullAddress;
-  }
-
-
-  @JsonProperty(value = JSON_PROPERTY_FULL_ADDRESS, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setFullAddress(@javax.annotation.Nonnull String fullAddress) {
-    this.fullAddress = fullAddress;
-  }
-
-
-  public GetKycRes fullName(@javax.annotation.Nonnull String fullName) {
-    this.fullName = fullName;
-    return this;
-  }
-
-  /**
-   * Get fullName
-   * @return fullName
-   */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_FULL_NAME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public String getFullName() {
-    return fullName;
-  }
-
-
-  @JsonProperty(value = JSON_PROPERTY_FULL_NAME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setFullName(@javax.annotation.Nonnull String fullName) {
-    this.fullName = fullName;
-  }
-
-
-  public GetKycRes givenName(@javax.annotation.Nullable String givenName) {
+  public UsGetResultRes givenName(@javax.annotation.Nonnull String givenName) {
     this.givenName = givenName;
     return this;
   }
@@ -281,22 +218,22 @@ public class GetKycRes {
    * Get givenName
    * @return givenName
    */
-  @javax.annotation.Nullable
-  @JsonProperty(value = JSON_PROPERTY_GIVEN_NAME, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @javax.annotation.Nonnull
+  @JsonProperty(value = JSON_PROPERTY_GIVEN_NAME, required = true)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public String getGivenName() {
     return givenName;
   }
 
 
-  @JsonProperty(value = JSON_PROPERTY_GIVEN_NAME, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setGivenName(@javax.annotation.Nullable String givenName) {
+  @JsonProperty(value = JSON_PROPERTY_GIVEN_NAME, required = true)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setGivenName(@javax.annotation.Nonnull String givenName) {
     this.givenName = givenName;
   }
 
 
-  public GetKycRes phoneNumber(@javax.annotation.Nullable String phoneNumber) {
+  public UsGetResultRes phoneNumber(@javax.annotation.Nonnull String phoneNumber) {
     this.phoneNumber = phoneNumber;
     return this;
   }
@@ -305,22 +242,22 @@ public class GetKycRes {
    * Get phoneNumber
    * @return phoneNumber
    */
-  @javax.annotation.Nullable
-  @JsonProperty(value = JSON_PROPERTY_PHONE_NUMBER, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @javax.annotation.Nonnull
+  @JsonProperty(value = JSON_PROPERTY_PHONE_NUMBER, required = true)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public String getPhoneNumber() {
     return phoneNumber;
   }
 
 
-  @JsonProperty(value = JSON_PROPERTY_PHONE_NUMBER, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setPhoneNumber(@javax.annotation.Nullable String phoneNumber) {
+  @JsonProperty(value = JSON_PROPERTY_PHONE_NUMBER, required = true)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setPhoneNumber(@javax.annotation.Nonnull String phoneNumber) {
     this.phoneNumber = phoneNumber;
   }
 
 
-  public GetKycRes postalCode(@javax.annotation.Nullable String postalCode) {
+  public UsGetResultRes postalCode(@javax.annotation.Nonnull String postalCode) {
     this.postalCode = postalCode;
     return this;
   }
@@ -329,22 +266,22 @@ public class GetKycRes {
    * Get postalCode
    * @return postalCode
    */
-  @javax.annotation.Nullable
-  @JsonProperty(value = JSON_PROPERTY_POSTAL_CODE, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @javax.annotation.Nonnull
+  @JsonProperty(value = JSON_PROPERTY_POSTAL_CODE, required = true)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public String getPostalCode() {
     return postalCode;
   }
 
 
-  @JsonProperty(value = JSON_PROPERTY_POSTAL_CODE, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setPostalCode(@javax.annotation.Nullable String postalCode) {
+  @JsonProperty(value = JSON_PROPERTY_POSTAL_CODE, required = true)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setPostalCode(@javax.annotation.Nonnull String postalCode) {
     this.postalCode = postalCode;
   }
 
 
-  public GetKycRes region(@javax.annotation.Nullable String region) {
+  public UsGetResultRes region(@javax.annotation.Nonnull String region) {
     this.region = region;
     return this;
   }
@@ -353,46 +290,22 @@ public class GetKycRes {
    * Get region
    * @return region
    */
-  @javax.annotation.Nullable
-  @JsonProperty(value = JSON_PROPERTY_REGION, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @javax.annotation.Nonnull
+  @JsonProperty(value = JSON_PROPERTY_REGION, required = true)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public String getRegion() {
     return region;
   }
 
 
-  @JsonProperty(value = JSON_PROPERTY_REGION, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setRegion(@javax.annotation.Nullable String region) {
+  @JsonProperty(value = JSON_PROPERTY_REGION, required = true)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setRegion(@javax.annotation.Nonnull String region) {
     this.region = region;
   }
 
 
-  public GetKycRes sex(@javax.annotation.Nullable String sex) {
-    this.sex = sex;
-    return this;
-  }
-
-  /**
-   * Get sex
-   * @return sex
-   */
-  @javax.annotation.Nullable
-  @JsonProperty(value = JSON_PROPERTY_SEX, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public String getSex() {
-    return sex;
-  }
-
-
-  @JsonProperty(value = JSON_PROPERTY_SEX, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setSex(@javax.annotation.Nullable String sex) {
-    this.sex = sex;
-  }
-
-
-  public GetKycRes street(@javax.annotation.Nullable String street) {
+  public UsGetResultRes street(@javax.annotation.Nonnull String street) {
     this.street = street;
     return this;
   }
@@ -401,23 +314,23 @@ public class GetKycRes {
    * Get street
    * @return street
    */
-  @javax.annotation.Nullable
-  @JsonProperty(value = JSON_PROPERTY_STREET, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @javax.annotation.Nonnull
+  @JsonProperty(value = JSON_PROPERTY_STREET, required = true)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public String getStreet() {
     return street;
   }
 
 
-  @JsonProperty(value = JSON_PROPERTY_STREET, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setStreet(@javax.annotation.Nullable String street) {
+  @JsonProperty(value = JSON_PROPERTY_STREET, required = true)
+  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  public void setStreet(@javax.annotation.Nonnull String street) {
     this.street = street;
   }
 
 
   /**
-   * Return true if this GetKycRes object is equal to o.
+   * Return true if this UsGetResultRes object is equal to o.
    */
   @Override
   public boolean equals(Object o) {
@@ -427,43 +340,37 @@ public class GetKycRes {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    GetKycRes getKycRes = (GetKycRes) o;
-    return Objects.equals(this.city, getKycRes.city) &&
-        Objects.equals(this.country, getKycRes.country) &&
-        Objects.equals(this.dateOfBirth, getKycRes.dateOfBirth) &&
-        Objects.equals(this.emailAddress, getKycRes.emailAddress) &&
-        Objects.equals(this.familyName, getKycRes.familyName) &&
-        Objects.equals(this.fullAddress, getKycRes.fullAddress) &&
-        Objects.equals(this.fullName, getKycRes.fullName) &&
-        Objects.equals(this.givenName, getKycRes.givenName) &&
-        Objects.equals(this.phoneNumber, getKycRes.phoneNumber) &&
-        Objects.equals(this.postalCode, getKycRes.postalCode) &&
-        Objects.equals(this.region, getKycRes.region) &&
-        Objects.equals(this.sex, getKycRes.sex) &&
-        Objects.equals(this.street, getKycRes.street);
+    UsGetResultRes usGetResultRes = (UsGetResultRes) o;
+    return Objects.equals(this.city, usGetResultRes.city) &&
+        Objects.equals(this.country, usGetResultRes.country) &&
+        Objects.equals(this.dateOfBirth, usGetResultRes.dateOfBirth) &&
+        Objects.equals(this.emailAddress, usGetResultRes.emailAddress) &&
+        Objects.equals(this.familyName, usGetResultRes.familyName) &&
+        Objects.equals(this.givenName, usGetResultRes.givenName) &&
+        Objects.equals(this.phoneNumber, usGetResultRes.phoneNumber) &&
+        Objects.equals(this.postalCode, usGetResultRes.postalCode) &&
+        Objects.equals(this.region, usGetResultRes.region) &&
+        Objects.equals(this.street, usGetResultRes.street);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(city, country, dateOfBirth, emailAddress, familyName, fullAddress, fullName, givenName, phoneNumber, postalCode, region, sex, street);
+    return Objects.hash(city, country, dateOfBirth, emailAddress, familyName, givenName, phoneNumber, postalCode, region, street);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class GetKycRes {\n");
+    sb.append("class UsGetResultRes {\n");
     sb.append("    city: ").append(toIndentedString(city)).append("\n");
     sb.append("    country: ").append(toIndentedString(country)).append("\n");
     sb.append("    dateOfBirth: ").append(toIndentedString(dateOfBirth)).append("\n");
     sb.append("    emailAddress: ").append(toIndentedString(emailAddress)).append("\n");
     sb.append("    familyName: ").append(toIndentedString(familyName)).append("\n");
-    sb.append("    fullAddress: ").append(toIndentedString(fullAddress)).append("\n");
-    sb.append("    fullName: ").append(toIndentedString(fullName)).append("\n");
     sb.append("    givenName: ").append(toIndentedString(givenName)).append("\n");
     sb.append("    phoneNumber: ").append(toIndentedString(phoneNumber)).append("\n");
     sb.append("    postalCode: ").append(toIndentedString(postalCode)).append("\n");
     sb.append("    region: ").append(toIndentedString(region)).append("\n");
-    sb.append("    sex: ").append(toIndentedString(sex)).append("\n");
     sb.append("    street: ").append(toIndentedString(street)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -534,16 +441,6 @@ public class GetKycRes {
       joiner.add(String.format(java.util.Locale.ROOT, "%sfamily_name%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFamilyName()))));
     }
 
-    // add `full_address` to the URL query string
-    if (getFullAddress() != null) {
-      joiner.add(String.format(java.util.Locale.ROOT, "%sfull_address%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFullAddress()))));
-    }
-
-    // add `full_name` to the URL query string
-    if (getFullName() != null) {
-      joiner.add(String.format(java.util.Locale.ROOT, "%sfull_name%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getFullName()))));
-    }
-
     // add `given_name` to the URL query string
     if (getGivenName() != null) {
       joiner.add(String.format(java.util.Locale.ROOT, "%sgiven_name%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getGivenName()))));
@@ -562,11 +459,6 @@ public class GetKycRes {
     // add `region` to the URL query string
     if (getRegion() != null) {
       joiner.add(String.format(java.util.Locale.ROOT, "%sregion%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getRegion()))));
-    }
-
-    // add `sex` to the URL query string
-    if (getSex() != null) {
-      joiner.add(String.format(java.util.Locale.ROOT, "%ssex%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getSex()))));
     }
 
     // add `street` to the URL query string
