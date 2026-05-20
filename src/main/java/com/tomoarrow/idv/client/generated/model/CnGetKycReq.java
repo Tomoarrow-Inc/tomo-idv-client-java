@@ -24,57 +24,67 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.tomoarrow.idv.client.generated.model.Country;
+import com.tomoarrow.idv.client.generated.model.CnIdvField;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
 import com.tomoarrow.idv.client.generated.ApiClient;
 /**
- * GetKycReq
+ * CnGetKycReq
  */
 @JsonPropertyOrder({
-  GetKycReq.JSON_PROPERTY_COUNTRY,
-  GetKycReq.JSON_PROPERTY_USER_ID
+  CnGetKycReq.JSON_PROPERTY_FIELDS,
+  CnGetKycReq.JSON_PROPERTY_USER_ID
 })
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
-public class GetKycReq {
-  public static final String JSON_PROPERTY_COUNTRY = "country";
-  @javax.annotation.Nonnull
-  private Country country;
+public class CnGetKycReq {
+  public static final String JSON_PROPERTY_FIELDS = "fields";
+  @javax.annotation.Nullable
+  private List<CnIdvField> fields = new ArrayList<>();
 
   public static final String JSON_PROPERTY_USER_ID = "user_id";
   @javax.annotation.Nonnull
   private String userId;
 
-  public GetKycReq() { 
+  public CnGetKycReq() { 
   }
 
-  public GetKycReq country(@javax.annotation.Nonnull Country country) {
-    this.country = country;
+  public CnGetKycReq fields(@javax.annotation.Nullable List<CnIdvField> fields) {
+    this.fields = fields;
+    return this;
+  }
+
+  public CnGetKycReq addFieldsItem(CnIdvField fieldsItem) {
+    if (this.fields == null) {
+      this.fields = new ArrayList<>();
+    }
+    this.fields.add(fieldsItem);
     return this;
   }
 
   /**
-   * Get country
-   * @return country
+   * Get fields
+   * @return fields
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_COUNTRY, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public Country getCountry() {
-    return country;
+  @javax.annotation.Nullable
+  @JsonProperty(value = JSON_PROPERTY_FIELDS, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public List<CnIdvField> getFields() {
+    return fields;
   }
 
 
-  @JsonProperty(value = JSON_PROPERTY_COUNTRY, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setCountry(@javax.annotation.Nonnull Country country) {
-    this.country = country;
+  @JsonProperty(value = JSON_PROPERTY_FIELDS, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setFields(@javax.annotation.Nullable List<CnIdvField> fields) {
+    this.fields = fields;
   }
 
 
-  public GetKycReq userId(@javax.annotation.Nonnull String userId) {
+  public CnGetKycReq userId(@javax.annotation.Nonnull String userId) {
     this.userId = userId;
     return this;
   }
@@ -99,7 +109,7 @@ public class GetKycReq {
 
 
   /**
-   * Return true if this GetKycReq object is equal to o.
+   * Return true if this CnGetKycReq object is equal to o.
    */
   @Override
   public boolean equals(Object o) {
@@ -109,21 +119,21 @@ public class GetKycReq {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    GetKycReq getKycReq = (GetKycReq) o;
-    return Objects.equals(this.country, getKycReq.country) &&
-        Objects.equals(this.userId, getKycReq.userId);
+    CnGetKycReq cnGetKycReq = (CnGetKycReq) o;
+    return Objects.equals(this.fields, cnGetKycReq.fields) &&
+        Objects.equals(this.userId, cnGetKycReq.userId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(country, userId);
+    return Objects.hash(fields, userId);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class GetKycReq {\n");
-    sb.append("    country: ").append(toIndentedString(country)).append("\n");
+    sb.append("class CnGetKycReq {\n");
+    sb.append("    fields: ").append(toIndentedString(fields)).append("\n");
     sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -169,9 +179,15 @@ public class GetKycReq {
 
     StringJoiner joiner = new StringJoiner("&");
 
-    // add `country` to the URL query string
-    if (getCountry() != null) {
-      joiner.add(String.format(java.util.Locale.ROOT, "%scountry%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCountry()))));
+    // add `fields` to the URL query string
+    if (getFields() != null) {
+      for (int i = 0; i < getFields().size(); i++) {
+        if (getFields().get(i) != null) {
+          joiner.add(String.format(java.util.Locale.ROOT, "%sfields%s%s=%s", prefix, suffix,
+              "".equals(suffix) ? "" : String.format(java.util.Locale.ROOT, "%s%d%s", containerPrefix, i, containerSuffix),
+              ApiClient.urlEncode(ApiClient.valueToString(getFields().get(i)))));
+        }
+      }
     }
 
     // add `user_id` to the URL query string

@@ -13,8 +13,6 @@
 
 package com.tomoarrow.idv.client.generated.model;
 
-import org.apache.commons.lang3.builder.EqualsBuilder;
-import org.apache.commons.lang3.builder.HashCodeBuilder;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 import java.util.StringJoiner;
@@ -164,12 +162,22 @@ public class TokenRes {
    */
   @Override
   public boolean equals(Object o) {
-    return EqualsBuilder.reflectionEquals(this, o, false, null, true);
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+    TokenRes tokenRes = (TokenRes) o;
+    return Objects.equals(this.accessToken, tokenRes.accessToken) &&
+        Objects.equals(this.expiresIn, tokenRes.expiresIn) &&
+        Objects.equals(this.scope, tokenRes.scope) &&
+        Objects.equals(this.tokenType, tokenRes.tokenType);
   }
 
   @Override
   public int hashCode() {
-    return HashCodeBuilder.reflectionHashCode(this);
+    return Objects.hash(accessToken, expiresIn, scope, tokenType);
   }
 
   @Override

@@ -26,171 +26,33 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * Gets or Sets Country
+ * Gets or Sets UsIdvField
  */
-public enum Country {
+public enum UsIdvField {
   
-  AR("ar"),
+  DATE_OF_BIRTH("date_of_birth"),
   
-  AU("au"),
+  EMAIL_ADDRESS("email_address"),
   
-  AT("at"),
+  PHONE_NUMBER("phone_number"),
   
-  BE("be"),
+  FAMILY_NAME("family_name"),
   
-  BR("br"),
+  GIVEN_NAME("given_name"),
   
-  CA("ca"),
+  CITY("city"),
   
-  CL("cl"),
+  COUNTRY("country"),
   
-  CN("cn"),
+  POSTAL_CODE("postal_code"),
   
-  CO("co"),
+  REGION("region"),
   
-  CZ("cz"),
-  
-  DK("dk"),
-  
-  FI("fi"),
-  
-  FR("fr"),
-  
-  DE("de"),
-  
-  GI("gi"),
-  
-  HK("hk"),
-  
-  IN("in"),
-  
-  IE("ie"),
-  
-  IT("it"),
-  
-  JP("jp"),
-  
-  KE("ke"),
-  
-  LU("lu"),
-  
-  MY("my"),
-  
-  MX("mx"),
-  
-  NL("nl"),
-  
-  NZ("nz"),
-  
-  NG("ng"),
-  
-  NO("no"),
-  
-  PH("ph"),
-  
-  PL("pl"),
-  
-  PT("pt"),
-  
-  SG("sg"),
-  
-  SK("sk"),
-  
-  ZA("za"),
-  
-  ES("es"),
-  
-  SE("se"),
-  
-  CH("ch"),
-  
-  TR("tr"),
-  
-  GB("gb"),
-  
-  US("us"),
-  
-  AF("af"),
-  
-  AZ("az"),
-  
-  BH("bh"),
-  
-  BD("bd"),
-  
-  BT("bt"),
-  
-  BN("bn"),
-  
-  KH("kh"),
-  
-  ID("id"),
-  
-  IQ("iq"),
-  
-  IL("il"),
-  
-  JO("jo"),
-  
-  KZ("kz"),
-  
-  KW("kw"),
-  
-  KG("kg"),
-  
-  LA("la"),
-  
-  LB("lb"),
-  
-  MO("mo"),
-  
-  MV("mv"),
-  
-  MN("mn"),
-  
-  MM("mm"),
-  
-  NP("np"),
-  
-  OM("om"),
-  
-  PK("pk"),
-  
-  PS("ps"),
-  
-  QA("qa"),
-  
-  RU("ru"),
-  
-  SA("sa"),
-  
-  KR("kr"),
-  
-  LK("lk"),
-  
-  TW("tw"),
-  
-  TJ("tj"),
-  
-  TH("th"),
-  
-  TM("tm"),
-  
-  AE("ae"),
-  
-  UZ("uz"),
-  
-  VN("vn"),
-  
-  YE("ye"),
-  
-  UK("uk"),
-  
-  UNKNOWN("unknown");
+  STREET("street");
 
   private String value;
 
-  Country(String value) {
+  UsIdvField(String value) {
     this.value = value;
   }
 
@@ -205,8 +67,8 @@ public enum Country {
   }
 
   @JsonCreator
-  public static Country fromValue(String value) {
-    for (Country b : Country.values()) {
+  public static UsIdvField fromValue(String value) {
+    for (UsIdvField b : UsIdvField.values()) {
       if (b.value.equals(value)) {
         return b;
       }

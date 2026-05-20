@@ -1,16 +1,16 @@
 
 
-# SessionStartReq
+# CnStartIdvReq
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
+|**bestFrameBase64** | **String** |  |  [optional] |
 |**callbackUrl** | **String** |  |  [optional] |
-|**country** | **Country** |  |  [optional] |
-|**email** | **String** |  |  [optional] |
-|**kycPolicy** | [**KycPolicy**](KycPolicy.md) |  |  [optional] |
+|**cardImageBase64** | **String** |  |  [optional] |
+|**kycPolicyId** | **String** |  |  [optional] |
 |**userId** | **String** |  |  |
 
 

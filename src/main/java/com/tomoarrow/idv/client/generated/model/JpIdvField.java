@@ -26,171 +26,23 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * Gets or Sets Country
+ * Gets or Sets JpIdvField
  */
-public enum Country {
+public enum JpIdvField {
   
-  AR("ar"),
+  NAME("name"),
   
-  AU("au"),
+  DATE_OF_BIRTH("date_of_birth"),
   
-  AT("at"),
+  SEX("sex"),
   
-  BE("be"),
+  ADDRESS("address"),
   
-  BR("br"),
-  
-  CA("ca"),
-  
-  CL("cl"),
-  
-  CN("cn"),
-  
-  CO("co"),
-  
-  CZ("cz"),
-  
-  DK("dk"),
-  
-  FI("fi"),
-  
-  FR("fr"),
-  
-  DE("de"),
-  
-  GI("gi"),
-  
-  HK("hk"),
-  
-  IN("in"),
-  
-  IE("ie"),
-  
-  IT("it"),
-  
-  JP("jp"),
-  
-  KE("ke"),
-  
-  LU("lu"),
-  
-  MY("my"),
-  
-  MX("mx"),
-  
-  NL("nl"),
-  
-  NZ("nz"),
-  
-  NG("ng"),
-  
-  NO("no"),
-  
-  PH("ph"),
-  
-  PL("pl"),
-  
-  PT("pt"),
-  
-  SG("sg"),
-  
-  SK("sk"),
-  
-  ZA("za"),
-  
-  ES("es"),
-  
-  SE("se"),
-  
-  CH("ch"),
-  
-  TR("tr"),
-  
-  GB("gb"),
-  
-  US("us"),
-  
-  AF("af"),
-  
-  AZ("az"),
-  
-  BH("bh"),
-  
-  BD("bd"),
-  
-  BT("bt"),
-  
-  BN("bn"),
-  
-  KH("kh"),
-  
-  ID("id"),
-  
-  IQ("iq"),
-  
-  IL("il"),
-  
-  JO("jo"),
-  
-  KZ("kz"),
-  
-  KW("kw"),
-  
-  KG("kg"),
-  
-  LA("la"),
-  
-  LB("lb"),
-  
-  MO("mo"),
-  
-  MV("mv"),
-  
-  MN("mn"),
-  
-  MM("mm"),
-  
-  NP("np"),
-  
-  OM("om"),
-  
-  PK("pk"),
-  
-  PS("ps"),
-  
-  QA("qa"),
-  
-  RU("ru"),
-  
-  SA("sa"),
-  
-  KR("kr"),
-  
-  LK("lk"),
-  
-  TW("tw"),
-  
-  TJ("tj"),
-  
-  TH("th"),
-  
-  TM("tm"),
-  
-  AE("ae"),
-  
-  UZ("uz"),
-  
-  VN("vn"),
-  
-  YE("ye"),
-  
-  UK("uk"),
-  
-  UNKNOWN("unknown");
+  POSTAL_CODE("postal_code");
 
   private String value;
 
-  Country(String value) {
+  JpIdvField(String value) {
     this.value = value;
   }
 
@@ -205,8 +57,8 @@ public enum Country {
   }
 
   @JsonCreator
-  public static Country fromValue(String value) {
-    for (Country b : Country.values()) {
+  public static JpIdvField fromValue(String value) {
+    for (JpIdvField b : JpIdvField.values()) {
       if (b.value.equals(value)) {
         return b;
       }

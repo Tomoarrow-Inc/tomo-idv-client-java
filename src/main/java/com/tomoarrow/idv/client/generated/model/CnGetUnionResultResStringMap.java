@@ -13,63 +13,75 @@
 
 package com.tomoarrow.idv.client.generated.model;
 
+import java.util.Map;
+import java.util.HashMap;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 import java.util.StringJoiner;
 import java.util.Objects;
 import java.util.Map;
 import java.util.HashMap;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonTypeName;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.Arrays;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
 import com.tomoarrow.idv.client.generated.ApiClient;
 /**
- * StartIdvRes
+ * CnGetUnionResultResStringMap
  */
 @JsonPropertyOrder({
-  StartIdvRes.JSON_PROPERTY_START_IDV_URI
 })
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
-public class StartIdvRes {
-  public static final String JSON_PROPERTY_START_IDV_URI = "start_idv_uri";
-  @javax.annotation.Nonnull
-  private String startIdvUri;
-
-  public StartIdvRes() { 
+public class CnGetUnionResultResStringMap {
+  public CnGetUnionResultResStringMap() { 
   }
+  /**
+   * A container for additional, undeclared properties.
+   * This is a holder for any undeclared properties as specified with
+   * the 'additionalProperties' keyword in the OAS document.
+   */
+  private Map<String, String> additionalProperties;
 
-  public StartIdvRes startIdvUri(@javax.annotation.Nonnull String startIdvUri) {
-    this.startIdvUri = startIdvUri;
+  /**
+   * Set the additional (undeclared) property with the specified name and value.
+   * If the property does not already exist, create it otherwise replace it.
+   * @param key the name of the property
+   * @param value the value of the property
+   * @return self reference
+   */
+  @JsonAnySetter
+  public CnGetUnionResultResStringMap putAdditionalProperty(String key, String value) {
+    if (this.additionalProperties == null) {
+        this.additionalProperties = new HashMap<String, String>();
+    }
+    this.additionalProperties.put(key, value);
     return this;
   }
 
   /**
-   * Get startIdvUri
-   * @return startIdvUri
+   * Return the additional (undeclared) properties.
+   * @return the additional (undeclared) properties
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_START_IDV_URI, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public String getStartIdvUri() {
-    return startIdvUri;
+  @JsonAnyGetter
+  public Map<String, String> getAdditionalProperties() {
+    return additionalProperties;
   }
-
-
-  @JsonProperty(value = JSON_PROPERTY_START_IDV_URI, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setStartIdvUri(@javax.annotation.Nonnull String startIdvUri) {
-    this.startIdvUri = startIdvUri;
-  }
-
 
   /**
-   * Return true if this StartIdvRes object is equal to o.
+   * Return the additional (undeclared) property with the specified name.
+   * @param key the name of the property
+   * @return the additional (undeclared) property with the specified name
+   */
+  public String getAdditionalProperty(String key) {
+    if (this.additionalProperties == null) {
+        return null;
+    }
+    return this.additionalProperties.get(key);
+  }
+
+  /**
+   * Return true if this CnGetUnionResultResStringMap object is equal to o.
    */
   @Override
   public boolean equals(Object o) {
@@ -79,20 +91,19 @@ public class StartIdvRes {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    StartIdvRes startIdvRes = (StartIdvRes) o;
-    return Objects.equals(this.startIdvUri, startIdvRes.startIdvUri);
+    return true;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(startIdvUri);
+    return Objects.hash(, additionalProperties);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class StartIdvRes {\n");
-    sb.append("    startIdvUri: ").append(toIndentedString(startIdvUri)).append("\n");
+    sb.append("class CnGetUnionResultResStringMap {\n");
+    sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -136,11 +147,6 @@ public class StartIdvRes {
     }
 
     StringJoiner joiner = new StringJoiner("&");
-
-    // add `start_idv_uri` to the URL query string
-    if (getStartIdvUri() != null) {
-      joiner.add(String.format(java.util.Locale.ROOT, "%sstart_idv_uri%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getStartIdvUri()))));
-    }
 
     return joiner.toString();
   }

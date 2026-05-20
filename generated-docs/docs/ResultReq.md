@@ -1,16 +1,14 @@
 
 
-# SessionStartReq
+# ResultReq
 
 
 ## Properties
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**callbackUrl** | **String** |  |  [optional] |
 |**country** | **Country** |  |  [optional] |
-|**email** | **String** |  |  [optional] |
-|**kycPolicy** | [**KycPolicy**](KycPolicy.md) |  |  [optional] |
+|**policy** | [**KycPolicy**](KycPolicy.md) |  |  [optional] |
 |**userId** | **String** |  |  |
 
 

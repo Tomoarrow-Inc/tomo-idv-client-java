@@ -7,11 +7,11 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**callbackUrl** | **String** |  |  [optional] |
+|**callbackUrl** | **String** |  |  |
 |**country** | **Country** |  |  [optional] |
 |**email** | **String** |  |  [optional] |
-|**kycPolicyId** | **String** |  |  [optional] |
-|**userId** | **String** |  |  |
+|**kycPolicy** | [**KycPolicy**](KycPolicy.md) |  |  [optional] |
+|**userId** | **String** |  |  [optional] |
 
 
 

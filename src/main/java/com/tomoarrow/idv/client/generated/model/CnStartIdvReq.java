@@ -24,49 +24,71 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
-import com.tomoarrow.idv.client.generated.model.Country;
-import com.tomoarrow.idv.client.generated.model.KycPolicy;
 import java.util.Arrays;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 
 import com.tomoarrow.idv.client.generated.ApiClient;
 /**
- * SessionStartReq
+ * CnStartIdvReq
  */
 @JsonPropertyOrder({
-  SessionStartReq.JSON_PROPERTY_CALLBACK_URL,
-  SessionStartReq.JSON_PROPERTY_COUNTRY,
-  SessionStartReq.JSON_PROPERTY_EMAIL,
-  SessionStartReq.JSON_PROPERTY_KYC_POLICY,
-  SessionStartReq.JSON_PROPERTY_USER_ID
+  CnStartIdvReq.JSON_PROPERTY_BEST_FRAME_BASE64,
+  CnStartIdvReq.JSON_PROPERTY_CALLBACK_URL,
+  CnStartIdvReq.JSON_PROPERTY_CARD_IMAGE_BASE64,
+  CnStartIdvReq.JSON_PROPERTY_KYC_POLICY_ID,
+  CnStartIdvReq.JSON_PROPERTY_USER_ID
 })
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
-public class SessionStartReq {
+public class CnStartIdvReq {
+  public static final String JSON_PROPERTY_BEST_FRAME_BASE64 = "best_frame_base64";
+  @javax.annotation.Nullable
+  private String bestFrameBase64;
+
   public static final String JSON_PROPERTY_CALLBACK_URL = "callback_url";
   @javax.annotation.Nullable
   private String callbackUrl;
 
-  public static final String JSON_PROPERTY_COUNTRY = "country";
+  public static final String JSON_PROPERTY_CARD_IMAGE_BASE64 = "card_image_base64";
   @javax.annotation.Nullable
-  private Country country;
+  private String cardImageBase64;
 
-  public static final String JSON_PROPERTY_EMAIL = "email";
+  public static final String JSON_PROPERTY_KYC_POLICY_ID = "kyc_policy_id";
   @javax.annotation.Nullable
-  private String email;
-
-  public static final String JSON_PROPERTY_KYC_POLICY = "kyc_policy";
-  @javax.annotation.Nullable
-  private KycPolicy kycPolicy;
+  private String kycPolicyId;
 
   public static final String JSON_PROPERTY_USER_ID = "user_id";
   @javax.annotation.Nonnull
   private String userId;
 
-  public SessionStartReq() { 
+  public CnStartIdvReq() { 
   }
 
-  public SessionStartReq callbackUrl(@javax.annotation.Nullable String callbackUrl) {
+  public CnStartIdvReq bestFrameBase64(@javax.annotation.Nullable String bestFrameBase64) {
+    this.bestFrameBase64 = bestFrameBase64;
+    return this;
+  }
+
+  /**
+   * Get bestFrameBase64
+   * @return bestFrameBase64
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(value = JSON_PROPERTY_BEST_FRAME_BASE64, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public String getBestFrameBase64() {
+    return bestFrameBase64;
+  }
+
+
+  @JsonProperty(value = JSON_PROPERTY_BEST_FRAME_BASE64, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setBestFrameBase64(@javax.annotation.Nullable String bestFrameBase64) {
+    this.bestFrameBase64 = bestFrameBase64;
+  }
+
+
+  public CnStartIdvReq callbackUrl(@javax.annotation.Nullable String callbackUrl) {
     this.callbackUrl = callbackUrl;
     return this;
   }
@@ -90,79 +112,55 @@ public class SessionStartReq {
   }
 
 
-  public SessionStartReq country(@javax.annotation.Nullable Country country) {
-    this.country = country;
+  public CnStartIdvReq cardImageBase64(@javax.annotation.Nullable String cardImageBase64) {
+    this.cardImageBase64 = cardImageBase64;
     return this;
   }
 
   /**
-   * Get country
-   * @return country
+   * Get cardImageBase64
+   * @return cardImageBase64
    */
   @javax.annotation.Nullable
-  @JsonProperty(value = JSON_PROPERTY_COUNTRY, required = false)
+  @JsonProperty(value = JSON_PROPERTY_CARD_IMAGE_BASE64, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public Country getCountry() {
-    return country;
+  public String getCardImageBase64() {
+    return cardImageBase64;
   }
 
 
-  @JsonProperty(value = JSON_PROPERTY_COUNTRY, required = false)
+  @JsonProperty(value = JSON_PROPERTY_CARD_IMAGE_BASE64, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCountry(@javax.annotation.Nullable Country country) {
-    this.country = country;
+  public void setCardImageBase64(@javax.annotation.Nullable String cardImageBase64) {
+    this.cardImageBase64 = cardImageBase64;
   }
 
 
-  public SessionStartReq email(@javax.annotation.Nullable String email) {
-    this.email = email;
+  public CnStartIdvReq kycPolicyId(@javax.annotation.Nullable String kycPolicyId) {
+    this.kycPolicyId = kycPolicyId;
     return this;
   }
 
   /**
-   * Get email
-   * @return email
+   * Get kycPolicyId
+   * @return kycPolicyId
    */
   @javax.annotation.Nullable
-  @JsonProperty(value = JSON_PROPERTY_EMAIL, required = false)
+  @JsonProperty(value = JSON_PROPERTY_KYC_POLICY_ID, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public String getEmail() {
-    return email;
+  public String getKycPolicyId() {
+    return kycPolicyId;
   }
 
 
-  @JsonProperty(value = JSON_PROPERTY_EMAIL, required = false)
+  @JsonProperty(value = JSON_PROPERTY_KYC_POLICY_ID, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setEmail(@javax.annotation.Nullable String email) {
-    this.email = email;
+  public void setKycPolicyId(@javax.annotation.Nullable String kycPolicyId) {
+    this.kycPolicyId = kycPolicyId;
   }
 
 
-  public SessionStartReq kycPolicy(@javax.annotation.Nullable KycPolicy kycPolicy) {
-    this.kycPolicy = kycPolicy;
-    return this;
-  }
-
-  /**
-   * Get kycPolicy
-   * @return kycPolicy
-   */
-  @javax.annotation.Nullable
-  @JsonProperty(value = JSON_PROPERTY_KYC_POLICY, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public KycPolicy getKycPolicy() {
-    return kycPolicy;
-  }
-
-
-  @JsonProperty(value = JSON_PROPERTY_KYC_POLICY, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setKycPolicy(@javax.annotation.Nullable KycPolicy kycPolicy) {
-    this.kycPolicy = kycPolicy;
-  }
-
-
-  public SessionStartReq userId(@javax.annotation.Nonnull String userId) {
+  public CnStartIdvReq userId(@javax.annotation.Nonnull String userId) {
     this.userId = userId;
     return this;
   }
@@ -187,7 +185,7 @@ public class SessionStartReq {
 
 
   /**
-   * Return true if this SessionStartReq object is equal to o.
+   * Return true if this CnStartIdvReq object is equal to o.
    */
   @Override
   public boolean equals(Object o) {
@@ -197,27 +195,27 @@ public class SessionStartReq {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    SessionStartReq sessionStartReq = (SessionStartReq) o;
-    return Objects.equals(this.callbackUrl, sessionStartReq.callbackUrl) &&
-        Objects.equals(this.country, sessionStartReq.country) &&
-        Objects.equals(this.email, sessionStartReq.email) &&
-        Objects.equals(this.kycPolicy, sessionStartReq.kycPolicy) &&
-        Objects.equals(this.userId, sessionStartReq.userId);
+    CnStartIdvReq cnStartIdvReq = (CnStartIdvReq) o;
+    return Objects.equals(this.bestFrameBase64, cnStartIdvReq.bestFrameBase64) &&
+        Objects.equals(this.callbackUrl, cnStartIdvReq.callbackUrl) &&
+        Objects.equals(this.cardImageBase64, cnStartIdvReq.cardImageBase64) &&
+        Objects.equals(this.kycPolicyId, cnStartIdvReq.kycPolicyId) &&
+        Objects.equals(this.userId, cnStartIdvReq.userId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(callbackUrl, country, email, kycPolicy, userId);
+    return Objects.hash(bestFrameBase64, callbackUrl, cardImageBase64, kycPolicyId, userId);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class SessionStartReq {\n");
+    sb.append("class CnStartIdvReq {\n");
+    sb.append("    bestFrameBase64: ").append(toIndentedString(bestFrameBase64)).append("\n");
     sb.append("    callbackUrl: ").append(toIndentedString(callbackUrl)).append("\n");
-    sb.append("    country: ").append(toIndentedString(country)).append("\n");
-    sb.append("    email: ").append(toIndentedString(email)).append("\n");
-    sb.append("    kycPolicy: ").append(toIndentedString(kycPolicy)).append("\n");
+    sb.append("    cardImageBase64: ").append(toIndentedString(cardImageBase64)).append("\n");
+    sb.append("    kycPolicyId: ").append(toIndentedString(kycPolicyId)).append("\n");
     sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -263,24 +261,24 @@ public class SessionStartReq {
 
     StringJoiner joiner = new StringJoiner("&");
 
+    // add `best_frame_base64` to the URL query string
+    if (getBestFrameBase64() != null) {
+      joiner.add(String.format(java.util.Locale.ROOT, "%sbest_frame_base64%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getBestFrameBase64()))));
+    }
+
     // add `callback_url` to the URL query string
     if (getCallbackUrl() != null) {
       joiner.add(String.format(java.util.Locale.ROOT, "%scallback_url%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCallbackUrl()))));
     }
 
-    // add `country` to the URL query string
-    if (getCountry() != null) {
-      joiner.add(String.format(java.util.Locale.ROOT, "%scountry%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCountry()))));
+    // add `card_image_base64` to the URL query string
+    if (getCardImageBase64() != null) {
+      joiner.add(String.format(java.util.Locale.ROOT, "%scard_image_base64%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCardImageBase64()))));
     }
 
-    // add `email` to the URL query string
-    if (getEmail() != null) {
-      joiner.add(String.format(java.util.Locale.ROOT, "%semail%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getEmail()))));
-    }
-
-    // add `kyc_policy` to the URL query string
-    if (getKycPolicy() != null) {
-      joiner.add(getKycPolicy().toUrlQueryString(prefix + "kyc_policy" + suffix));
+    // add `kyc_policy_id` to the URL query string
+    if (getKycPolicyId() != null) {
+      joiner.add(String.format(java.util.Locale.ROOT, "%skyc_policy_id%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getKycPolicyId()))));
     }
 
     // add `user_id` to the URL query string

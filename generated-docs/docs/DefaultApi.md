@@ -10,18 +10,16 @@ All URIs are relative to *http://localhost*
 | [**v1IdvCaKycGetPostWithHttpInfo**](DefaultApi.md#v1IdvCaKycGetPostWithHttpInfo) | **POST** /v1/idv/ca/kyc/get |  |
 | [**v1IdvCaStartPost**](DefaultApi.md#v1IdvCaStartPost) | **POST** /v1/idv/ca/start |  |
 | [**v1IdvCaStartPostWithHttpInfo**](DefaultApi.md#v1IdvCaStartPostWithHttpInfo) | **POST** /v1/idv/ca/start |  |
-| [**v1IdvCnCookieStartPost**](DefaultApi.md#v1IdvCnCookieStartPost) | **POST** /v1/idv/cn/cookie/start |  |
-| [**v1IdvCnCookieStartPostWithHttpInfo**](DefaultApi.md#v1IdvCnCookieStartPostWithHttpInfo) | **POST** /v1/idv/cn/cookie/start |  |
 | [**v1IdvCnHealthGet**](DefaultApi.md#v1IdvCnHealthGet) | **GET** /v1/idv/cn/health |  |
 | [**v1IdvCnHealthGetWithHttpInfo**](DefaultApi.md#v1IdvCnHealthGetWithHttpInfo) | **GET** /v1/idv/cn/health |  |
 | [**v1IdvCnKycGetPost**](DefaultApi.md#v1IdvCnKycGetPost) | **POST** /v1/idv/cn/kyc/get |  |
 | [**v1IdvCnKycGetPostWithHttpInfo**](DefaultApi.md#v1IdvCnKycGetPostWithHttpInfo) | **POST** /v1/idv/cn/kyc/get |  |
-| [**v1IdvCnResultWebPost**](DefaultApi.md#v1IdvCnResultWebPost) | **POST** /v1/idv/cn/result/web |  |
-| [**v1IdvCnResultWebPostWithHttpInfo**](DefaultApi.md#v1IdvCnResultWebPostWithHttpInfo) | **POST** /v1/idv/cn/result/web |  |
 | [**v1IdvCnStartPost**](DefaultApi.md#v1IdvCnStartPost) | **POST** /v1/idv/cn/start |  |
 | [**v1IdvCnStartPostWithHttpInfo**](DefaultApi.md#v1IdvCnStartPostWithHttpInfo) | **POST** /v1/idv/cn/start |  |
 | [**v1IdvCnTokenPost**](DefaultApi.md#v1IdvCnTokenPost) | **POST** /v1/idv/cn/token |  |
 | [**v1IdvCnTokenPostWithHttpInfo**](DefaultApi.md#v1IdvCnTokenPostWithHttpInfo) | **POST** /v1/idv/cn/token |  |
+| [**v1IdvHealthGet**](DefaultApi.md#v1IdvHealthGet) | **GET** /v1/idv/health |  |
+| [**v1IdvHealthGetWithHttpInfo**](DefaultApi.md#v1IdvHealthGetWithHttpInfo) | **GET** /v1/idv/health |  |
 | [**v1IdvJpHealthGet**](DefaultApi.md#v1IdvJpHealthGet) | **GET** /v1/idv/jp/health |  |
 | [**v1IdvJpHealthGetWithHttpInfo**](DefaultApi.md#v1IdvJpHealthGetWithHttpInfo) | **GET** /v1/idv/jp/health |  |
 | [**v1IdvJpKycGetPost**](DefaultApi.md#v1IdvJpKycGetPost) | **POST** /v1/idv/jp/kyc/get |  |
@@ -30,6 +28,8 @@ All URIs are relative to *http://localhost*
 | [**v1IdvJpStartPostWithHttpInfo**](DefaultApi.md#v1IdvJpStartPostWithHttpInfo) | **POST** /v1/idv/jp/start |  |
 | [**v1IdvKycGetPost**](DefaultApi.md#v1IdvKycGetPost) | **POST** /v1/idv/kyc/get |  |
 | [**v1IdvKycGetPostWithHttpInfo**](DefaultApi.md#v1IdvKycGetPostWithHttpInfo) | **POST** /v1/idv/kyc/get |  |
+| [**v1IdvResultPost**](DefaultApi.md#v1IdvResultPost) | **POST** /v1/idv/result |  |
+| [**v1IdvResultPostWithHttpInfo**](DefaultApi.md#v1IdvResultPostWithHttpInfo) | **POST** /v1/idv/result |  |
 | [**v1IdvSessionsStartPost**](DefaultApi.md#v1IdvSessionsStartPost) | **POST** /v1/idv/sessions/start |  |
 | [**v1IdvSessionsStartPostWithHttpInfo**](DefaultApi.md#v1IdvSessionsStartPostWithHttpInfo) | **POST** /v1/idv/sessions/start |  |
 | [**v1IdvStartPost**](DefaultApi.md#v1IdvStartPost) | **POST** /v1/idv/start |  |
@@ -56,6 +56,8 @@ All URIs are relative to *http://localhost*
 > String v1IdvCaHealthGet()
 
 
+
+[DEPRECATED] Use /v1/idv/health.
 
 ### Example
 
@@ -116,6 +118,8 @@ No authorization required
 
 
 
+[DEPRECATED] Use /v1/idv/health.
+
 ### Example
 
 ```java
@@ -175,9 +179,11 @@ No authorization required
 
 ## v1IdvCaKycGetPost
 
-> PlaidGetResultRes v1IdvCaKycGetPost(authorization, plaidGetKycReq)
+> UsGetUnionResultRes v1IdvCaKycGetPost(authorization, usGetKycReq)
 
 
+
+[DEPRECATED] Use /v1/idv/result with country&#x3D;ca.
 
 ### Example
 
@@ -196,9 +202,9 @@ public class Example {
 
         DefaultApi apiInstance = new DefaultApi(defaultClient);
         String authorization = "authorization_example"; // String | 
-        PlaidGetKycReq plaidGetKycReq = new PlaidGetKycReq(); // PlaidGetKycReq | 
+        UsGetKycReq usGetKycReq = new UsGetKycReq(); // UsGetKycReq | 
         try {
-            PlaidGetResultRes result = apiInstance.v1IdvCaKycGetPost(authorization, plaidGetKycReq);
+            UsGetUnionResultRes result = apiInstance.v1IdvCaKycGetPost(authorization, usGetKycReq);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling DefaultApi#v1IdvCaKycGetPost");
@@ -217,11 +223,11 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **authorization** | **String**|  | [optional] |
-| **plaidGetKycReq** | [**PlaidGetKycReq**](PlaidGetKycReq.md)|  | [optional] |
+| **usGetKycReq** | [**UsGetKycReq**](UsGetKycReq.md)|  | [optional] |
 
 ### Return type
 
-[**PlaidGetResultRes**](PlaidGetResultRes.md)
+[**UsGetUnionResultRes**](UsGetUnionResultRes.md)
 
 
 ### Authorization
@@ -241,9 +247,11 @@ No authorization required
 
 ## v1IdvCaKycGetPostWithHttpInfo
 
-> ApiResponse<PlaidGetResultRes> v1IdvCaKycGetPostWithHttpInfo(authorization, plaidGetKycReq)
+> ApiResponse<UsGetUnionResultRes> v1IdvCaKycGetPostWithHttpInfo(authorization, usGetKycReq)
 
 
+
+[DEPRECATED] Use /v1/idv/result with country&#x3D;ca.
 
 ### Example
 
@@ -263,9 +271,9 @@ public class Example {
 
         DefaultApi apiInstance = new DefaultApi(defaultClient);
         String authorization = "authorization_example"; // String | 
-        PlaidGetKycReq plaidGetKycReq = new PlaidGetKycReq(); // PlaidGetKycReq | 
+        UsGetKycReq usGetKycReq = new UsGetKycReq(); // UsGetKycReq | 
         try {
-            ApiResponse<PlaidGetResultRes> response = apiInstance.v1IdvCaKycGetPostWithHttpInfo(authorization, plaidGetKycReq);
+            ApiResponse<UsGetUnionResultRes> response = apiInstance.v1IdvCaKycGetPostWithHttpInfo(authorization, usGetKycReq);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
@@ -286,11 +294,11 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **authorization** | **String**|  | [optional] |
-| **plaidGetKycReq** | [**PlaidGetKycReq**](PlaidGetKycReq.md)|  | [optional] |
+| **usGetKycReq** | [**UsGetKycReq**](UsGetKycReq.md)|  | [optional] |
 
 ### Return type
 
-ApiResponse<[**PlaidGetResultRes**](PlaidGetResultRes.md)>
+ApiResponse<[**UsGetUnionResultRes**](UsGetUnionResultRes.md)>
 
 
 ### Authorization
@@ -311,9 +319,11 @@ No authorization required
 
 ## v1IdvCaStartPost
 
-> PlaidStartIdvRes v1IdvCaStartPost(authorization, plaidStartIdvReq)
+> StartIdvRes v1IdvCaStartPost(authorization, caStartIdvReq)
 
 
+
+[DEPRECATED] Use /v1/idv/start with country&#x3D;ca.
 
 ### Example
 
@@ -332,9 +342,9 @@ public class Example {
 
         DefaultApi apiInstance = new DefaultApi(defaultClient);
         String authorization = "authorization_example"; // String | 
-        PlaidStartIdvReq plaidStartIdvReq = new PlaidStartIdvReq(); // PlaidStartIdvReq | 
+        CaStartIdvReq caStartIdvReq = new CaStartIdvReq(); // CaStartIdvReq | 
         try {
-            PlaidStartIdvRes result = apiInstance.v1IdvCaStartPost(authorization, plaidStartIdvReq);
+            StartIdvRes result = apiInstance.v1IdvCaStartPost(authorization, caStartIdvReq);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling DefaultApi#v1IdvCaStartPost");
@@ -353,11 +363,11 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **authorization** | **String**|  | [optional] |
-| **plaidStartIdvReq** | [**PlaidStartIdvReq**](PlaidStartIdvReq.md)|  | [optional] |
+| **caStartIdvReq** | [**CaStartIdvReq**](CaStartIdvReq.md)|  | [optional] |
 
 ### Return type
 
-[**PlaidStartIdvRes**](PlaidStartIdvRes.md)
+[**StartIdvRes**](StartIdvRes.md)
 
 
 ### Authorization
@@ -377,9 +387,11 @@ No authorization required
 
 ## v1IdvCaStartPostWithHttpInfo
 
-> ApiResponse<PlaidStartIdvRes> v1IdvCaStartPostWithHttpInfo(authorization, plaidStartIdvReq)
+> ApiResponse<StartIdvRes> v1IdvCaStartPostWithHttpInfo(authorization, caStartIdvReq)
 
 
+
+[DEPRECATED] Use /v1/idv/start with country&#x3D;ca.
 
 ### Example
 
@@ -399,9 +411,9 @@ public class Example {
 
         DefaultApi apiInstance = new DefaultApi(defaultClient);
         String authorization = "authorization_example"; // String | 
-        PlaidStartIdvReq plaidStartIdvReq = new PlaidStartIdvReq(); // PlaidStartIdvReq | 
+        CaStartIdvReq caStartIdvReq = new CaStartIdvReq(); // CaStartIdvReq | 
         try {
-            ApiResponse<PlaidStartIdvRes> response = apiInstance.v1IdvCaStartPostWithHttpInfo(authorization, plaidStartIdvReq);
+            ApiResponse<StartIdvRes> response = apiInstance.v1IdvCaStartPostWithHttpInfo(authorization, caStartIdvReq);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
@@ -422,11 +434,11 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **authorization** | **String**|  | [optional] |
-| **plaidStartIdvReq** | [**PlaidStartIdvReq**](PlaidStartIdvReq.md)|  | [optional] |
+| **caStartIdvReq** | [**CaStartIdvReq**](CaStartIdvReq.md)|  | [optional] |
 
 ### Return type
 
-ApiResponse<[**PlaidStartIdvRes**](PlaidStartIdvRes.md)>
+ApiResponse<[**StartIdvRes**](StartIdvRes.md)>
 
 
 ### Authorization
@@ -445,143 +457,13 @@ No authorization required
 | **400** | Invalid &#x60;body&#x60; or &#x60;Authorization&#x60; |  -  |
 
 
-## v1IdvCnCookieStartPost
-
-> TencentStartIdvRes v1IdvCnCookieStartPost(tencentStartReq)
-
-
-
-### Example
-
-```java
-// Import classes:
-import com.tomoarrow.idv.client.generated.ApiClient;
-import com.tomoarrow.idv.client.generated.ApiException;
-import com.tomoarrow.idv.client.generated.Configuration;
-import com.tomoarrow.idv.client.generated.models.*;
-import com.tomoarrow.idv.client.generated.api.DefaultApi;
-
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("http://localhost");
-
-        DefaultApi apiInstance = new DefaultApi(defaultClient);
-        TencentStartReq tencentStartReq = new TencentStartReq(); // TencentStartReq | 
-        try {
-            TencentStartIdvRes result = apiInstance.v1IdvCnCookieStartPost(tencentStartReq);
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling DefaultApi#v1IdvCnCookieStartPost");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **tencentStartReq** | [**TencentStartReq**](TencentStartReq.md)|  | [optional] |
-
-### Return type
-
-[**TencentStartIdvRes**](TencentStartIdvRes.md)
-
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json;charset=utf-8
-- **Accept**: application/json;charset=utf-8
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** |  |  * Set-Cookie -  <br>  |
-| **400** | Invalid &#x60;body&#x60; |  -  |
-
-## v1IdvCnCookieStartPostWithHttpInfo
-
-> ApiResponse<TencentStartIdvRes> v1IdvCnCookieStartPostWithHttpInfo(tencentStartReq)
-
-
-
-### Example
-
-```java
-// Import classes:
-import com.tomoarrow.idv.client.generated.ApiClient;
-import com.tomoarrow.idv.client.generated.ApiException;
-import com.tomoarrow.idv.client.generated.ApiResponse;
-import com.tomoarrow.idv.client.generated.Configuration;
-import com.tomoarrow.idv.client.generated.models.*;
-import com.tomoarrow.idv.client.generated.api.DefaultApi;
-
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("http://localhost");
-
-        DefaultApi apiInstance = new DefaultApi(defaultClient);
-        TencentStartReq tencentStartReq = new TencentStartReq(); // TencentStartReq | 
-        try {
-            ApiResponse<TencentStartIdvRes> response = apiInstance.v1IdvCnCookieStartPostWithHttpInfo(tencentStartReq);
-            System.out.println("Status code: " + response.getStatusCode());
-            System.out.println("Response headers: " + response.getHeaders());
-            System.out.println("Response body: " + response.getData());
-        } catch (ApiException e) {
-            System.err.println("Exception when calling DefaultApi#v1IdvCnCookieStartPost");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            System.err.println("Reason: " + e.getResponseBody());
-            e.printStackTrace();
-        }
-    }
-}
-```
-
-### Parameters
-
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **tencentStartReq** | [**TencentStartReq**](TencentStartReq.md)|  | [optional] |
-
-### Return type
-
-ApiResponse<[**TencentStartIdvRes**](TencentStartIdvRes.md)>
-
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json;charset=utf-8
-- **Accept**: application/json;charset=utf-8
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** |  |  * Set-Cookie -  <br>  |
-| **400** | Invalid &#x60;body&#x60; |  -  |
-
-
 ## v1IdvCnHealthGet
 
 > String v1IdvCnHealthGet()
 
 
+
+[DEPRECATED] Use /v1/idv/health.
 
 ### Example
 
@@ -642,6 +524,8 @@ No authorization required
 
 
 
+[DEPRECATED] Use /v1/idv/health.
+
 ### Example
 
 ```java
@@ -701,9 +585,11 @@ No authorization required
 
 ## v1IdvCnKycGetPost
 
-> TencentGetUnionResultRes v1IdvCnKycGetPost(authorization, tencentGetKycReq)
+> CnGetUnionResultRes v1IdvCnKycGetPost(authorization, cnGetKycReq)
 
 
+
+[DEPRECATED] Use /v1/idv/result with country&#x3D;cn.
 
 ### Example
 
@@ -722,9 +608,9 @@ public class Example {
 
         DefaultApi apiInstance = new DefaultApi(defaultClient);
         String authorization = "authorization_example"; // String | 
-        TencentGetKycReq tencentGetKycReq = new TencentGetKycReq(); // TencentGetKycReq | 
+        CnGetKycReq cnGetKycReq = new CnGetKycReq(); // CnGetKycReq | 
         try {
-            TencentGetUnionResultRes result = apiInstance.v1IdvCnKycGetPost(authorization, tencentGetKycReq);
+            CnGetUnionResultRes result = apiInstance.v1IdvCnKycGetPost(authorization, cnGetKycReq);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling DefaultApi#v1IdvCnKycGetPost");
@@ -743,11 +629,11 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **authorization** | **String**|  | [optional] |
-| **tencentGetKycReq** | [**TencentGetKycReq**](TencentGetKycReq.md)|  | [optional] |
+| **cnGetKycReq** | [**CnGetKycReq**](CnGetKycReq.md)|  | [optional] |
 
 ### Return type
 
-[**TencentGetUnionResultRes**](TencentGetUnionResultRes.md)
+[**CnGetUnionResultRes**](CnGetUnionResultRes.md)
 
 
 ### Authorization
@@ -767,9 +653,11 @@ No authorization required
 
 ## v1IdvCnKycGetPostWithHttpInfo
 
-> ApiResponse<TencentGetUnionResultRes> v1IdvCnKycGetPostWithHttpInfo(authorization, tencentGetKycReq)
+> ApiResponse<CnGetUnionResultRes> v1IdvCnKycGetPostWithHttpInfo(authorization, cnGetKycReq)
 
 
+
+[DEPRECATED] Use /v1/idv/result with country&#x3D;cn.
 
 ### Example
 
@@ -789,9 +677,9 @@ public class Example {
 
         DefaultApi apiInstance = new DefaultApi(defaultClient);
         String authorization = "authorization_example"; // String | 
-        TencentGetKycReq tencentGetKycReq = new TencentGetKycReq(); // TencentGetKycReq | 
+        CnGetKycReq cnGetKycReq = new CnGetKycReq(); // CnGetKycReq | 
         try {
-            ApiResponse<TencentGetUnionResultRes> response = apiInstance.v1IdvCnKycGetPostWithHttpInfo(authorization, tencentGetKycReq);
+            ApiResponse<CnGetUnionResultRes> response = apiInstance.v1IdvCnKycGetPostWithHttpInfo(authorization, cnGetKycReq);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
@@ -812,11 +700,11 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **authorization** | **String**|  | [optional] |
-| **tencentGetKycReq** | [**TencentGetKycReq**](TencentGetKycReq.md)|  | [optional] |
+| **cnGetKycReq** | [**CnGetKycReq**](CnGetKycReq.md)|  | [optional] |
 
 ### Return type
 
-ApiResponse<[**TencentGetUnionResultRes**](TencentGetUnionResultRes.md)>
+ApiResponse<[**CnGetUnionResultRes**](CnGetUnionResultRes.md)>
 
 
 ### Authorization
@@ -835,133 +723,13 @@ No authorization required
 | **400** | Invalid &#x60;body&#x60; or &#x60;Authorization&#x60; |  -  |
 
 
-## v1IdvCnResultWebPost
-
-> Object v1IdvCnResultWebPost()
-
-
-
-### Example
-
-```java
-// Import classes:
-import com.tomoarrow.idv.client.generated.ApiClient;
-import com.tomoarrow.idv.client.generated.ApiException;
-import com.tomoarrow.idv.client.generated.Configuration;
-import com.tomoarrow.idv.client.generated.models.*;
-import com.tomoarrow.idv.client.generated.api.DefaultApi;
-
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("http://localhost");
-
-        DefaultApi apiInstance = new DefaultApi(defaultClient);
-        try {
-            Object result = apiInstance.v1IdvCnResultWebPost();
-            System.out.println(result);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling DefaultApi#v1IdvCnResultWebPost");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Reason: " + e.getResponseBody());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            e.printStackTrace();
-        }
-    }
-}
-```
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-**Object**
-
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json;charset=utf-8
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** |  |  -  |
-
-## v1IdvCnResultWebPostWithHttpInfo
-
-> ApiResponse<Object> v1IdvCnResultWebPostWithHttpInfo()
-
-
-
-### Example
-
-```java
-// Import classes:
-import com.tomoarrow.idv.client.generated.ApiClient;
-import com.tomoarrow.idv.client.generated.ApiException;
-import com.tomoarrow.idv.client.generated.ApiResponse;
-import com.tomoarrow.idv.client.generated.Configuration;
-import com.tomoarrow.idv.client.generated.models.*;
-import com.tomoarrow.idv.client.generated.api.DefaultApi;
-
-public class Example {
-    public static void main(String[] args) {
-        ApiClient defaultClient = Configuration.getDefaultApiClient();
-        defaultClient.setBasePath("http://localhost");
-
-        DefaultApi apiInstance = new DefaultApi(defaultClient);
-        try {
-            ApiResponse<Object> response = apiInstance.v1IdvCnResultWebPostWithHttpInfo();
-            System.out.println("Status code: " + response.getStatusCode());
-            System.out.println("Response headers: " + response.getHeaders());
-            System.out.println("Response body: " + response.getData());
-        } catch (ApiException e) {
-            System.err.println("Exception when calling DefaultApi#v1IdvCnResultWebPost");
-            System.err.println("Status code: " + e.getCode());
-            System.err.println("Response headers: " + e.getResponseHeaders());
-            System.err.println("Reason: " + e.getResponseBody());
-            e.printStackTrace();
-        }
-    }
-}
-```
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-ApiResponse<**Object**>
-
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json;charset=utf-8
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** |  |  -  |
-
-
 ## v1IdvCnStartPost
 
-> TencentStartIdvRes v1IdvCnStartPost(authorization, tencentStartReq)
+> StartIdvRes v1IdvCnStartPost(authorization, cnStartIdvReq)
 
 
+
+[DEPRECATED] Use /v1/idv/start with country&#x3D;cn.
 
 ### Example
 
@@ -980,9 +748,9 @@ public class Example {
 
         DefaultApi apiInstance = new DefaultApi(defaultClient);
         String authorization = "authorization_example"; // String | 
-        TencentStartReq tencentStartReq = new TencentStartReq(); // TencentStartReq | 
+        CnStartIdvReq cnStartIdvReq = new CnStartIdvReq(); // CnStartIdvReq | 
         try {
-            TencentStartIdvRes result = apiInstance.v1IdvCnStartPost(authorization, tencentStartReq);
+            StartIdvRes result = apiInstance.v1IdvCnStartPost(authorization, cnStartIdvReq);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling DefaultApi#v1IdvCnStartPost");
@@ -1001,11 +769,11 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **authorization** | **String**|  | [optional] |
-| **tencentStartReq** | [**TencentStartReq**](TencentStartReq.md)|  | [optional] |
+| **cnStartIdvReq** | [**CnStartIdvReq**](CnStartIdvReq.md)|  | [optional] |
 
 ### Return type
 
-[**TencentStartIdvRes**](TencentStartIdvRes.md)
+[**StartIdvRes**](StartIdvRes.md)
 
 
 ### Authorization
@@ -1025,9 +793,11 @@ No authorization required
 
 ## v1IdvCnStartPostWithHttpInfo
 
-> ApiResponse<TencentStartIdvRes> v1IdvCnStartPostWithHttpInfo(authorization, tencentStartReq)
+> ApiResponse<StartIdvRes> v1IdvCnStartPostWithHttpInfo(authorization, cnStartIdvReq)
 
 
+
+[DEPRECATED] Use /v1/idv/start with country&#x3D;cn.
 
 ### Example
 
@@ -1047,9 +817,9 @@ public class Example {
 
         DefaultApi apiInstance = new DefaultApi(defaultClient);
         String authorization = "authorization_example"; // String | 
-        TencentStartReq tencentStartReq = new TencentStartReq(); // TencentStartReq | 
+        CnStartIdvReq cnStartIdvReq = new CnStartIdvReq(); // CnStartIdvReq | 
         try {
-            ApiResponse<TencentStartIdvRes> response = apiInstance.v1IdvCnStartPostWithHttpInfo(authorization, tencentStartReq);
+            ApiResponse<StartIdvRes> response = apiInstance.v1IdvCnStartPostWithHttpInfo(authorization, cnStartIdvReq);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
@@ -1070,11 +840,11 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **authorization** | **String**|  | [optional] |
-| **tencentStartReq** | [**TencentStartReq**](TencentStartReq.md)|  | [optional] |
+| **cnStartIdvReq** | [**CnStartIdvReq**](CnStartIdvReq.md)|  | [optional] |
 
 ### Return type
 
-ApiResponse<[**TencentStartIdvRes**](TencentStartIdvRes.md)>
+ApiResponse<[**StartIdvRes**](StartIdvRes.md)>
 
 
 ### Authorization
@@ -1098,6 +868,8 @@ No authorization required
 > TomoIdvIssueTokenRes v1IdvCnTokenPost(authorization, tomoIdvIssueTokenReq)
 
 
+
+[DEPRECATED] Use the OAuth2 token endpoint.
 
 ### Example
 
@@ -1165,6 +937,8 @@ No authorization required
 
 
 
+[DEPRECATED] Use the OAuth2 token endpoint.
+
 ### Example
 
 ```java
@@ -1229,11 +1003,135 @@ No authorization required
 | **400** | Invalid &#x60;body&#x60; or &#x60;Authorization&#x60; |  -  |
 
 
+## v1IdvHealthGet
+
+> String v1IdvHealthGet()
+
+
+
+### Example
+
+```java
+// Import classes:
+import com.tomoarrow.idv.client.generated.ApiClient;
+import com.tomoarrow.idv.client.generated.ApiException;
+import com.tomoarrow.idv.client.generated.Configuration;
+import com.tomoarrow.idv.client.generated.models.*;
+import com.tomoarrow.idv.client.generated.api.DefaultApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("http://localhost");
+
+        DefaultApi apiInstance = new DefaultApi(defaultClient);
+        try {
+            String result = apiInstance.v1IdvHealthGet();
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling DefaultApi#v1IdvHealthGet");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+**String**
+
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json;charset=utf-8
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** |  |  -  |
+
+## v1IdvHealthGetWithHttpInfo
+
+> ApiResponse<String> v1IdvHealthGetWithHttpInfo()
+
+
+
+### Example
+
+```java
+// Import classes:
+import com.tomoarrow.idv.client.generated.ApiClient;
+import com.tomoarrow.idv.client.generated.ApiException;
+import com.tomoarrow.idv.client.generated.ApiResponse;
+import com.tomoarrow.idv.client.generated.Configuration;
+import com.tomoarrow.idv.client.generated.models.*;
+import com.tomoarrow.idv.client.generated.api.DefaultApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("http://localhost");
+
+        DefaultApi apiInstance = new DefaultApi(defaultClient);
+        try {
+            ApiResponse<String> response = apiInstance.v1IdvHealthGetWithHttpInfo();
+            System.out.println("Status code: " + response.getStatusCode());
+            System.out.println("Response headers: " + response.getHeaders());
+            System.out.println("Response body: " + response.getData());
+        } catch (ApiException e) {
+            System.err.println("Exception when calling DefaultApi#v1IdvHealthGet");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            System.err.println("Reason: " + e.getResponseBody());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+This endpoint does not need any parameter.
+
+### Return type
+
+ApiResponse<**String**>
+
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json;charset=utf-8
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** |  |  -  |
+
+
 ## v1IdvJpHealthGet
 
 > String v1IdvJpHealthGet()
 
 
+
+[DEPRECATED] Use /v1/idv/health.
 
 ### Example
 
@@ -1294,6 +1192,8 @@ No authorization required
 
 
 
+[DEPRECATED] Use /v1/idv/health.
+
 ### Example
 
 ```java
@@ -1353,9 +1253,11 @@ No authorization required
 
 ## v1IdvJpKycGetPost
 
-> LiquidGetUnionResultRes v1IdvJpKycGetPost(authorization, liquidGetKycReq)
+> JpGetUnionResultRes v1IdvJpKycGetPost(authorization, jpGetKycReq)
 
 
+
+[DEPRECATED] Use /v1/idv/result with country&#x3D;jp.
 
 ### Example
 
@@ -1374,9 +1276,9 @@ public class Example {
 
         DefaultApi apiInstance = new DefaultApi(defaultClient);
         String authorization = "authorization_example"; // String | 
-        LiquidGetKycReq liquidGetKycReq = new LiquidGetKycReq(); // LiquidGetKycReq | 
+        JpGetKycReq jpGetKycReq = new JpGetKycReq(); // JpGetKycReq | 
         try {
-            LiquidGetUnionResultRes result = apiInstance.v1IdvJpKycGetPost(authorization, liquidGetKycReq);
+            JpGetUnionResultRes result = apiInstance.v1IdvJpKycGetPost(authorization, jpGetKycReq);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling DefaultApi#v1IdvJpKycGetPost");
@@ -1395,11 +1297,11 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **authorization** | **String**|  | [optional] |
-| **liquidGetKycReq** | [**LiquidGetKycReq**](LiquidGetKycReq.md)|  | [optional] |
+| **jpGetKycReq** | [**JpGetKycReq**](JpGetKycReq.md)|  | [optional] |
 
 ### Return type
 
-[**LiquidGetUnionResultRes**](LiquidGetUnionResultRes.md)
+[**JpGetUnionResultRes**](JpGetUnionResultRes.md)
 
 
 ### Authorization
@@ -1419,9 +1321,11 @@ No authorization required
 
 ## v1IdvJpKycGetPostWithHttpInfo
 
-> ApiResponse<LiquidGetUnionResultRes> v1IdvJpKycGetPostWithHttpInfo(authorization, liquidGetKycReq)
+> ApiResponse<JpGetUnionResultRes> v1IdvJpKycGetPostWithHttpInfo(authorization, jpGetKycReq)
 
 
+
+[DEPRECATED] Use /v1/idv/result with country&#x3D;jp.
 
 ### Example
 
@@ -1441,9 +1345,9 @@ public class Example {
 
         DefaultApi apiInstance = new DefaultApi(defaultClient);
         String authorization = "authorization_example"; // String | 
-        LiquidGetKycReq liquidGetKycReq = new LiquidGetKycReq(); // LiquidGetKycReq | 
+        JpGetKycReq jpGetKycReq = new JpGetKycReq(); // JpGetKycReq | 
         try {
-            ApiResponse<LiquidGetUnionResultRes> response = apiInstance.v1IdvJpKycGetPostWithHttpInfo(authorization, liquidGetKycReq);
+            ApiResponse<JpGetUnionResultRes> response = apiInstance.v1IdvJpKycGetPostWithHttpInfo(authorization, jpGetKycReq);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
@@ -1464,11 +1368,11 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **authorization** | **String**|  | [optional] |
-| **liquidGetKycReq** | [**LiquidGetKycReq**](LiquidGetKycReq.md)|  | [optional] |
+| **jpGetKycReq** | [**JpGetKycReq**](JpGetKycReq.md)|  | [optional] |
 
 ### Return type
 
-ApiResponse<[**LiquidGetUnionResultRes**](LiquidGetUnionResultRes.md)>
+ApiResponse<[**JpGetUnionResultRes**](JpGetUnionResultRes.md)>
 
 
 ### Authorization
@@ -1489,9 +1393,11 @@ No authorization required
 
 ## v1IdvJpStartPost
 
-> LiquidIntegratedAppRes v1IdvJpStartPost(authorization, liquidStartIdvReq)
+> StartIdvRes v1IdvJpStartPost(authorization, jpStartIdvReq)
 
 
+
+[DEPRECATED] Use /v1/idv/start with country&#x3D;jp.
 
 ### Example
 
@@ -1510,9 +1416,9 @@ public class Example {
 
         DefaultApi apiInstance = new DefaultApi(defaultClient);
         String authorization = "authorization_example"; // String | 
-        LiquidStartIdvReq liquidStartIdvReq = new LiquidStartIdvReq(); // LiquidStartIdvReq | 
+        JpStartIdvReq jpStartIdvReq = new JpStartIdvReq(); // JpStartIdvReq | 
         try {
-            LiquidIntegratedAppRes result = apiInstance.v1IdvJpStartPost(authorization, liquidStartIdvReq);
+            StartIdvRes result = apiInstance.v1IdvJpStartPost(authorization, jpStartIdvReq);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling DefaultApi#v1IdvJpStartPost");
@@ -1531,11 +1437,11 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **authorization** | **String**|  | [optional] |
-| **liquidStartIdvReq** | [**LiquidStartIdvReq**](LiquidStartIdvReq.md)|  | [optional] |
+| **jpStartIdvReq** | [**JpStartIdvReq**](JpStartIdvReq.md)|  | [optional] |
 
 ### Return type
 
-[**LiquidIntegratedAppRes**](LiquidIntegratedAppRes.md)
+[**StartIdvRes**](StartIdvRes.md)
 
 
 ### Authorization
@@ -1555,9 +1461,11 @@ No authorization required
 
 ## v1IdvJpStartPostWithHttpInfo
 
-> ApiResponse<LiquidIntegratedAppRes> v1IdvJpStartPostWithHttpInfo(authorization, liquidStartIdvReq)
+> ApiResponse<StartIdvRes> v1IdvJpStartPostWithHttpInfo(authorization, jpStartIdvReq)
 
 
+
+[DEPRECATED] Use /v1/idv/start with country&#x3D;jp.
 
 ### Example
 
@@ -1577,9 +1485,9 @@ public class Example {
 
         DefaultApi apiInstance = new DefaultApi(defaultClient);
         String authorization = "authorization_example"; // String | 
-        LiquidStartIdvReq liquidStartIdvReq = new LiquidStartIdvReq(); // LiquidStartIdvReq | 
+        JpStartIdvReq jpStartIdvReq = new JpStartIdvReq(); // JpStartIdvReq | 
         try {
-            ApiResponse<LiquidIntegratedAppRes> response = apiInstance.v1IdvJpStartPostWithHttpInfo(authorization, liquidStartIdvReq);
+            ApiResponse<StartIdvRes> response = apiInstance.v1IdvJpStartPostWithHttpInfo(authorization, jpStartIdvReq);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
@@ -1600,11 +1508,11 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **authorization** | **String**|  | [optional] |
-| **liquidStartIdvReq** | [**LiquidStartIdvReq**](LiquidStartIdvReq.md)|  | [optional] |
+| **jpStartIdvReq** | [**JpStartIdvReq**](JpStartIdvReq.md)|  | [optional] |
 
 ### Return type
 
-ApiResponse<[**LiquidIntegratedAppRes**](LiquidIntegratedAppRes.md)>
+ApiResponse<[**StartIdvRes**](StartIdvRes.md)>
 
 
 ### Authorization
@@ -1759,11 +1667,149 @@ No authorization required
 | **400** | Invalid &#x60;body&#x60; or &#x60;Authorization&#x60; |  -  |
 
 
+## v1IdvResultPost
+
+> ResultRes v1IdvResultPost(authorization, resultReq)
+
+
+
+### Example
+
+```java
+// Import classes:
+import com.tomoarrow.idv.client.generated.ApiClient;
+import com.tomoarrow.idv.client.generated.ApiException;
+import com.tomoarrow.idv.client.generated.Configuration;
+import com.tomoarrow.idv.client.generated.models.*;
+import com.tomoarrow.idv.client.generated.api.DefaultApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("http://localhost");
+
+        DefaultApi apiInstance = new DefaultApi(defaultClient);
+        String authorization = "authorization_example"; // String | 
+        ResultReq resultReq = new ResultReq(); // ResultReq | 
+        try {
+            ResultRes result = apiInstance.v1IdvResultPost(authorization, resultReq);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling DefaultApi#v1IdvResultPost");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **authorization** | **String**|  | [optional] |
+| **resultReq** | [**ResultReq**](ResultReq.md)|  | [optional] |
+
+### Return type
+
+[**ResultRes**](ResultRes.md)
+
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json;charset=utf-8
+- **Accept**: application/json;charset=utf-8
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** |  |  -  |
+| **400** | Invalid &#x60;body&#x60; or &#x60;Authorization&#x60; |  -  |
+
+## v1IdvResultPostWithHttpInfo
+
+> ApiResponse<ResultRes> v1IdvResultPostWithHttpInfo(authorization, resultReq)
+
+
+
+### Example
+
+```java
+// Import classes:
+import com.tomoarrow.idv.client.generated.ApiClient;
+import com.tomoarrow.idv.client.generated.ApiException;
+import com.tomoarrow.idv.client.generated.ApiResponse;
+import com.tomoarrow.idv.client.generated.Configuration;
+import com.tomoarrow.idv.client.generated.models.*;
+import com.tomoarrow.idv.client.generated.api.DefaultApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("http://localhost");
+
+        DefaultApi apiInstance = new DefaultApi(defaultClient);
+        String authorization = "authorization_example"; // String | 
+        ResultReq resultReq = new ResultReq(); // ResultReq | 
+        try {
+            ApiResponse<ResultRes> response = apiInstance.v1IdvResultPostWithHttpInfo(authorization, resultReq);
+            System.out.println("Status code: " + response.getStatusCode());
+            System.out.println("Response headers: " + response.getHeaders());
+            System.out.println("Response body: " + response.getData());
+        } catch (ApiException e) {
+            System.err.println("Exception when calling DefaultApi#v1IdvResultPost");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            System.err.println("Reason: " + e.getResponseBody());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **authorization** | **String**|  | [optional] |
+| **resultReq** | [**ResultReq**](ResultReq.md)|  | [optional] |
+
+### Return type
+
+ApiResponse<[**ResultRes**](ResultRes.md)>
+
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json;charset=utf-8
+- **Accept**: application/json;charset=utf-8
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** |  |  -  |
+| **400** | Invalid &#x60;body&#x60; or &#x60;Authorization&#x60; |  -  |
+
+
 ## v1IdvSessionsStartPost
 
 > SessionStartRes v1IdvSessionsStartPost(authorization, sessionStartReq)
 
 
+
+[DEPRECATED] Use /v1/idv/start.
 
 ### Example
 
@@ -1830,6 +1876,8 @@ No authorization required
 > ApiResponse<SessionStartRes> v1IdvSessionsStartPostWithHttpInfo(authorization, sessionStartReq)
 
 
+
+[DEPRECATED] Use /v1/idv/start.
 
 ### Example
 
@@ -2037,6 +2085,8 @@ No authorization required
 
 
 
+[DEPRECATED] Use /v1/idv/health.
+
 ### Example
 
 ```java
@@ -2095,6 +2145,8 @@ No authorization required
 > ApiResponse<String> v1IdvUkHealthGetWithHttpInfo()
 
 
+
+[DEPRECATED] Use /v1/idv/health.
 
 ### Example
 
@@ -2155,9 +2207,11 @@ No authorization required
 
 ## v1IdvUkKycGetPost
 
-> PlaidGetResultRes v1IdvUkKycGetPost(authorization, plaidGetKycReq)
+> UsGetUnionResultRes v1IdvUkKycGetPost(authorization, usGetKycReq)
 
 
+
+[DEPRECATED] Use /v1/idv/result with country&#x3D;uk.
 
 ### Example
 
@@ -2176,9 +2230,9 @@ public class Example {
 
         DefaultApi apiInstance = new DefaultApi(defaultClient);
         String authorization = "authorization_example"; // String | 
-        PlaidGetKycReq plaidGetKycReq = new PlaidGetKycReq(); // PlaidGetKycReq | 
+        UsGetKycReq usGetKycReq = new UsGetKycReq(); // UsGetKycReq | 
         try {
-            PlaidGetResultRes result = apiInstance.v1IdvUkKycGetPost(authorization, plaidGetKycReq);
+            UsGetUnionResultRes result = apiInstance.v1IdvUkKycGetPost(authorization, usGetKycReq);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling DefaultApi#v1IdvUkKycGetPost");
@@ -2197,11 +2251,11 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **authorization** | **String**|  | [optional] |
-| **plaidGetKycReq** | [**PlaidGetKycReq**](PlaidGetKycReq.md)|  | [optional] |
+| **usGetKycReq** | [**UsGetKycReq**](UsGetKycReq.md)|  | [optional] |
 
 ### Return type
 
-[**PlaidGetResultRes**](PlaidGetResultRes.md)
+[**UsGetUnionResultRes**](UsGetUnionResultRes.md)
 
 
 ### Authorization
@@ -2221,9 +2275,11 @@ No authorization required
 
 ## v1IdvUkKycGetPostWithHttpInfo
 
-> ApiResponse<PlaidGetResultRes> v1IdvUkKycGetPostWithHttpInfo(authorization, plaidGetKycReq)
+> ApiResponse<UsGetUnionResultRes> v1IdvUkKycGetPostWithHttpInfo(authorization, usGetKycReq)
 
 
+
+[DEPRECATED] Use /v1/idv/result with country&#x3D;uk.
 
 ### Example
 
@@ -2243,9 +2299,9 @@ public class Example {
 
         DefaultApi apiInstance = new DefaultApi(defaultClient);
         String authorization = "authorization_example"; // String | 
-        PlaidGetKycReq plaidGetKycReq = new PlaidGetKycReq(); // PlaidGetKycReq | 
+        UsGetKycReq usGetKycReq = new UsGetKycReq(); // UsGetKycReq | 
         try {
-            ApiResponse<PlaidGetResultRes> response = apiInstance.v1IdvUkKycGetPostWithHttpInfo(authorization, plaidGetKycReq);
+            ApiResponse<UsGetUnionResultRes> response = apiInstance.v1IdvUkKycGetPostWithHttpInfo(authorization, usGetKycReq);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
@@ -2266,11 +2322,11 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **authorization** | **String**|  | [optional] |
-| **plaidGetKycReq** | [**PlaidGetKycReq**](PlaidGetKycReq.md)|  | [optional] |
+| **usGetKycReq** | [**UsGetKycReq**](UsGetKycReq.md)|  | [optional] |
 
 ### Return type
 
-ApiResponse<[**PlaidGetResultRes**](PlaidGetResultRes.md)>
+ApiResponse<[**UsGetUnionResultRes**](UsGetUnionResultRes.md)>
 
 
 ### Authorization
@@ -2291,9 +2347,11 @@ No authorization required
 
 ## v1IdvUkStartPost
 
-> PlaidStartIdvRes v1IdvUkStartPost(authorization, plaidStartIdvReq)
+> StartIdvRes v1IdvUkStartPost(authorization, ukStartIdvReq)
 
 
+
+[DEPRECATED] Use /v1/idv/start with country&#x3D;uk.
 
 ### Example
 
@@ -2312,9 +2370,9 @@ public class Example {
 
         DefaultApi apiInstance = new DefaultApi(defaultClient);
         String authorization = "authorization_example"; // String | 
-        PlaidStartIdvReq plaidStartIdvReq = new PlaidStartIdvReq(); // PlaidStartIdvReq | 
+        UkStartIdvReq ukStartIdvReq = new UkStartIdvReq(); // UkStartIdvReq | 
         try {
-            PlaidStartIdvRes result = apiInstance.v1IdvUkStartPost(authorization, plaidStartIdvReq);
+            StartIdvRes result = apiInstance.v1IdvUkStartPost(authorization, ukStartIdvReq);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling DefaultApi#v1IdvUkStartPost");
@@ -2333,11 +2391,11 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **authorization** | **String**|  | [optional] |
-| **plaidStartIdvReq** | [**PlaidStartIdvReq**](PlaidStartIdvReq.md)|  | [optional] |
+| **ukStartIdvReq** | [**UkStartIdvReq**](UkStartIdvReq.md)|  | [optional] |
 
 ### Return type
 
-[**PlaidStartIdvRes**](PlaidStartIdvRes.md)
+[**StartIdvRes**](StartIdvRes.md)
 
 
 ### Authorization
@@ -2357,9 +2415,11 @@ No authorization required
 
 ## v1IdvUkStartPostWithHttpInfo
 
-> ApiResponse<PlaidStartIdvRes> v1IdvUkStartPostWithHttpInfo(authorization, plaidStartIdvReq)
+> ApiResponse<StartIdvRes> v1IdvUkStartPostWithHttpInfo(authorization, ukStartIdvReq)
 
 
+
+[DEPRECATED] Use /v1/idv/start with country&#x3D;uk.
 
 ### Example
 
@@ -2379,9 +2439,9 @@ public class Example {
 
         DefaultApi apiInstance = new DefaultApi(defaultClient);
         String authorization = "authorization_example"; // String | 
-        PlaidStartIdvReq plaidStartIdvReq = new PlaidStartIdvReq(); // PlaidStartIdvReq | 
+        UkStartIdvReq ukStartIdvReq = new UkStartIdvReq(); // UkStartIdvReq | 
         try {
-            ApiResponse<PlaidStartIdvRes> response = apiInstance.v1IdvUkStartPostWithHttpInfo(authorization, plaidStartIdvReq);
+            ApiResponse<StartIdvRes> response = apiInstance.v1IdvUkStartPostWithHttpInfo(authorization, ukStartIdvReq);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
@@ -2402,11 +2462,11 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **authorization** | **String**|  | [optional] |
-| **plaidStartIdvReq** | [**PlaidStartIdvReq**](PlaidStartIdvReq.md)|  | [optional] |
+| **ukStartIdvReq** | [**UkStartIdvReq**](UkStartIdvReq.md)|  | [optional] |
 
 ### Return type
 
-ApiResponse<[**PlaidStartIdvRes**](PlaidStartIdvRes.md)>
+ApiResponse<[**StartIdvRes**](StartIdvRes.md)>
 
 
 ### Authorization
@@ -2430,6 +2490,8 @@ No authorization required
 > String v1IdvUsHealthGet()
 
 
+
+[DEPRECATED] Use /v1/idv/health.
 
 ### Example
 
@@ -2490,6 +2552,8 @@ No authorization required
 
 
 
+[DEPRECATED] Use /v1/idv/health.
+
 ### Example
 
 ```java
@@ -2549,9 +2613,11 @@ No authorization required
 
 ## v1IdvUsKycGetPost
 
-> PlaidGetResultRes v1IdvUsKycGetPost(authorization, plaidGetKycReq)
+> UsGetUnionResultRes v1IdvUsKycGetPost(authorization, usGetKycReq)
 
 
+
+[DEPRECATED] Use /v1/idv/result with country&#x3D;us.
 
 ### Example
 
@@ -2570,9 +2636,9 @@ public class Example {
 
         DefaultApi apiInstance = new DefaultApi(defaultClient);
         String authorization = "authorization_example"; // String | 
-        PlaidGetKycReq plaidGetKycReq = new PlaidGetKycReq(); // PlaidGetKycReq | 
+        UsGetKycReq usGetKycReq = new UsGetKycReq(); // UsGetKycReq | 
         try {
-            PlaidGetResultRes result = apiInstance.v1IdvUsKycGetPost(authorization, plaidGetKycReq);
+            UsGetUnionResultRes result = apiInstance.v1IdvUsKycGetPost(authorization, usGetKycReq);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling DefaultApi#v1IdvUsKycGetPost");
@@ -2591,11 +2657,11 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **authorization** | **String**|  | [optional] |
-| **plaidGetKycReq** | [**PlaidGetKycReq**](PlaidGetKycReq.md)|  | [optional] |
+| **usGetKycReq** | [**UsGetKycReq**](UsGetKycReq.md)|  | [optional] |
 
 ### Return type
 
-[**PlaidGetResultRes**](PlaidGetResultRes.md)
+[**UsGetUnionResultRes**](UsGetUnionResultRes.md)
 
 
 ### Authorization
@@ -2615,9 +2681,11 @@ No authorization required
 
 ## v1IdvUsKycGetPostWithHttpInfo
 
-> ApiResponse<PlaidGetResultRes> v1IdvUsKycGetPostWithHttpInfo(authorization, plaidGetKycReq)
+> ApiResponse<UsGetUnionResultRes> v1IdvUsKycGetPostWithHttpInfo(authorization, usGetKycReq)
 
 
+
+[DEPRECATED] Use /v1/idv/result with country&#x3D;us.
 
 ### Example
 
@@ -2637,9 +2705,9 @@ public class Example {
 
         DefaultApi apiInstance = new DefaultApi(defaultClient);
         String authorization = "authorization_example"; // String | 
-        PlaidGetKycReq plaidGetKycReq = new PlaidGetKycReq(); // PlaidGetKycReq | 
+        UsGetKycReq usGetKycReq = new UsGetKycReq(); // UsGetKycReq | 
         try {
-            ApiResponse<PlaidGetResultRes> response = apiInstance.v1IdvUsKycGetPostWithHttpInfo(authorization, plaidGetKycReq);
+            ApiResponse<UsGetUnionResultRes> response = apiInstance.v1IdvUsKycGetPostWithHttpInfo(authorization, usGetKycReq);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
@@ -2660,11 +2728,11 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **authorization** | **String**|  | [optional] |
-| **plaidGetKycReq** | [**PlaidGetKycReq**](PlaidGetKycReq.md)|  | [optional] |
+| **usGetKycReq** | [**UsGetKycReq**](UsGetKycReq.md)|  | [optional] |
 
 ### Return type
 
-ApiResponse<[**PlaidGetResultRes**](PlaidGetResultRes.md)>
+ApiResponse<[**UsGetUnionResultRes**](UsGetUnionResultRes.md)>
 
 
 ### Authorization
@@ -2685,9 +2753,11 @@ No authorization required
 
 ## v1IdvUsStartPost
 
-> PlaidStartIdvRes v1IdvUsStartPost(authorization, plaidStartIdvReq)
+> StartIdvRes v1IdvUsStartPost(authorization, usStartIdvReq)
 
 
+
+[DEPRECATED] Use /v1/idv/start with country&#x3D;us.
 
 ### Example
 
@@ -2706,9 +2776,9 @@ public class Example {
 
         DefaultApi apiInstance = new DefaultApi(defaultClient);
         String authorization = "authorization_example"; // String | 
-        PlaidStartIdvReq plaidStartIdvReq = new PlaidStartIdvReq(); // PlaidStartIdvReq | 
+        UsStartIdvReq usStartIdvReq = new UsStartIdvReq(); // UsStartIdvReq | 
         try {
-            PlaidStartIdvRes result = apiInstance.v1IdvUsStartPost(authorization, plaidStartIdvReq);
+            StartIdvRes result = apiInstance.v1IdvUsStartPost(authorization, usStartIdvReq);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling DefaultApi#v1IdvUsStartPost");
@@ -2727,11 +2797,11 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **authorization** | **String**|  | [optional] |
-| **plaidStartIdvReq** | [**PlaidStartIdvReq**](PlaidStartIdvReq.md)|  | [optional] |
+| **usStartIdvReq** | [**UsStartIdvReq**](UsStartIdvReq.md)|  | [optional] |
 
 ### Return type
 
-[**PlaidStartIdvRes**](PlaidStartIdvRes.md)
+[**StartIdvRes**](StartIdvRes.md)
 
 
 ### Authorization
@@ -2751,9 +2821,11 @@ No authorization required
 
 ## v1IdvUsStartPostWithHttpInfo
 
-> ApiResponse<PlaidStartIdvRes> v1IdvUsStartPostWithHttpInfo(authorization, plaidStartIdvReq)
+> ApiResponse<StartIdvRes> v1IdvUsStartPostWithHttpInfo(authorization, usStartIdvReq)
 
 
+
+[DEPRECATED] Use /v1/idv/start with country&#x3D;us.
 
 ### Example
 
@@ -2773,9 +2845,9 @@ public class Example {
 
         DefaultApi apiInstance = new DefaultApi(defaultClient);
         String authorization = "authorization_example"; // String | 
-        PlaidStartIdvReq plaidStartIdvReq = new PlaidStartIdvReq(); // PlaidStartIdvReq | 
+        UsStartIdvReq usStartIdvReq = new UsStartIdvReq(); // UsStartIdvReq | 
         try {
-            ApiResponse<PlaidStartIdvRes> response = apiInstance.v1IdvUsStartPostWithHttpInfo(authorization, plaidStartIdvReq);
+            ApiResponse<StartIdvRes> response = apiInstance.v1IdvUsStartPostWithHttpInfo(authorization, usStartIdvReq);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
@@ -2796,11 +2868,11 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **authorization** | **String**|  | [optional] |
-| **plaidStartIdvReq** | [**PlaidStartIdvReq**](PlaidStartIdvReq.md)|  | [optional] |
+| **usStartIdvReq** | [**UsStartIdvReq**](UsStartIdvReq.md)|  | [optional] |
 
 ### Return type
 
-ApiResponse<[**PlaidStartIdvRes**](PlaidStartIdvRes.md)>
+ApiResponse<[**StartIdvRes**](StartIdvRes.md)>
 
 
 ### Authorization
