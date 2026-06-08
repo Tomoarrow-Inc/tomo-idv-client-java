@@ -35,26 +35,31 @@ import com.tomoarrow.idv.client.generated.ApiClient;
 @JsonPropertyOrder({
   KycPolicy.JSON_PROPERTY_METHOD,
   KycPolicy.JSON_PROPERTY_OWNER_ASSURANCE,
+  KycPolicy.JSON_PROPERTY_PRESET,
   KycPolicy.JSON_PROPERTY_SUBJECT
 })
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
 public class KycPolicy {
   public static final String JSON_PROPERTY_METHOD = "method";
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private String method;
 
   public static final String JSON_PROPERTY_OWNER_ASSURANCE = "owner_assurance";
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private Object ownerAssurance;
 
+  public static final String JSON_PROPERTY_PRESET = "preset";
+  @javax.annotation.Nullable
+  private String preset;
+
   public static final String JSON_PROPERTY_SUBJECT = "subject";
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private Object subject;
 
   public KycPolicy() { 
   }
 
-  public KycPolicy method(@javax.annotation.Nonnull String method) {
+  public KycPolicy method(@javax.annotation.Nullable String method) {
     this.method = method;
     return this;
   }
@@ -63,22 +68,22 @@ public class KycPolicy {
    * Get method
    * @return method
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_METHOD, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonProperty(value = JSON_PROPERTY_METHOD, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public String getMethod() {
     return method;
   }
 
 
-  @JsonProperty(value = JSON_PROPERTY_METHOD, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setMethod(@javax.annotation.Nonnull String method) {
+  @JsonProperty(value = JSON_PROPERTY_METHOD, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setMethod(@javax.annotation.Nullable String method) {
     this.method = method;
   }
 
 
-  public KycPolicy ownerAssurance(@javax.annotation.Nonnull Object ownerAssurance) {
+  public KycPolicy ownerAssurance(@javax.annotation.Nullable Object ownerAssurance) {
     this.ownerAssurance = ownerAssurance;
     return this;
   }
@@ -87,22 +92,46 @@ public class KycPolicy {
    * Get ownerAssurance
    * @return ownerAssurance
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_OWNER_ASSURANCE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonProperty(value = JSON_PROPERTY_OWNER_ASSURANCE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public Object getOwnerAssurance() {
     return ownerAssurance;
   }
 
 
-  @JsonProperty(value = JSON_PROPERTY_OWNER_ASSURANCE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setOwnerAssurance(@javax.annotation.Nonnull Object ownerAssurance) {
+  @JsonProperty(value = JSON_PROPERTY_OWNER_ASSURANCE, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setOwnerAssurance(@javax.annotation.Nullable Object ownerAssurance) {
     this.ownerAssurance = ownerAssurance;
   }
 
 
-  public KycPolicy subject(@javax.annotation.Nonnull Object subject) {
+  public KycPolicy preset(@javax.annotation.Nullable String preset) {
+    this.preset = preset;
+    return this;
+  }
+
+  /**
+   * Get preset
+   * @return preset
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(value = JSON_PROPERTY_PRESET, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public String getPreset() {
+    return preset;
+  }
+
+
+  @JsonProperty(value = JSON_PROPERTY_PRESET, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setPreset(@javax.annotation.Nullable String preset) {
+    this.preset = preset;
+  }
+
+
+  public KycPolicy subject(@javax.annotation.Nullable Object subject) {
     this.subject = subject;
     return this;
   }
@@ -111,17 +140,17 @@ public class KycPolicy {
    * Get subject
    * @return subject
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_SUBJECT, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonProperty(value = JSON_PROPERTY_SUBJECT, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public Object getSubject() {
     return subject;
   }
 
 
-  @JsonProperty(value = JSON_PROPERTY_SUBJECT, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setSubject(@javax.annotation.Nonnull Object subject) {
+  @JsonProperty(value = JSON_PROPERTY_SUBJECT, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setSubject(@javax.annotation.Nullable Object subject) {
     this.subject = subject;
   }
 
@@ -140,12 +169,13 @@ public class KycPolicy {
     KycPolicy kycPolicy = (KycPolicy) o;
     return Objects.equals(this.method, kycPolicy.method) &&
         Objects.equals(this.ownerAssurance, kycPolicy.ownerAssurance) &&
+        Objects.equals(this.preset, kycPolicy.preset) &&
         Objects.equals(this.subject, kycPolicy.subject);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(method, ownerAssurance, subject);
+    return Objects.hash(method, ownerAssurance, preset, subject);
   }
 
   @Override
@@ -154,6 +184,7 @@ public class KycPolicy {
     sb.append("class KycPolicy {\n");
     sb.append("    method: ").append(toIndentedString(method)).append("\n");
     sb.append("    ownerAssurance: ").append(toIndentedString(ownerAssurance)).append("\n");
+    sb.append("    preset: ").append(toIndentedString(preset)).append("\n");
     sb.append("    subject: ").append(toIndentedString(subject)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -207,6 +238,11 @@ public class KycPolicy {
     // add `owner_assurance` to the URL query string
     if (getOwnerAssurance() != null) {
       joiner.add(String.format(java.util.Locale.ROOT, "%sowner_assurance%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getOwnerAssurance()))));
+    }
+
+    // add `preset` to the URL query string
+    if (getPreset() != null) {
+      joiner.add(String.format(java.util.Locale.ROOT, "%spreset%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getPreset()))));
     }
 
     // add `subject` to the URL query string

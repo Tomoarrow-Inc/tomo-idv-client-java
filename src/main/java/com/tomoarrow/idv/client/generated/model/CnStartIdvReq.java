@@ -33,60 +33,31 @@ import com.tomoarrow.idv.client.generated.ApiClient;
  * CnStartIdvReq
  */
 @JsonPropertyOrder({
-  CnStartIdvReq.JSON_PROPERTY_BEST_FRAME_BASE64,
   CnStartIdvReq.JSON_PROPERTY_CALLBACK_URL,
-  CnStartIdvReq.JSON_PROPERTY_CARD_IMAGE_BASE64,
-  CnStartIdvReq.JSON_PROPERTY_KYC_POLICY_ID,
-  CnStartIdvReq.JSON_PROPERTY_USER_ID
+  CnStartIdvReq.JSON_PROPERTY_REDIRECT_URL,
+  CnStartIdvReq.JSON_PROPERTY_USER_ID,
+  CnStartIdvReq.JSON_PROPERTY_WEBHOOK_URL
 })
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
 public class CnStartIdvReq {
-  public static final String JSON_PROPERTY_BEST_FRAME_BASE64 = "best_frame_base64";
-  @javax.annotation.Nullable
-  private String bestFrameBase64;
-
   public static final String JSON_PROPERTY_CALLBACK_URL = "callback_url";
   @javax.annotation.Nullable
   private String callbackUrl;
 
-  public static final String JSON_PROPERTY_CARD_IMAGE_BASE64 = "card_image_base64";
+  public static final String JSON_PROPERTY_REDIRECT_URL = "redirect_url";
   @javax.annotation.Nullable
-  private String cardImageBase64;
-
-  public static final String JSON_PROPERTY_KYC_POLICY_ID = "kyc_policy_id";
-  @javax.annotation.Nullable
-  private String kycPolicyId;
+  private String redirectUrl;
 
   public static final String JSON_PROPERTY_USER_ID = "user_id";
   @javax.annotation.Nonnull
   private String userId;
 
+  public static final String JSON_PROPERTY_WEBHOOK_URL = "webhook_url";
+  @javax.annotation.Nullable
+  private String webhookUrl;
+
   public CnStartIdvReq() { 
   }
-
-  public CnStartIdvReq bestFrameBase64(@javax.annotation.Nullable String bestFrameBase64) {
-    this.bestFrameBase64 = bestFrameBase64;
-    return this;
-  }
-
-  /**
-   * Get bestFrameBase64
-   * @return bestFrameBase64
-   */
-  @javax.annotation.Nullable
-  @JsonProperty(value = JSON_PROPERTY_BEST_FRAME_BASE64, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public String getBestFrameBase64() {
-    return bestFrameBase64;
-  }
-
-
-  @JsonProperty(value = JSON_PROPERTY_BEST_FRAME_BASE64, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setBestFrameBase64(@javax.annotation.Nullable String bestFrameBase64) {
-    this.bestFrameBase64 = bestFrameBase64;
-  }
-
 
   public CnStartIdvReq callbackUrl(@javax.annotation.Nullable String callbackUrl) {
     this.callbackUrl = callbackUrl;
@@ -112,51 +83,27 @@ public class CnStartIdvReq {
   }
 
 
-  public CnStartIdvReq cardImageBase64(@javax.annotation.Nullable String cardImageBase64) {
-    this.cardImageBase64 = cardImageBase64;
+  public CnStartIdvReq redirectUrl(@javax.annotation.Nullable String redirectUrl) {
+    this.redirectUrl = redirectUrl;
     return this;
   }
 
   /**
-   * Get cardImageBase64
-   * @return cardImageBase64
+   * Get redirectUrl
+   * @return redirectUrl
    */
   @javax.annotation.Nullable
-  @JsonProperty(value = JSON_PROPERTY_CARD_IMAGE_BASE64, required = false)
+  @JsonProperty(value = JSON_PROPERTY_REDIRECT_URL, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public String getCardImageBase64() {
-    return cardImageBase64;
+  public String getRedirectUrl() {
+    return redirectUrl;
   }
 
 
-  @JsonProperty(value = JSON_PROPERTY_CARD_IMAGE_BASE64, required = false)
+  @JsonProperty(value = JSON_PROPERTY_REDIRECT_URL, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setCardImageBase64(@javax.annotation.Nullable String cardImageBase64) {
-    this.cardImageBase64 = cardImageBase64;
-  }
-
-
-  public CnStartIdvReq kycPolicyId(@javax.annotation.Nullable String kycPolicyId) {
-    this.kycPolicyId = kycPolicyId;
-    return this;
-  }
-
-  /**
-   * Get kycPolicyId
-   * @return kycPolicyId
-   */
-  @javax.annotation.Nullable
-  @JsonProperty(value = JSON_PROPERTY_KYC_POLICY_ID, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public String getKycPolicyId() {
-    return kycPolicyId;
-  }
-
-
-  @JsonProperty(value = JSON_PROPERTY_KYC_POLICY_ID, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setKycPolicyId(@javax.annotation.Nullable String kycPolicyId) {
-    this.kycPolicyId = kycPolicyId;
+  public void setRedirectUrl(@javax.annotation.Nullable String redirectUrl) {
+    this.redirectUrl = redirectUrl;
   }
 
 
@@ -184,6 +131,30 @@ public class CnStartIdvReq {
   }
 
 
+  public CnStartIdvReq webhookUrl(@javax.annotation.Nullable String webhookUrl) {
+    this.webhookUrl = webhookUrl;
+    return this;
+  }
+
+  /**
+   * Get webhookUrl
+   * @return webhookUrl
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(value = JSON_PROPERTY_WEBHOOK_URL, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public String getWebhookUrl() {
+    return webhookUrl;
+  }
+
+
+  @JsonProperty(value = JSON_PROPERTY_WEBHOOK_URL, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setWebhookUrl(@javax.annotation.Nullable String webhookUrl) {
+    this.webhookUrl = webhookUrl;
+  }
+
+
   /**
    * Return true if this CnStartIdvReq object is equal to o.
    */
@@ -196,27 +167,25 @@ public class CnStartIdvReq {
       return false;
     }
     CnStartIdvReq cnStartIdvReq = (CnStartIdvReq) o;
-    return Objects.equals(this.bestFrameBase64, cnStartIdvReq.bestFrameBase64) &&
-        Objects.equals(this.callbackUrl, cnStartIdvReq.callbackUrl) &&
-        Objects.equals(this.cardImageBase64, cnStartIdvReq.cardImageBase64) &&
-        Objects.equals(this.kycPolicyId, cnStartIdvReq.kycPolicyId) &&
-        Objects.equals(this.userId, cnStartIdvReq.userId);
+    return Objects.equals(this.callbackUrl, cnStartIdvReq.callbackUrl) &&
+        Objects.equals(this.redirectUrl, cnStartIdvReq.redirectUrl) &&
+        Objects.equals(this.userId, cnStartIdvReq.userId) &&
+        Objects.equals(this.webhookUrl, cnStartIdvReq.webhookUrl);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(bestFrameBase64, callbackUrl, cardImageBase64, kycPolicyId, userId);
+    return Objects.hash(callbackUrl, redirectUrl, userId, webhookUrl);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class CnStartIdvReq {\n");
-    sb.append("    bestFrameBase64: ").append(toIndentedString(bestFrameBase64)).append("\n");
     sb.append("    callbackUrl: ").append(toIndentedString(callbackUrl)).append("\n");
-    sb.append("    cardImageBase64: ").append(toIndentedString(cardImageBase64)).append("\n");
-    sb.append("    kycPolicyId: ").append(toIndentedString(kycPolicyId)).append("\n");
+    sb.append("    redirectUrl: ").append(toIndentedString(redirectUrl)).append("\n");
     sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
+    sb.append("    webhookUrl: ").append(toIndentedString(webhookUrl)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -261,29 +230,24 @@ public class CnStartIdvReq {
 
     StringJoiner joiner = new StringJoiner("&");
 
-    // add `best_frame_base64` to the URL query string
-    if (getBestFrameBase64() != null) {
-      joiner.add(String.format(java.util.Locale.ROOT, "%sbest_frame_base64%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getBestFrameBase64()))));
-    }
-
     // add `callback_url` to the URL query string
     if (getCallbackUrl() != null) {
       joiner.add(String.format(java.util.Locale.ROOT, "%scallback_url%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCallbackUrl()))));
     }
 
-    // add `card_image_base64` to the URL query string
-    if (getCardImageBase64() != null) {
-      joiner.add(String.format(java.util.Locale.ROOT, "%scard_image_base64%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getCardImageBase64()))));
-    }
-
-    // add `kyc_policy_id` to the URL query string
-    if (getKycPolicyId() != null) {
-      joiner.add(String.format(java.util.Locale.ROOT, "%skyc_policy_id%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getKycPolicyId()))));
+    // add `redirect_url` to the URL query string
+    if (getRedirectUrl() != null) {
+      joiner.add(String.format(java.util.Locale.ROOT, "%sredirect_url%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getRedirectUrl()))));
     }
 
     // add `user_id` to the URL query string
     if (getUserId() != null) {
       joiner.add(String.format(java.util.Locale.ROOT, "%suser_id%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getUserId()))));
+    }
+
+    // add `webhook_url` to the URL query string
+    if (getWebhookUrl() != null) {
+      joiner.add(String.format(java.util.Locale.ROOT, "%swebhook_url%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getWebhookUrl()))));
     }
 
     return joiner.toString();

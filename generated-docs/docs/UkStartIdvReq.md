@@ -7,10 +7,11 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**callbackUrl** | **String** |  |  |
+|**callbackUrl** | **String** |  |  [optional] |
 |**email** | **String** |  |  [optional] |
-|**kycPolicyId** | **String** |  |  [optional] |
+|**redirectUrl** | **String** |  |  [optional] |
 |**userId** | **String** |  |  |
+|**webhookUrl** | **String** |  |  [optional] |
 
 
 

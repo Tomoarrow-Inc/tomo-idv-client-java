@@ -22,14 +22,6 @@ paths:
     post:
       deprecated: true
       description: "[DEPRECATED] Use /v1/idv/result with country=ca."
-      parameters:
-      - explode: false
-        in: header
-        name: Authorization
-        required: false
-        schema:
-          type: string
-        style: simple
       requestBody:
         content:
           application/json;charset=utf-8:
@@ -44,6 +36,8 @@ paths:
           description: ""
         "400":
           description: Invalid `body` or `Authorization`
+      security:
+      - bearerAuth: []
       x-content-type: application/json;charset=utf-8
       x-accepts:
       - application/json;charset=utf-8
@@ -51,14 +45,6 @@ paths:
     post:
       deprecated: true
       description: "[DEPRECATED] Use /v1/idv/start with country=ca."
-      parameters:
-      - explode: false
-        in: header
-        name: Authorization
-        required: false
-        schema:
-          type: string
-        style: simple
       requestBody:
         content:
           application/json;charset=utf-8:
@@ -73,6 +59,8 @@ paths:
           description: ""
         "400":
           description: Invalid `body` or `Authorization`
+      security:
+      - bearerAuth: []
       x-content-type: application/json;charset=utf-8
       x-accepts:
       - application/json;charset=utf-8
@@ -93,14 +81,6 @@ paths:
     post:
       deprecated: true
       description: "[DEPRECATED] Use /v1/idv/result with country=cn."
-      parameters:
-      - explode: false
-        in: header
-        name: Authorization
-        required: false
-        schema:
-          type: string
-        style: simple
       requestBody:
         content:
           application/json;charset=utf-8:
@@ -115,6 +95,8 @@ paths:
           description: ""
         "400":
           description: Invalid `body` or `Authorization`
+      security:
+      - bearerAuth: []
       x-content-type: application/json;charset=utf-8
       x-accepts:
       - application/json;charset=utf-8
@@ -122,14 +104,6 @@ paths:
     post:
       deprecated: true
       description: "[DEPRECATED] Use /v1/idv/start with country=cn."
-      parameters:
-      - explode: false
-        in: header
-        name: Authorization
-        required: false
-        schema:
-          type: string
-        style: simple
       requestBody:
         content:
           application/json;charset=utf-8:
@@ -144,6 +118,8 @@ paths:
           description: ""
         "400":
           description: Invalid `body` or `Authorization`
+      security:
+      - bearerAuth: []
       x-content-type: application/json;charset=utf-8
       x-accepts:
       - application/json;charset=utf-8
@@ -151,14 +127,6 @@ paths:
     post:
       deprecated: true
       description: "[DEPRECATED] Use the OAuth2 token endpoint."
-      parameters:
-      - explode: false
-        in: header
-        name: Authorization
-        required: false
-        schema:
-          type: string
-        style: simple
       requestBody:
         content:
           application/json;charset=utf-8:
@@ -173,6 +141,8 @@ paths:
           description: ""
         "400":
           description: Invalid `body` or `Authorization`
+      security:
+      - bearerAuth: []
       x-content-type: application/json;charset=utf-8
       x-accepts:
       - application/json;charset=utf-8
@@ -204,14 +174,6 @@ paths:
     post:
       deprecated: true
       description: "[DEPRECATED] Use /v1/idv/result with country=jp."
-      parameters:
-      - explode: false
-        in: header
-        name: Authorization
-        required: false
-        schema:
-          type: string
-        style: simple
       requestBody:
         content:
           application/json;charset=utf-8:
@@ -226,6 +188,8 @@ paths:
           description: ""
         "400":
           description: Invalid `body` or `Authorization`
+      security:
+      - bearerAuth: []
       x-content-type: application/json;charset=utf-8
       x-accepts:
       - application/json;charset=utf-8
@@ -233,14 +197,6 @@ paths:
     post:
       deprecated: true
       description: "[DEPRECATED] Use /v1/idv/start with country=jp."
-      parameters:
-      - explode: false
-        in: header
-        name: Authorization
-        required: false
-        schema:
-          type: string
-        style: simple
       requestBody:
         content:
           application/json;charset=utf-8:
@@ -255,19 +211,13 @@ paths:
           description: ""
         "400":
           description: Invalid `body` or `Authorization`
+      security:
+      - bearerAuth: []
       x-content-type: application/json;charset=utf-8
       x-accepts:
       - application/json;charset=utf-8
   /v1/idv/kyc/get:
     post:
-      parameters:
-      - explode: false
-        in: header
-        name: Authorization
-        required: false
-        schema:
-          type: string
-        style: simple
       requestBody:
         content:
           application/json;charset=utf-8:
@@ -282,19 +232,13 @@ paths:
           description: ""
         "400":
           description: Invalid `body` or `Authorization`
+      security:
+      - bearerAuth: []
       x-content-type: application/json;charset=utf-8
       x-accepts:
       - application/json;charset=utf-8
   /v1/idv/result:
     post:
-      parameters:
-      - explode: false
-        in: header
-        name: Authorization
-        required: false
-        schema:
-          type: string
-        style: simple
       requestBody:
         content:
           application/json;charset=utf-8:
@@ -309,6 +253,8 @@ paths:
           description: ""
         "400":
           description: Invalid `body` or `Authorization`
+      security:
+      - bearerAuth: []
       x-content-type: application/json;charset=utf-8
       x-accepts:
       - application/json;charset=utf-8
@@ -316,14 +262,6 @@ paths:
     post:
       deprecated: true
       description: "[DEPRECATED] Use /v1/idv/start."
-      parameters:
-      - explode: false
-        in: header
-        name: Authorization
-        required: false
-        schema:
-          type: string
-        style: simple
       requestBody:
         content:
           application/json;charset=utf-8:
@@ -338,19 +276,13 @@ paths:
           description: ""
         "400":
           description: Invalid `body` or `Authorization`
+      security:
+      - bearerAuth: []
       x-content-type: application/json;charset=utf-8
       x-accepts:
       - application/json;charset=utf-8
   /v1/idv/start:
     post:
-      parameters:
-      - explode: false
-        in: header
-        name: Authorization
-        required: false
-        schema:
-          type: string
-        style: simple
       requestBody:
         content:
           application/json;charset=utf-8:
@@ -365,6 +297,8 @@ paths:
           description: ""
         "400":
           description: Invalid `body` or `Authorization`
+      security:
+      - bearerAuth: []
       x-content-type: application/json;charset=utf-8
       x-accepts:
       - application/json;charset=utf-8
@@ -385,14 +319,6 @@ paths:
     post:
       deprecated: true
       description: "[DEPRECATED] Use /v1/idv/result with country=uk."
-      parameters:
-      - explode: false
-        in: header
-        name: Authorization
-        required: false
-        schema:
-          type: string
-        style: simple
       requestBody:
         content:
           application/json;charset=utf-8:
@@ -407,6 +333,8 @@ paths:
           description: ""
         "400":
           description: Invalid `body` or `Authorization`
+      security:
+      - bearerAuth: []
       x-content-type: application/json;charset=utf-8
       x-accepts:
       - application/json;charset=utf-8
@@ -414,14 +342,6 @@ paths:
     post:
       deprecated: true
       description: "[DEPRECATED] Use /v1/idv/start with country=uk."
-      parameters:
-      - explode: false
-        in: header
-        name: Authorization
-        required: false
-        schema:
-          type: string
-        style: simple
       requestBody:
         content:
           application/json;charset=utf-8:
@@ -436,6 +356,8 @@ paths:
           description: ""
         "400":
           description: Invalid `body` or `Authorization`
+      security:
+      - bearerAuth: []
       x-content-type: application/json;charset=utf-8
       x-accepts:
       - application/json;charset=utf-8
@@ -456,14 +378,6 @@ paths:
     post:
       deprecated: true
       description: "[DEPRECATED] Use /v1/idv/result with country=us."
-      parameters:
-      - explode: false
-        in: header
-        name: Authorization
-        required: false
-        schema:
-          type: string
-        style: simple
       requestBody:
         content:
           application/json;charset=utf-8:
@@ -478,6 +392,8 @@ paths:
           description: ""
         "400":
           description: Invalid `body` or `Authorization`
+      security:
+      - bearerAuth: []
       x-content-type: application/json;charset=utf-8
       x-accepts:
       - application/json;charset=utf-8
@@ -485,14 +401,6 @@ paths:
     post:
       deprecated: true
       description: "[DEPRECATED] Use /v1/idv/start with country=us."
-      parameters:
-      - explode: false
-        in: header
-        name: Authorization
-        required: false
-        schema:
-          type: string
-        style: simple
       requestBody:
         content:
           application/json;charset=utf-8:
@@ -507,6 +415,8 @@ paths:
           description: ""
         "400":
           description: Invalid `body` or `Authorization`
+      security:
+      - bearerAuth: []
       x-content-type: application/json;charset=utf-8
       x-accepts:
       - application/json;charset=utf-8
@@ -534,20 +444,22 @@ components:
     CaStartIdvReq:
       example:
         callback_url: callback_url
+        webhook_url: webhook_url
         user_id: user_id
-        kyc_policy_id: kyc_policy_id
         email: email
+        redirect_url: redirect_url
       properties:
         callback_url:
           type: string
         email:
           type: string
-        kyc_policy_id:
+        redirect_url:
           type: string
         user_id:
           type: string
+        webhook_url:
+          type: string
       required:
-      - callback_url
       - user_id
       type: object
     CnGetKycReq:
@@ -633,20 +545,17 @@ components:
     CnStartIdvReq:
       example:
         callback_url: callback_url
+        webhook_url: webhook_url
         user_id: user_id
-        card_image_base64: card_image_base64
-        kyc_policy_id: kyc_policy_id
-        best_frame_base64: best_frame_base64
+        redirect_url: redirect_url
       properties:
-        best_frame_base64:
-          type: string
         callback_url:
           type: string
-        card_image_base64:
-          type: string
-        kyc_policy_id:
+        redirect_url:
           type: string
         user_id:
+          type: string
+        webhook_url:
           type: string
       required:
       - user_id
@@ -849,17 +758,19 @@ components:
     JpStartIdvReq:
       example:
         callback_url: callback_url
+        webhook_url: webhook_url
         user_id: user_id
-        kyc_policy_id: kyc_policy_id
+        redirect_url: redirect_url
       properties:
         callback_url:
           type: string
-        kyc_policy_id:
+        redirect_url:
           type: string
         user_id:
           type: string
+        webhook_url:
+          type: string
       required:
-      - callback_url
       - user_id
       type: object
     KycPolicy:
@@ -867,17 +778,16 @@ components:
         method: method
         owner_assurance: "{}"
         subject: "{}"
+        preset: preset
       properties:
         method:
           type: string
         owner_assurance:
           type: object
+        preset:
+          type: string
         subject:
           type: object
-      required:
-      - method
-      - owner_assurance
-      - subject
       type: object
     LaunchKind:
       example:
@@ -945,6 +855,7 @@ components:
           method: method
           owner_assurance: "{}"
           subject: "{}"
+          preset: preset
       properties:
         country:
           $ref: "#/components/schemas/Country"
@@ -1025,9 +936,12 @@ components:
           method: method
           owner_assurance: "{}"
           subject: "{}"
+          preset: preset
         country: ar
+        webhook_url: webhook_url
         user_id: user_id
         email: email
+        redirect_url: redirect_url
       properties:
         callback_url:
           type: string
@@ -1037,7 +951,11 @@ components:
           type: string
         kyc_policy:
           $ref: "#/components/schemas/KycPolicy"
+        redirect_url:
+          type: string
         user_id:
+          type: string
+        webhook_url:
           type: string
       required:
       - user_id
@@ -1068,9 +986,12 @@ components:
           method: method
           owner_assurance: "{}"
           subject: "{}"
+          preset: preset
         country: ar
+        webhook_url: webhook_url
         user_id: user_id
         email: email
+        redirect_url: redirect_url
       properties:
         callback_url:
           type: string
@@ -1080,10 +1001,12 @@ components:
           type: string
         kyc_policy:
           $ref: "#/components/schemas/KycPolicy"
+        redirect_url:
+          type: string
         user_id:
           type: string
-      required:
-      - callback_url
+        webhook_url:
+          type: string
       type: object
     StartIdvRes:
       example:
@@ -1164,20 +1087,22 @@ components:
     UkStartIdvReq:
       example:
         callback_url: callback_url
+        webhook_url: webhook_url
         user_id: user_id
-        kyc_policy_id: kyc_policy_id
         email: email
+        redirect_url: redirect_url
       properties:
         callback_url:
           type: string
         email:
           type: string
-        kyc_policy_id:
+        redirect_url:
           type: string
         user_id:
           type: string
+        webhook_url:
+          type: string
       required:
-      - callback_url
       - user_id
       type: object
     UsGetKycReq:
@@ -1260,20 +1185,22 @@ components:
     UsStartIdvReq:
       example:
         callback_url: callback_url
+        webhook_url: webhook_url
         user_id: user_id
-        kyc_policy_id: kyc_policy_id
         email: email
+        redirect_url: redirect_url
       properties:
         callback_url:
           type: string
         email:
           type: string
-        kyc_policy_id:
+        redirect_url:
           type: string
         user_id:
           type: string
+        webhook_url:
+          type: string
       required:
-      - callback_url
       - user_id
       type: object
     CnGetUnionResultResStringMap:
@@ -1288,4 +1215,9 @@ components:
       additionalProperties:
         type: string
       type: object
+  securitySchemes:
+    bearerAuth:
+      bearerFormat: JWT
+      scheme: bearer
+      type: http
 

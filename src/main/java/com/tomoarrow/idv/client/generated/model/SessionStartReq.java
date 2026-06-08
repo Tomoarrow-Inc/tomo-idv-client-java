@@ -39,7 +39,9 @@ import com.tomoarrow.idv.client.generated.ApiClient;
   SessionStartReq.JSON_PROPERTY_COUNTRY,
   SessionStartReq.JSON_PROPERTY_EMAIL,
   SessionStartReq.JSON_PROPERTY_KYC_POLICY,
-  SessionStartReq.JSON_PROPERTY_USER_ID
+  SessionStartReq.JSON_PROPERTY_REDIRECT_URL,
+  SessionStartReq.JSON_PROPERTY_USER_ID,
+  SessionStartReq.JSON_PROPERTY_WEBHOOK_URL
 })
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
 public class SessionStartReq {
@@ -59,9 +61,17 @@ public class SessionStartReq {
   @javax.annotation.Nullable
   private KycPolicy kycPolicy;
 
+  public static final String JSON_PROPERTY_REDIRECT_URL = "redirect_url";
+  @javax.annotation.Nullable
+  private String redirectUrl;
+
   public static final String JSON_PROPERTY_USER_ID = "user_id";
   @javax.annotation.Nonnull
   private String userId;
+
+  public static final String JSON_PROPERTY_WEBHOOK_URL = "webhook_url";
+  @javax.annotation.Nullable
+  private String webhookUrl;
 
   public SessionStartReq() { 
   }
@@ -162,6 +172,30 @@ public class SessionStartReq {
   }
 
 
+  public SessionStartReq redirectUrl(@javax.annotation.Nullable String redirectUrl) {
+    this.redirectUrl = redirectUrl;
+    return this;
+  }
+
+  /**
+   * Get redirectUrl
+   * @return redirectUrl
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(value = JSON_PROPERTY_REDIRECT_URL, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public String getRedirectUrl() {
+    return redirectUrl;
+  }
+
+
+  @JsonProperty(value = JSON_PROPERTY_REDIRECT_URL, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setRedirectUrl(@javax.annotation.Nullable String redirectUrl) {
+    this.redirectUrl = redirectUrl;
+  }
+
+
   public SessionStartReq userId(@javax.annotation.Nonnull String userId) {
     this.userId = userId;
     return this;
@@ -186,6 +220,30 @@ public class SessionStartReq {
   }
 
 
+  public SessionStartReq webhookUrl(@javax.annotation.Nullable String webhookUrl) {
+    this.webhookUrl = webhookUrl;
+    return this;
+  }
+
+  /**
+   * Get webhookUrl
+   * @return webhookUrl
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(value = JSON_PROPERTY_WEBHOOK_URL, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public String getWebhookUrl() {
+    return webhookUrl;
+  }
+
+
+  @JsonProperty(value = JSON_PROPERTY_WEBHOOK_URL, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setWebhookUrl(@javax.annotation.Nullable String webhookUrl) {
+    this.webhookUrl = webhookUrl;
+  }
+
+
   /**
    * Return true if this SessionStartReq object is equal to o.
    */
@@ -202,12 +260,14 @@ public class SessionStartReq {
         Objects.equals(this.country, sessionStartReq.country) &&
         Objects.equals(this.email, sessionStartReq.email) &&
         Objects.equals(this.kycPolicy, sessionStartReq.kycPolicy) &&
-        Objects.equals(this.userId, sessionStartReq.userId);
+        Objects.equals(this.redirectUrl, sessionStartReq.redirectUrl) &&
+        Objects.equals(this.userId, sessionStartReq.userId) &&
+        Objects.equals(this.webhookUrl, sessionStartReq.webhookUrl);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(callbackUrl, country, email, kycPolicy, userId);
+    return Objects.hash(callbackUrl, country, email, kycPolicy, redirectUrl, userId, webhookUrl);
   }
 
   @Override
@@ -218,7 +278,9 @@ public class SessionStartReq {
     sb.append("    country: ").append(toIndentedString(country)).append("\n");
     sb.append("    email: ").append(toIndentedString(email)).append("\n");
     sb.append("    kycPolicy: ").append(toIndentedString(kycPolicy)).append("\n");
+    sb.append("    redirectUrl: ").append(toIndentedString(redirectUrl)).append("\n");
     sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
+    sb.append("    webhookUrl: ").append(toIndentedString(webhookUrl)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -283,9 +345,19 @@ public class SessionStartReq {
       joiner.add(getKycPolicy().toUrlQueryString(prefix + "kyc_policy" + suffix));
     }
 
+    // add `redirect_url` to the URL query string
+    if (getRedirectUrl() != null) {
+      joiner.add(String.format(java.util.Locale.ROOT, "%sredirect_url%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getRedirectUrl()))));
+    }
+
     // add `user_id` to the URL query string
     if (getUserId() != null) {
       joiner.add(String.format(java.util.Locale.ROOT, "%suser_id%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getUserId()))));
+    }
+
+    // add `webhook_url` to the URL query string
+    if (getWebhookUrl() != null) {
+      joiner.add(String.format(java.util.Locale.ROOT, "%swebhook_url%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getWebhookUrl()))));
     }
 
     return joiner.toString();

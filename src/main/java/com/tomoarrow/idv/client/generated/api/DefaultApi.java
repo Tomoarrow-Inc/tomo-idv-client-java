@@ -309,21 +309,19 @@ public class DefaultApi {
   /**
    * 
    * [DEPRECATED] Use /v1/idv/result with country&#x3D;ca.
-   * @param authorization  (optional)
    * @param usGetKycReq  (optional)
    * @return UsGetUnionResultRes
    * @throws ApiException if fails to make API call
    * @deprecated
    */
   @Deprecated
-  public UsGetUnionResultRes v1IdvCaKycGetPost(@javax.annotation.Nullable String authorization, @javax.annotation.Nullable UsGetKycReq usGetKycReq) throws ApiException {
-    return v1IdvCaKycGetPost(authorization, usGetKycReq, null);
+  public UsGetUnionResultRes v1IdvCaKycGetPost(@javax.annotation.Nullable UsGetKycReq usGetKycReq) throws ApiException {
+    return v1IdvCaKycGetPost(usGetKycReq, null);
   }
 
   /**
    * 
    * [DEPRECATED] Use /v1/idv/result with country&#x3D;ca.
-   * @param authorization  (optional)
    * @param usGetKycReq  (optional)
    * @param headers Optional headers to include in the request
    * @return UsGetUnionResultRes
@@ -331,29 +329,27 @@ public class DefaultApi {
    * @deprecated
    */
   @Deprecated
-  public UsGetUnionResultRes v1IdvCaKycGetPost(@javax.annotation.Nullable String authorization, @javax.annotation.Nullable UsGetKycReq usGetKycReq, Map<String, String> headers) throws ApiException {
-    ApiResponse<UsGetUnionResultRes> localVarResponse = v1IdvCaKycGetPostWithHttpInfo(authorization, usGetKycReq, headers);
+  public UsGetUnionResultRes v1IdvCaKycGetPost(@javax.annotation.Nullable UsGetKycReq usGetKycReq, Map<String, String> headers) throws ApiException {
+    ApiResponse<UsGetUnionResultRes> localVarResponse = v1IdvCaKycGetPostWithHttpInfo(usGetKycReq, headers);
     return localVarResponse.getData();
   }
 
   /**
    * 
    * [DEPRECATED] Use /v1/idv/result with country&#x3D;ca.
-   * @param authorization  (optional)
    * @param usGetKycReq  (optional)
    * @return ApiResponse&lt;UsGetUnionResultRes&gt;
    * @throws ApiException if fails to make API call
    * @deprecated
    */
   @Deprecated
-  public ApiResponse<UsGetUnionResultRes> v1IdvCaKycGetPostWithHttpInfo(@javax.annotation.Nullable String authorization, @javax.annotation.Nullable UsGetKycReq usGetKycReq) throws ApiException {
-    return v1IdvCaKycGetPostWithHttpInfo(authorization, usGetKycReq, null);
+  public ApiResponse<UsGetUnionResultRes> v1IdvCaKycGetPostWithHttpInfo(@javax.annotation.Nullable UsGetKycReq usGetKycReq) throws ApiException {
+    return v1IdvCaKycGetPostWithHttpInfo(usGetKycReq, null);
   }
 
   /**
    * 
    * [DEPRECATED] Use /v1/idv/result with country&#x3D;ca.
-   * @param authorization  (optional)
    * @param usGetKycReq  (optional)
    * @param headers Optional headers to include in the request
    * @return ApiResponse&lt;UsGetUnionResultRes&gt;
@@ -361,8 +357,8 @@ public class DefaultApi {
    * @deprecated
    */
   @Deprecated
-  public ApiResponse<UsGetUnionResultRes> v1IdvCaKycGetPostWithHttpInfo(@javax.annotation.Nullable String authorization, @javax.annotation.Nullable UsGetKycReq usGetKycReq, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = v1IdvCaKycGetPostRequestBuilder(authorization, usGetKycReq, headers);
+  public ApiResponse<UsGetUnionResultRes> v1IdvCaKycGetPostWithHttpInfo(@javax.annotation.Nullable UsGetKycReq usGetKycReq, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = v1IdvCaKycGetPostRequestBuilder(usGetKycReq, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -409,7 +405,7 @@ public class DefaultApi {
     }
   }
 
-  private HttpRequest.Builder v1IdvCaKycGetPostRequestBuilder(@javax.annotation.Nullable String authorization, @javax.annotation.Nullable UsGetKycReq usGetKycReq, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder v1IdvCaKycGetPostRequestBuilder(@javax.annotation.Nullable UsGetKycReq usGetKycReq, Map<String, String> headers) throws ApiException {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 
@@ -417,9 +413,6 @@ public class DefaultApi {
 
     localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath));
 
-    if (authorization != null) {
-      localVarRequestBuilder.header("Authorization", authorization.toString());
-    }
     localVarRequestBuilder.header("Content-Type", "application/json;charset=utf-8");
     localVarRequestBuilder.header("Accept", "application/json;charset=utf-8");
 
@@ -443,21 +436,19 @@ public class DefaultApi {
   /**
    * 
    * [DEPRECATED] Use /v1/idv/start with country&#x3D;ca.
-   * @param authorization  (optional)
    * @param caStartIdvReq  (optional)
    * @return StartIdvRes
    * @throws ApiException if fails to make API call
    * @deprecated
    */
   @Deprecated
-  public StartIdvRes v1IdvCaStartPost(@javax.annotation.Nullable String authorization, @javax.annotation.Nullable CaStartIdvReq caStartIdvReq) throws ApiException {
-    return v1IdvCaStartPost(authorization, caStartIdvReq, null);
+  public StartIdvRes v1IdvCaStartPost(@javax.annotation.Nullable CaStartIdvReq caStartIdvReq) throws ApiException {
+    return v1IdvCaStartPost(caStartIdvReq, null);
   }
 
   /**
    * 
    * [DEPRECATED] Use /v1/idv/start with country&#x3D;ca.
-   * @param authorization  (optional)
    * @param caStartIdvReq  (optional)
    * @param headers Optional headers to include in the request
    * @return StartIdvRes
@@ -465,29 +456,27 @@ public class DefaultApi {
    * @deprecated
    */
   @Deprecated
-  public StartIdvRes v1IdvCaStartPost(@javax.annotation.Nullable String authorization, @javax.annotation.Nullable CaStartIdvReq caStartIdvReq, Map<String, String> headers) throws ApiException {
-    ApiResponse<StartIdvRes> localVarResponse = v1IdvCaStartPostWithHttpInfo(authorization, caStartIdvReq, headers);
+  public StartIdvRes v1IdvCaStartPost(@javax.annotation.Nullable CaStartIdvReq caStartIdvReq, Map<String, String> headers) throws ApiException {
+    ApiResponse<StartIdvRes> localVarResponse = v1IdvCaStartPostWithHttpInfo(caStartIdvReq, headers);
     return localVarResponse.getData();
   }
 
   /**
    * 
    * [DEPRECATED] Use /v1/idv/start with country&#x3D;ca.
-   * @param authorization  (optional)
    * @param caStartIdvReq  (optional)
    * @return ApiResponse&lt;StartIdvRes&gt;
    * @throws ApiException if fails to make API call
    * @deprecated
    */
   @Deprecated
-  public ApiResponse<StartIdvRes> v1IdvCaStartPostWithHttpInfo(@javax.annotation.Nullable String authorization, @javax.annotation.Nullable CaStartIdvReq caStartIdvReq) throws ApiException {
-    return v1IdvCaStartPostWithHttpInfo(authorization, caStartIdvReq, null);
+  public ApiResponse<StartIdvRes> v1IdvCaStartPostWithHttpInfo(@javax.annotation.Nullable CaStartIdvReq caStartIdvReq) throws ApiException {
+    return v1IdvCaStartPostWithHttpInfo(caStartIdvReq, null);
   }
 
   /**
    * 
    * [DEPRECATED] Use /v1/idv/start with country&#x3D;ca.
-   * @param authorization  (optional)
    * @param caStartIdvReq  (optional)
    * @param headers Optional headers to include in the request
    * @return ApiResponse&lt;StartIdvRes&gt;
@@ -495,8 +484,8 @@ public class DefaultApi {
    * @deprecated
    */
   @Deprecated
-  public ApiResponse<StartIdvRes> v1IdvCaStartPostWithHttpInfo(@javax.annotation.Nullable String authorization, @javax.annotation.Nullable CaStartIdvReq caStartIdvReq, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = v1IdvCaStartPostRequestBuilder(authorization, caStartIdvReq, headers);
+  public ApiResponse<StartIdvRes> v1IdvCaStartPostWithHttpInfo(@javax.annotation.Nullable CaStartIdvReq caStartIdvReq, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = v1IdvCaStartPostRequestBuilder(caStartIdvReq, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -543,7 +532,7 @@ public class DefaultApi {
     }
   }
 
-  private HttpRequest.Builder v1IdvCaStartPostRequestBuilder(@javax.annotation.Nullable String authorization, @javax.annotation.Nullable CaStartIdvReq caStartIdvReq, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder v1IdvCaStartPostRequestBuilder(@javax.annotation.Nullable CaStartIdvReq caStartIdvReq, Map<String, String> headers) throws ApiException {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 
@@ -551,9 +540,6 @@ public class DefaultApi {
 
     localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath));
 
-    if (authorization != null) {
-      localVarRequestBuilder.header("Authorization", authorization.toString());
-    }
     localVarRequestBuilder.header("Content-Type", "application/json;charset=utf-8");
     localVarRequestBuilder.header("Accept", "application/json;charset=utf-8");
 
@@ -694,21 +680,19 @@ public class DefaultApi {
   /**
    * 
    * [DEPRECATED] Use /v1/idv/result with country&#x3D;cn.
-   * @param authorization  (optional)
    * @param cnGetKycReq  (optional)
    * @return CnGetUnionResultRes
    * @throws ApiException if fails to make API call
    * @deprecated
    */
   @Deprecated
-  public CnGetUnionResultRes v1IdvCnKycGetPost(@javax.annotation.Nullable String authorization, @javax.annotation.Nullable CnGetKycReq cnGetKycReq) throws ApiException {
-    return v1IdvCnKycGetPost(authorization, cnGetKycReq, null);
+  public CnGetUnionResultRes v1IdvCnKycGetPost(@javax.annotation.Nullable CnGetKycReq cnGetKycReq) throws ApiException {
+    return v1IdvCnKycGetPost(cnGetKycReq, null);
   }
 
   /**
    * 
    * [DEPRECATED] Use /v1/idv/result with country&#x3D;cn.
-   * @param authorization  (optional)
    * @param cnGetKycReq  (optional)
    * @param headers Optional headers to include in the request
    * @return CnGetUnionResultRes
@@ -716,29 +700,27 @@ public class DefaultApi {
    * @deprecated
    */
   @Deprecated
-  public CnGetUnionResultRes v1IdvCnKycGetPost(@javax.annotation.Nullable String authorization, @javax.annotation.Nullable CnGetKycReq cnGetKycReq, Map<String, String> headers) throws ApiException {
-    ApiResponse<CnGetUnionResultRes> localVarResponse = v1IdvCnKycGetPostWithHttpInfo(authorization, cnGetKycReq, headers);
+  public CnGetUnionResultRes v1IdvCnKycGetPost(@javax.annotation.Nullable CnGetKycReq cnGetKycReq, Map<String, String> headers) throws ApiException {
+    ApiResponse<CnGetUnionResultRes> localVarResponse = v1IdvCnKycGetPostWithHttpInfo(cnGetKycReq, headers);
     return localVarResponse.getData();
   }
 
   /**
    * 
    * [DEPRECATED] Use /v1/idv/result with country&#x3D;cn.
-   * @param authorization  (optional)
    * @param cnGetKycReq  (optional)
    * @return ApiResponse&lt;CnGetUnionResultRes&gt;
    * @throws ApiException if fails to make API call
    * @deprecated
    */
   @Deprecated
-  public ApiResponse<CnGetUnionResultRes> v1IdvCnKycGetPostWithHttpInfo(@javax.annotation.Nullable String authorization, @javax.annotation.Nullable CnGetKycReq cnGetKycReq) throws ApiException {
-    return v1IdvCnKycGetPostWithHttpInfo(authorization, cnGetKycReq, null);
+  public ApiResponse<CnGetUnionResultRes> v1IdvCnKycGetPostWithHttpInfo(@javax.annotation.Nullable CnGetKycReq cnGetKycReq) throws ApiException {
+    return v1IdvCnKycGetPostWithHttpInfo(cnGetKycReq, null);
   }
 
   /**
    * 
    * [DEPRECATED] Use /v1/idv/result with country&#x3D;cn.
-   * @param authorization  (optional)
    * @param cnGetKycReq  (optional)
    * @param headers Optional headers to include in the request
    * @return ApiResponse&lt;CnGetUnionResultRes&gt;
@@ -746,8 +728,8 @@ public class DefaultApi {
    * @deprecated
    */
   @Deprecated
-  public ApiResponse<CnGetUnionResultRes> v1IdvCnKycGetPostWithHttpInfo(@javax.annotation.Nullable String authorization, @javax.annotation.Nullable CnGetKycReq cnGetKycReq, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = v1IdvCnKycGetPostRequestBuilder(authorization, cnGetKycReq, headers);
+  public ApiResponse<CnGetUnionResultRes> v1IdvCnKycGetPostWithHttpInfo(@javax.annotation.Nullable CnGetKycReq cnGetKycReq, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = v1IdvCnKycGetPostRequestBuilder(cnGetKycReq, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -794,7 +776,7 @@ public class DefaultApi {
     }
   }
 
-  private HttpRequest.Builder v1IdvCnKycGetPostRequestBuilder(@javax.annotation.Nullable String authorization, @javax.annotation.Nullable CnGetKycReq cnGetKycReq, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder v1IdvCnKycGetPostRequestBuilder(@javax.annotation.Nullable CnGetKycReq cnGetKycReq, Map<String, String> headers) throws ApiException {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 
@@ -802,9 +784,6 @@ public class DefaultApi {
 
     localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath));
 
-    if (authorization != null) {
-      localVarRequestBuilder.header("Authorization", authorization.toString());
-    }
     localVarRequestBuilder.header("Content-Type", "application/json;charset=utf-8");
     localVarRequestBuilder.header("Accept", "application/json;charset=utf-8");
 
@@ -828,21 +807,19 @@ public class DefaultApi {
   /**
    * 
    * [DEPRECATED] Use /v1/idv/start with country&#x3D;cn.
-   * @param authorization  (optional)
    * @param cnStartIdvReq  (optional)
    * @return StartIdvRes
    * @throws ApiException if fails to make API call
    * @deprecated
    */
   @Deprecated
-  public StartIdvRes v1IdvCnStartPost(@javax.annotation.Nullable String authorization, @javax.annotation.Nullable CnStartIdvReq cnStartIdvReq) throws ApiException {
-    return v1IdvCnStartPost(authorization, cnStartIdvReq, null);
+  public StartIdvRes v1IdvCnStartPost(@javax.annotation.Nullable CnStartIdvReq cnStartIdvReq) throws ApiException {
+    return v1IdvCnStartPost(cnStartIdvReq, null);
   }
 
   /**
    * 
    * [DEPRECATED] Use /v1/idv/start with country&#x3D;cn.
-   * @param authorization  (optional)
    * @param cnStartIdvReq  (optional)
    * @param headers Optional headers to include in the request
    * @return StartIdvRes
@@ -850,29 +827,27 @@ public class DefaultApi {
    * @deprecated
    */
   @Deprecated
-  public StartIdvRes v1IdvCnStartPost(@javax.annotation.Nullable String authorization, @javax.annotation.Nullable CnStartIdvReq cnStartIdvReq, Map<String, String> headers) throws ApiException {
-    ApiResponse<StartIdvRes> localVarResponse = v1IdvCnStartPostWithHttpInfo(authorization, cnStartIdvReq, headers);
+  public StartIdvRes v1IdvCnStartPost(@javax.annotation.Nullable CnStartIdvReq cnStartIdvReq, Map<String, String> headers) throws ApiException {
+    ApiResponse<StartIdvRes> localVarResponse = v1IdvCnStartPostWithHttpInfo(cnStartIdvReq, headers);
     return localVarResponse.getData();
   }
 
   /**
    * 
    * [DEPRECATED] Use /v1/idv/start with country&#x3D;cn.
-   * @param authorization  (optional)
    * @param cnStartIdvReq  (optional)
    * @return ApiResponse&lt;StartIdvRes&gt;
    * @throws ApiException if fails to make API call
    * @deprecated
    */
   @Deprecated
-  public ApiResponse<StartIdvRes> v1IdvCnStartPostWithHttpInfo(@javax.annotation.Nullable String authorization, @javax.annotation.Nullable CnStartIdvReq cnStartIdvReq) throws ApiException {
-    return v1IdvCnStartPostWithHttpInfo(authorization, cnStartIdvReq, null);
+  public ApiResponse<StartIdvRes> v1IdvCnStartPostWithHttpInfo(@javax.annotation.Nullable CnStartIdvReq cnStartIdvReq) throws ApiException {
+    return v1IdvCnStartPostWithHttpInfo(cnStartIdvReq, null);
   }
 
   /**
    * 
    * [DEPRECATED] Use /v1/idv/start with country&#x3D;cn.
-   * @param authorization  (optional)
    * @param cnStartIdvReq  (optional)
    * @param headers Optional headers to include in the request
    * @return ApiResponse&lt;StartIdvRes&gt;
@@ -880,8 +855,8 @@ public class DefaultApi {
    * @deprecated
    */
   @Deprecated
-  public ApiResponse<StartIdvRes> v1IdvCnStartPostWithHttpInfo(@javax.annotation.Nullable String authorization, @javax.annotation.Nullable CnStartIdvReq cnStartIdvReq, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = v1IdvCnStartPostRequestBuilder(authorization, cnStartIdvReq, headers);
+  public ApiResponse<StartIdvRes> v1IdvCnStartPostWithHttpInfo(@javax.annotation.Nullable CnStartIdvReq cnStartIdvReq, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = v1IdvCnStartPostRequestBuilder(cnStartIdvReq, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -928,7 +903,7 @@ public class DefaultApi {
     }
   }
 
-  private HttpRequest.Builder v1IdvCnStartPostRequestBuilder(@javax.annotation.Nullable String authorization, @javax.annotation.Nullable CnStartIdvReq cnStartIdvReq, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder v1IdvCnStartPostRequestBuilder(@javax.annotation.Nullable CnStartIdvReq cnStartIdvReq, Map<String, String> headers) throws ApiException {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 
@@ -936,9 +911,6 @@ public class DefaultApi {
 
     localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath));
 
-    if (authorization != null) {
-      localVarRequestBuilder.header("Authorization", authorization.toString());
-    }
     localVarRequestBuilder.header("Content-Type", "application/json;charset=utf-8");
     localVarRequestBuilder.header("Accept", "application/json;charset=utf-8");
 
@@ -962,21 +934,19 @@ public class DefaultApi {
   /**
    * 
    * [DEPRECATED] Use the OAuth2 token endpoint.
-   * @param authorization  (optional)
    * @param tomoIdvIssueTokenReq  (optional)
    * @return TomoIdvIssueTokenRes
    * @throws ApiException if fails to make API call
    * @deprecated
    */
   @Deprecated
-  public TomoIdvIssueTokenRes v1IdvCnTokenPost(@javax.annotation.Nullable String authorization, @javax.annotation.Nullable TomoIdvIssueTokenReq tomoIdvIssueTokenReq) throws ApiException {
-    return v1IdvCnTokenPost(authorization, tomoIdvIssueTokenReq, null);
+  public TomoIdvIssueTokenRes v1IdvCnTokenPost(@javax.annotation.Nullable TomoIdvIssueTokenReq tomoIdvIssueTokenReq) throws ApiException {
+    return v1IdvCnTokenPost(tomoIdvIssueTokenReq, null);
   }
 
   /**
    * 
    * [DEPRECATED] Use the OAuth2 token endpoint.
-   * @param authorization  (optional)
    * @param tomoIdvIssueTokenReq  (optional)
    * @param headers Optional headers to include in the request
    * @return TomoIdvIssueTokenRes
@@ -984,29 +954,27 @@ public class DefaultApi {
    * @deprecated
    */
   @Deprecated
-  public TomoIdvIssueTokenRes v1IdvCnTokenPost(@javax.annotation.Nullable String authorization, @javax.annotation.Nullable TomoIdvIssueTokenReq tomoIdvIssueTokenReq, Map<String, String> headers) throws ApiException {
-    ApiResponse<TomoIdvIssueTokenRes> localVarResponse = v1IdvCnTokenPostWithHttpInfo(authorization, tomoIdvIssueTokenReq, headers);
+  public TomoIdvIssueTokenRes v1IdvCnTokenPost(@javax.annotation.Nullable TomoIdvIssueTokenReq tomoIdvIssueTokenReq, Map<String, String> headers) throws ApiException {
+    ApiResponse<TomoIdvIssueTokenRes> localVarResponse = v1IdvCnTokenPostWithHttpInfo(tomoIdvIssueTokenReq, headers);
     return localVarResponse.getData();
   }
 
   /**
    * 
    * [DEPRECATED] Use the OAuth2 token endpoint.
-   * @param authorization  (optional)
    * @param tomoIdvIssueTokenReq  (optional)
    * @return ApiResponse&lt;TomoIdvIssueTokenRes&gt;
    * @throws ApiException if fails to make API call
    * @deprecated
    */
   @Deprecated
-  public ApiResponse<TomoIdvIssueTokenRes> v1IdvCnTokenPostWithHttpInfo(@javax.annotation.Nullable String authorization, @javax.annotation.Nullable TomoIdvIssueTokenReq tomoIdvIssueTokenReq) throws ApiException {
-    return v1IdvCnTokenPostWithHttpInfo(authorization, tomoIdvIssueTokenReq, null);
+  public ApiResponse<TomoIdvIssueTokenRes> v1IdvCnTokenPostWithHttpInfo(@javax.annotation.Nullable TomoIdvIssueTokenReq tomoIdvIssueTokenReq) throws ApiException {
+    return v1IdvCnTokenPostWithHttpInfo(tomoIdvIssueTokenReq, null);
   }
 
   /**
    * 
    * [DEPRECATED] Use the OAuth2 token endpoint.
-   * @param authorization  (optional)
    * @param tomoIdvIssueTokenReq  (optional)
    * @param headers Optional headers to include in the request
    * @return ApiResponse&lt;TomoIdvIssueTokenRes&gt;
@@ -1014,8 +982,8 @@ public class DefaultApi {
    * @deprecated
    */
   @Deprecated
-  public ApiResponse<TomoIdvIssueTokenRes> v1IdvCnTokenPostWithHttpInfo(@javax.annotation.Nullable String authorization, @javax.annotation.Nullable TomoIdvIssueTokenReq tomoIdvIssueTokenReq, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = v1IdvCnTokenPostRequestBuilder(authorization, tomoIdvIssueTokenReq, headers);
+  public ApiResponse<TomoIdvIssueTokenRes> v1IdvCnTokenPostWithHttpInfo(@javax.annotation.Nullable TomoIdvIssueTokenReq tomoIdvIssueTokenReq, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = v1IdvCnTokenPostRequestBuilder(tomoIdvIssueTokenReq, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -1062,7 +1030,7 @@ public class DefaultApi {
     }
   }
 
-  private HttpRequest.Builder v1IdvCnTokenPostRequestBuilder(@javax.annotation.Nullable String authorization, @javax.annotation.Nullable TomoIdvIssueTokenReq tomoIdvIssueTokenReq, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder v1IdvCnTokenPostRequestBuilder(@javax.annotation.Nullable TomoIdvIssueTokenReq tomoIdvIssueTokenReq, Map<String, String> headers) throws ApiException {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 
@@ -1070,9 +1038,6 @@ public class DefaultApi {
 
     localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath));
 
-    if (authorization != null) {
-      localVarRequestBuilder.header("Authorization", authorization.toString());
-    }
     localVarRequestBuilder.header("Content-Type", "application/json;charset=utf-8");
     localVarRequestBuilder.header("Accept", "application/json;charset=utf-8");
 
@@ -1322,21 +1287,19 @@ public class DefaultApi {
   /**
    * 
    * [DEPRECATED] Use /v1/idv/result with country&#x3D;jp.
-   * @param authorization  (optional)
    * @param jpGetKycReq  (optional)
    * @return JpGetUnionResultRes
    * @throws ApiException if fails to make API call
    * @deprecated
    */
   @Deprecated
-  public JpGetUnionResultRes v1IdvJpKycGetPost(@javax.annotation.Nullable String authorization, @javax.annotation.Nullable JpGetKycReq jpGetKycReq) throws ApiException {
-    return v1IdvJpKycGetPost(authorization, jpGetKycReq, null);
+  public JpGetUnionResultRes v1IdvJpKycGetPost(@javax.annotation.Nullable JpGetKycReq jpGetKycReq) throws ApiException {
+    return v1IdvJpKycGetPost(jpGetKycReq, null);
   }
 
   /**
    * 
    * [DEPRECATED] Use /v1/idv/result with country&#x3D;jp.
-   * @param authorization  (optional)
    * @param jpGetKycReq  (optional)
    * @param headers Optional headers to include in the request
    * @return JpGetUnionResultRes
@@ -1344,29 +1307,27 @@ public class DefaultApi {
    * @deprecated
    */
   @Deprecated
-  public JpGetUnionResultRes v1IdvJpKycGetPost(@javax.annotation.Nullable String authorization, @javax.annotation.Nullable JpGetKycReq jpGetKycReq, Map<String, String> headers) throws ApiException {
-    ApiResponse<JpGetUnionResultRes> localVarResponse = v1IdvJpKycGetPostWithHttpInfo(authorization, jpGetKycReq, headers);
+  public JpGetUnionResultRes v1IdvJpKycGetPost(@javax.annotation.Nullable JpGetKycReq jpGetKycReq, Map<String, String> headers) throws ApiException {
+    ApiResponse<JpGetUnionResultRes> localVarResponse = v1IdvJpKycGetPostWithHttpInfo(jpGetKycReq, headers);
     return localVarResponse.getData();
   }
 
   /**
    * 
    * [DEPRECATED] Use /v1/idv/result with country&#x3D;jp.
-   * @param authorization  (optional)
    * @param jpGetKycReq  (optional)
    * @return ApiResponse&lt;JpGetUnionResultRes&gt;
    * @throws ApiException if fails to make API call
    * @deprecated
    */
   @Deprecated
-  public ApiResponse<JpGetUnionResultRes> v1IdvJpKycGetPostWithHttpInfo(@javax.annotation.Nullable String authorization, @javax.annotation.Nullable JpGetKycReq jpGetKycReq) throws ApiException {
-    return v1IdvJpKycGetPostWithHttpInfo(authorization, jpGetKycReq, null);
+  public ApiResponse<JpGetUnionResultRes> v1IdvJpKycGetPostWithHttpInfo(@javax.annotation.Nullable JpGetKycReq jpGetKycReq) throws ApiException {
+    return v1IdvJpKycGetPostWithHttpInfo(jpGetKycReq, null);
   }
 
   /**
    * 
    * [DEPRECATED] Use /v1/idv/result with country&#x3D;jp.
-   * @param authorization  (optional)
    * @param jpGetKycReq  (optional)
    * @param headers Optional headers to include in the request
    * @return ApiResponse&lt;JpGetUnionResultRes&gt;
@@ -1374,8 +1335,8 @@ public class DefaultApi {
    * @deprecated
    */
   @Deprecated
-  public ApiResponse<JpGetUnionResultRes> v1IdvJpKycGetPostWithHttpInfo(@javax.annotation.Nullable String authorization, @javax.annotation.Nullable JpGetKycReq jpGetKycReq, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = v1IdvJpKycGetPostRequestBuilder(authorization, jpGetKycReq, headers);
+  public ApiResponse<JpGetUnionResultRes> v1IdvJpKycGetPostWithHttpInfo(@javax.annotation.Nullable JpGetKycReq jpGetKycReq, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = v1IdvJpKycGetPostRequestBuilder(jpGetKycReq, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -1422,7 +1383,7 @@ public class DefaultApi {
     }
   }
 
-  private HttpRequest.Builder v1IdvJpKycGetPostRequestBuilder(@javax.annotation.Nullable String authorization, @javax.annotation.Nullable JpGetKycReq jpGetKycReq, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder v1IdvJpKycGetPostRequestBuilder(@javax.annotation.Nullable JpGetKycReq jpGetKycReq, Map<String, String> headers) throws ApiException {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 
@@ -1430,9 +1391,6 @@ public class DefaultApi {
 
     localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath));
 
-    if (authorization != null) {
-      localVarRequestBuilder.header("Authorization", authorization.toString());
-    }
     localVarRequestBuilder.header("Content-Type", "application/json;charset=utf-8");
     localVarRequestBuilder.header("Accept", "application/json;charset=utf-8");
 
@@ -1456,21 +1414,19 @@ public class DefaultApi {
   /**
    * 
    * [DEPRECATED] Use /v1/idv/start with country&#x3D;jp.
-   * @param authorization  (optional)
    * @param jpStartIdvReq  (optional)
    * @return StartIdvRes
    * @throws ApiException if fails to make API call
    * @deprecated
    */
   @Deprecated
-  public StartIdvRes v1IdvJpStartPost(@javax.annotation.Nullable String authorization, @javax.annotation.Nullable JpStartIdvReq jpStartIdvReq) throws ApiException {
-    return v1IdvJpStartPost(authorization, jpStartIdvReq, null);
+  public StartIdvRes v1IdvJpStartPost(@javax.annotation.Nullable JpStartIdvReq jpStartIdvReq) throws ApiException {
+    return v1IdvJpStartPost(jpStartIdvReq, null);
   }
 
   /**
    * 
    * [DEPRECATED] Use /v1/idv/start with country&#x3D;jp.
-   * @param authorization  (optional)
    * @param jpStartIdvReq  (optional)
    * @param headers Optional headers to include in the request
    * @return StartIdvRes
@@ -1478,29 +1434,27 @@ public class DefaultApi {
    * @deprecated
    */
   @Deprecated
-  public StartIdvRes v1IdvJpStartPost(@javax.annotation.Nullable String authorization, @javax.annotation.Nullable JpStartIdvReq jpStartIdvReq, Map<String, String> headers) throws ApiException {
-    ApiResponse<StartIdvRes> localVarResponse = v1IdvJpStartPostWithHttpInfo(authorization, jpStartIdvReq, headers);
+  public StartIdvRes v1IdvJpStartPost(@javax.annotation.Nullable JpStartIdvReq jpStartIdvReq, Map<String, String> headers) throws ApiException {
+    ApiResponse<StartIdvRes> localVarResponse = v1IdvJpStartPostWithHttpInfo(jpStartIdvReq, headers);
     return localVarResponse.getData();
   }
 
   /**
    * 
    * [DEPRECATED] Use /v1/idv/start with country&#x3D;jp.
-   * @param authorization  (optional)
    * @param jpStartIdvReq  (optional)
    * @return ApiResponse&lt;StartIdvRes&gt;
    * @throws ApiException if fails to make API call
    * @deprecated
    */
   @Deprecated
-  public ApiResponse<StartIdvRes> v1IdvJpStartPostWithHttpInfo(@javax.annotation.Nullable String authorization, @javax.annotation.Nullable JpStartIdvReq jpStartIdvReq) throws ApiException {
-    return v1IdvJpStartPostWithHttpInfo(authorization, jpStartIdvReq, null);
+  public ApiResponse<StartIdvRes> v1IdvJpStartPostWithHttpInfo(@javax.annotation.Nullable JpStartIdvReq jpStartIdvReq) throws ApiException {
+    return v1IdvJpStartPostWithHttpInfo(jpStartIdvReq, null);
   }
 
   /**
    * 
    * [DEPRECATED] Use /v1/idv/start with country&#x3D;jp.
-   * @param authorization  (optional)
    * @param jpStartIdvReq  (optional)
    * @param headers Optional headers to include in the request
    * @return ApiResponse&lt;StartIdvRes&gt;
@@ -1508,8 +1462,8 @@ public class DefaultApi {
    * @deprecated
    */
   @Deprecated
-  public ApiResponse<StartIdvRes> v1IdvJpStartPostWithHttpInfo(@javax.annotation.Nullable String authorization, @javax.annotation.Nullable JpStartIdvReq jpStartIdvReq, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = v1IdvJpStartPostRequestBuilder(authorization, jpStartIdvReq, headers);
+  public ApiResponse<StartIdvRes> v1IdvJpStartPostWithHttpInfo(@javax.annotation.Nullable JpStartIdvReq jpStartIdvReq, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = v1IdvJpStartPostRequestBuilder(jpStartIdvReq, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -1556,7 +1510,7 @@ public class DefaultApi {
     }
   }
 
-  private HttpRequest.Builder v1IdvJpStartPostRequestBuilder(@javax.annotation.Nullable String authorization, @javax.annotation.Nullable JpStartIdvReq jpStartIdvReq, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder v1IdvJpStartPostRequestBuilder(@javax.annotation.Nullable JpStartIdvReq jpStartIdvReq, Map<String, String> headers) throws ApiException {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 
@@ -1564,9 +1518,6 @@ public class DefaultApi {
 
     localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath));
 
-    if (authorization != null) {
-      localVarRequestBuilder.header("Authorization", authorization.toString());
-    }
     localVarRequestBuilder.header("Content-Type", "application/json;charset=utf-8");
     localVarRequestBuilder.header("Accept", "application/json;charset=utf-8");
 
@@ -1590,52 +1541,48 @@ public class DefaultApi {
   /**
    * 
    * 
-   * @param authorization  (optional)
    * @param getKycReq  (optional)
    * @return GetKycRes
    * @throws ApiException if fails to make API call
    */
-  public GetKycRes v1IdvKycGetPost(@javax.annotation.Nullable String authorization, @javax.annotation.Nullable GetKycReq getKycReq) throws ApiException {
-    return v1IdvKycGetPost(authorization, getKycReq, null);
+  public GetKycRes v1IdvKycGetPost(@javax.annotation.Nullable GetKycReq getKycReq) throws ApiException {
+    return v1IdvKycGetPost(getKycReq, null);
   }
 
   /**
    * 
    * 
-   * @param authorization  (optional)
    * @param getKycReq  (optional)
    * @param headers Optional headers to include in the request
    * @return GetKycRes
    * @throws ApiException if fails to make API call
    */
-  public GetKycRes v1IdvKycGetPost(@javax.annotation.Nullable String authorization, @javax.annotation.Nullable GetKycReq getKycReq, Map<String, String> headers) throws ApiException {
-    ApiResponse<GetKycRes> localVarResponse = v1IdvKycGetPostWithHttpInfo(authorization, getKycReq, headers);
+  public GetKycRes v1IdvKycGetPost(@javax.annotation.Nullable GetKycReq getKycReq, Map<String, String> headers) throws ApiException {
+    ApiResponse<GetKycRes> localVarResponse = v1IdvKycGetPostWithHttpInfo(getKycReq, headers);
     return localVarResponse.getData();
   }
 
   /**
    * 
    * 
-   * @param authorization  (optional)
    * @param getKycReq  (optional)
    * @return ApiResponse&lt;GetKycRes&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<GetKycRes> v1IdvKycGetPostWithHttpInfo(@javax.annotation.Nullable String authorization, @javax.annotation.Nullable GetKycReq getKycReq) throws ApiException {
-    return v1IdvKycGetPostWithHttpInfo(authorization, getKycReq, null);
+  public ApiResponse<GetKycRes> v1IdvKycGetPostWithHttpInfo(@javax.annotation.Nullable GetKycReq getKycReq) throws ApiException {
+    return v1IdvKycGetPostWithHttpInfo(getKycReq, null);
   }
 
   /**
    * 
    * 
-   * @param authorization  (optional)
    * @param getKycReq  (optional)
    * @param headers Optional headers to include in the request
    * @return ApiResponse&lt;GetKycRes&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<GetKycRes> v1IdvKycGetPostWithHttpInfo(@javax.annotation.Nullable String authorization, @javax.annotation.Nullable GetKycReq getKycReq, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = v1IdvKycGetPostRequestBuilder(authorization, getKycReq, headers);
+  public ApiResponse<GetKycRes> v1IdvKycGetPostWithHttpInfo(@javax.annotation.Nullable GetKycReq getKycReq, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = v1IdvKycGetPostRequestBuilder(getKycReq, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -1682,7 +1629,7 @@ public class DefaultApi {
     }
   }
 
-  private HttpRequest.Builder v1IdvKycGetPostRequestBuilder(@javax.annotation.Nullable String authorization, @javax.annotation.Nullable GetKycReq getKycReq, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder v1IdvKycGetPostRequestBuilder(@javax.annotation.Nullable GetKycReq getKycReq, Map<String, String> headers) throws ApiException {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 
@@ -1690,9 +1637,6 @@ public class DefaultApi {
 
     localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath));
 
-    if (authorization != null) {
-      localVarRequestBuilder.header("Authorization", authorization.toString());
-    }
     localVarRequestBuilder.header("Content-Type", "application/json;charset=utf-8");
     localVarRequestBuilder.header("Accept", "application/json;charset=utf-8");
 
@@ -1716,52 +1660,48 @@ public class DefaultApi {
   /**
    * 
    * 
-   * @param authorization  (optional)
    * @param resultReq  (optional)
    * @return ResultRes
    * @throws ApiException if fails to make API call
    */
-  public ResultRes v1IdvResultPost(@javax.annotation.Nullable String authorization, @javax.annotation.Nullable ResultReq resultReq) throws ApiException {
-    return v1IdvResultPost(authorization, resultReq, null);
+  public ResultRes v1IdvResultPost(@javax.annotation.Nullable ResultReq resultReq) throws ApiException {
+    return v1IdvResultPost(resultReq, null);
   }
 
   /**
    * 
    * 
-   * @param authorization  (optional)
    * @param resultReq  (optional)
    * @param headers Optional headers to include in the request
    * @return ResultRes
    * @throws ApiException if fails to make API call
    */
-  public ResultRes v1IdvResultPost(@javax.annotation.Nullable String authorization, @javax.annotation.Nullable ResultReq resultReq, Map<String, String> headers) throws ApiException {
-    ApiResponse<ResultRes> localVarResponse = v1IdvResultPostWithHttpInfo(authorization, resultReq, headers);
+  public ResultRes v1IdvResultPost(@javax.annotation.Nullable ResultReq resultReq, Map<String, String> headers) throws ApiException {
+    ApiResponse<ResultRes> localVarResponse = v1IdvResultPostWithHttpInfo(resultReq, headers);
     return localVarResponse.getData();
   }
 
   /**
    * 
    * 
-   * @param authorization  (optional)
    * @param resultReq  (optional)
    * @return ApiResponse&lt;ResultRes&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ResultRes> v1IdvResultPostWithHttpInfo(@javax.annotation.Nullable String authorization, @javax.annotation.Nullable ResultReq resultReq) throws ApiException {
-    return v1IdvResultPostWithHttpInfo(authorization, resultReq, null);
+  public ApiResponse<ResultRes> v1IdvResultPostWithHttpInfo(@javax.annotation.Nullable ResultReq resultReq) throws ApiException {
+    return v1IdvResultPostWithHttpInfo(resultReq, null);
   }
 
   /**
    * 
    * 
-   * @param authorization  (optional)
    * @param resultReq  (optional)
    * @param headers Optional headers to include in the request
    * @return ApiResponse&lt;ResultRes&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<ResultRes> v1IdvResultPostWithHttpInfo(@javax.annotation.Nullable String authorization, @javax.annotation.Nullable ResultReq resultReq, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = v1IdvResultPostRequestBuilder(authorization, resultReq, headers);
+  public ApiResponse<ResultRes> v1IdvResultPostWithHttpInfo(@javax.annotation.Nullable ResultReq resultReq, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = v1IdvResultPostRequestBuilder(resultReq, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -1808,7 +1748,7 @@ public class DefaultApi {
     }
   }
 
-  private HttpRequest.Builder v1IdvResultPostRequestBuilder(@javax.annotation.Nullable String authorization, @javax.annotation.Nullable ResultReq resultReq, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder v1IdvResultPostRequestBuilder(@javax.annotation.Nullable ResultReq resultReq, Map<String, String> headers) throws ApiException {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 
@@ -1816,9 +1756,6 @@ public class DefaultApi {
 
     localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath));
 
-    if (authorization != null) {
-      localVarRequestBuilder.header("Authorization", authorization.toString());
-    }
     localVarRequestBuilder.header("Content-Type", "application/json;charset=utf-8");
     localVarRequestBuilder.header("Accept", "application/json;charset=utf-8");
 
@@ -1842,21 +1779,19 @@ public class DefaultApi {
   /**
    * 
    * [DEPRECATED] Use /v1/idv/start.
-   * @param authorization  (optional)
    * @param sessionStartReq  (optional)
    * @return SessionStartRes
    * @throws ApiException if fails to make API call
    * @deprecated
    */
   @Deprecated
-  public SessionStartRes v1IdvSessionsStartPost(@javax.annotation.Nullable String authorization, @javax.annotation.Nullable SessionStartReq sessionStartReq) throws ApiException {
-    return v1IdvSessionsStartPost(authorization, sessionStartReq, null);
+  public SessionStartRes v1IdvSessionsStartPost(@javax.annotation.Nullable SessionStartReq sessionStartReq) throws ApiException {
+    return v1IdvSessionsStartPost(sessionStartReq, null);
   }
 
   /**
    * 
    * [DEPRECATED] Use /v1/idv/start.
-   * @param authorization  (optional)
    * @param sessionStartReq  (optional)
    * @param headers Optional headers to include in the request
    * @return SessionStartRes
@@ -1864,29 +1799,27 @@ public class DefaultApi {
    * @deprecated
    */
   @Deprecated
-  public SessionStartRes v1IdvSessionsStartPost(@javax.annotation.Nullable String authorization, @javax.annotation.Nullable SessionStartReq sessionStartReq, Map<String, String> headers) throws ApiException {
-    ApiResponse<SessionStartRes> localVarResponse = v1IdvSessionsStartPostWithHttpInfo(authorization, sessionStartReq, headers);
+  public SessionStartRes v1IdvSessionsStartPost(@javax.annotation.Nullable SessionStartReq sessionStartReq, Map<String, String> headers) throws ApiException {
+    ApiResponse<SessionStartRes> localVarResponse = v1IdvSessionsStartPostWithHttpInfo(sessionStartReq, headers);
     return localVarResponse.getData();
   }
 
   /**
    * 
    * [DEPRECATED] Use /v1/idv/start.
-   * @param authorization  (optional)
    * @param sessionStartReq  (optional)
    * @return ApiResponse&lt;SessionStartRes&gt;
    * @throws ApiException if fails to make API call
    * @deprecated
    */
   @Deprecated
-  public ApiResponse<SessionStartRes> v1IdvSessionsStartPostWithHttpInfo(@javax.annotation.Nullable String authorization, @javax.annotation.Nullable SessionStartReq sessionStartReq) throws ApiException {
-    return v1IdvSessionsStartPostWithHttpInfo(authorization, sessionStartReq, null);
+  public ApiResponse<SessionStartRes> v1IdvSessionsStartPostWithHttpInfo(@javax.annotation.Nullable SessionStartReq sessionStartReq) throws ApiException {
+    return v1IdvSessionsStartPostWithHttpInfo(sessionStartReq, null);
   }
 
   /**
    * 
    * [DEPRECATED] Use /v1/idv/start.
-   * @param authorization  (optional)
    * @param sessionStartReq  (optional)
    * @param headers Optional headers to include in the request
    * @return ApiResponse&lt;SessionStartRes&gt;
@@ -1894,8 +1827,8 @@ public class DefaultApi {
    * @deprecated
    */
   @Deprecated
-  public ApiResponse<SessionStartRes> v1IdvSessionsStartPostWithHttpInfo(@javax.annotation.Nullable String authorization, @javax.annotation.Nullable SessionStartReq sessionStartReq, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = v1IdvSessionsStartPostRequestBuilder(authorization, sessionStartReq, headers);
+  public ApiResponse<SessionStartRes> v1IdvSessionsStartPostWithHttpInfo(@javax.annotation.Nullable SessionStartReq sessionStartReq, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = v1IdvSessionsStartPostRequestBuilder(sessionStartReq, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -1942,7 +1875,7 @@ public class DefaultApi {
     }
   }
 
-  private HttpRequest.Builder v1IdvSessionsStartPostRequestBuilder(@javax.annotation.Nullable String authorization, @javax.annotation.Nullable SessionStartReq sessionStartReq, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder v1IdvSessionsStartPostRequestBuilder(@javax.annotation.Nullable SessionStartReq sessionStartReq, Map<String, String> headers) throws ApiException {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 
@@ -1950,9 +1883,6 @@ public class DefaultApi {
 
     localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath));
 
-    if (authorization != null) {
-      localVarRequestBuilder.header("Authorization", authorization.toString());
-    }
     localVarRequestBuilder.header("Content-Type", "application/json;charset=utf-8");
     localVarRequestBuilder.header("Accept", "application/json;charset=utf-8");
 
@@ -1976,52 +1906,48 @@ public class DefaultApi {
   /**
    * 
    * 
-   * @param authorization  (optional)
    * @param startIdvReq  (optional)
    * @return StartIdvRes
    * @throws ApiException if fails to make API call
    */
-  public StartIdvRes v1IdvStartPost(@javax.annotation.Nullable String authorization, @javax.annotation.Nullable StartIdvReq startIdvReq) throws ApiException {
-    return v1IdvStartPost(authorization, startIdvReq, null);
+  public StartIdvRes v1IdvStartPost(@javax.annotation.Nullable StartIdvReq startIdvReq) throws ApiException {
+    return v1IdvStartPost(startIdvReq, null);
   }
 
   /**
    * 
    * 
-   * @param authorization  (optional)
    * @param startIdvReq  (optional)
    * @param headers Optional headers to include in the request
    * @return StartIdvRes
    * @throws ApiException if fails to make API call
    */
-  public StartIdvRes v1IdvStartPost(@javax.annotation.Nullable String authorization, @javax.annotation.Nullable StartIdvReq startIdvReq, Map<String, String> headers) throws ApiException {
-    ApiResponse<StartIdvRes> localVarResponse = v1IdvStartPostWithHttpInfo(authorization, startIdvReq, headers);
+  public StartIdvRes v1IdvStartPost(@javax.annotation.Nullable StartIdvReq startIdvReq, Map<String, String> headers) throws ApiException {
+    ApiResponse<StartIdvRes> localVarResponse = v1IdvStartPostWithHttpInfo(startIdvReq, headers);
     return localVarResponse.getData();
   }
 
   /**
    * 
    * 
-   * @param authorization  (optional)
    * @param startIdvReq  (optional)
    * @return ApiResponse&lt;StartIdvRes&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<StartIdvRes> v1IdvStartPostWithHttpInfo(@javax.annotation.Nullable String authorization, @javax.annotation.Nullable StartIdvReq startIdvReq) throws ApiException {
-    return v1IdvStartPostWithHttpInfo(authorization, startIdvReq, null);
+  public ApiResponse<StartIdvRes> v1IdvStartPostWithHttpInfo(@javax.annotation.Nullable StartIdvReq startIdvReq) throws ApiException {
+    return v1IdvStartPostWithHttpInfo(startIdvReq, null);
   }
 
   /**
    * 
    * 
-   * @param authorization  (optional)
    * @param startIdvReq  (optional)
    * @param headers Optional headers to include in the request
    * @return ApiResponse&lt;StartIdvRes&gt;
    * @throws ApiException if fails to make API call
    */
-  public ApiResponse<StartIdvRes> v1IdvStartPostWithHttpInfo(@javax.annotation.Nullable String authorization, @javax.annotation.Nullable StartIdvReq startIdvReq, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = v1IdvStartPostRequestBuilder(authorization, startIdvReq, headers);
+  public ApiResponse<StartIdvRes> v1IdvStartPostWithHttpInfo(@javax.annotation.Nullable StartIdvReq startIdvReq, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = v1IdvStartPostRequestBuilder(startIdvReq, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -2068,7 +1994,7 @@ public class DefaultApi {
     }
   }
 
-  private HttpRequest.Builder v1IdvStartPostRequestBuilder(@javax.annotation.Nullable String authorization, @javax.annotation.Nullable StartIdvReq startIdvReq, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder v1IdvStartPostRequestBuilder(@javax.annotation.Nullable StartIdvReq startIdvReq, Map<String, String> headers) throws ApiException {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 
@@ -2076,9 +2002,6 @@ public class DefaultApi {
 
     localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath));
 
-    if (authorization != null) {
-      localVarRequestBuilder.header("Authorization", authorization.toString());
-    }
     localVarRequestBuilder.header("Content-Type", "application/json;charset=utf-8");
     localVarRequestBuilder.header("Accept", "application/json;charset=utf-8");
 
@@ -2219,21 +2142,19 @@ public class DefaultApi {
   /**
    * 
    * [DEPRECATED] Use /v1/idv/result with country&#x3D;uk.
-   * @param authorization  (optional)
    * @param usGetKycReq  (optional)
    * @return UsGetUnionResultRes
    * @throws ApiException if fails to make API call
    * @deprecated
    */
   @Deprecated
-  public UsGetUnionResultRes v1IdvUkKycGetPost(@javax.annotation.Nullable String authorization, @javax.annotation.Nullable UsGetKycReq usGetKycReq) throws ApiException {
-    return v1IdvUkKycGetPost(authorization, usGetKycReq, null);
+  public UsGetUnionResultRes v1IdvUkKycGetPost(@javax.annotation.Nullable UsGetKycReq usGetKycReq) throws ApiException {
+    return v1IdvUkKycGetPost(usGetKycReq, null);
   }
 
   /**
    * 
    * [DEPRECATED] Use /v1/idv/result with country&#x3D;uk.
-   * @param authorization  (optional)
    * @param usGetKycReq  (optional)
    * @param headers Optional headers to include in the request
    * @return UsGetUnionResultRes
@@ -2241,29 +2162,27 @@ public class DefaultApi {
    * @deprecated
    */
   @Deprecated
-  public UsGetUnionResultRes v1IdvUkKycGetPost(@javax.annotation.Nullable String authorization, @javax.annotation.Nullable UsGetKycReq usGetKycReq, Map<String, String> headers) throws ApiException {
-    ApiResponse<UsGetUnionResultRes> localVarResponse = v1IdvUkKycGetPostWithHttpInfo(authorization, usGetKycReq, headers);
+  public UsGetUnionResultRes v1IdvUkKycGetPost(@javax.annotation.Nullable UsGetKycReq usGetKycReq, Map<String, String> headers) throws ApiException {
+    ApiResponse<UsGetUnionResultRes> localVarResponse = v1IdvUkKycGetPostWithHttpInfo(usGetKycReq, headers);
     return localVarResponse.getData();
   }
 
   /**
    * 
    * [DEPRECATED] Use /v1/idv/result with country&#x3D;uk.
-   * @param authorization  (optional)
    * @param usGetKycReq  (optional)
    * @return ApiResponse&lt;UsGetUnionResultRes&gt;
    * @throws ApiException if fails to make API call
    * @deprecated
    */
   @Deprecated
-  public ApiResponse<UsGetUnionResultRes> v1IdvUkKycGetPostWithHttpInfo(@javax.annotation.Nullable String authorization, @javax.annotation.Nullable UsGetKycReq usGetKycReq) throws ApiException {
-    return v1IdvUkKycGetPostWithHttpInfo(authorization, usGetKycReq, null);
+  public ApiResponse<UsGetUnionResultRes> v1IdvUkKycGetPostWithHttpInfo(@javax.annotation.Nullable UsGetKycReq usGetKycReq) throws ApiException {
+    return v1IdvUkKycGetPostWithHttpInfo(usGetKycReq, null);
   }
 
   /**
    * 
    * [DEPRECATED] Use /v1/idv/result with country&#x3D;uk.
-   * @param authorization  (optional)
    * @param usGetKycReq  (optional)
    * @param headers Optional headers to include in the request
    * @return ApiResponse&lt;UsGetUnionResultRes&gt;
@@ -2271,8 +2190,8 @@ public class DefaultApi {
    * @deprecated
    */
   @Deprecated
-  public ApiResponse<UsGetUnionResultRes> v1IdvUkKycGetPostWithHttpInfo(@javax.annotation.Nullable String authorization, @javax.annotation.Nullable UsGetKycReq usGetKycReq, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = v1IdvUkKycGetPostRequestBuilder(authorization, usGetKycReq, headers);
+  public ApiResponse<UsGetUnionResultRes> v1IdvUkKycGetPostWithHttpInfo(@javax.annotation.Nullable UsGetKycReq usGetKycReq, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = v1IdvUkKycGetPostRequestBuilder(usGetKycReq, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -2319,7 +2238,7 @@ public class DefaultApi {
     }
   }
 
-  private HttpRequest.Builder v1IdvUkKycGetPostRequestBuilder(@javax.annotation.Nullable String authorization, @javax.annotation.Nullable UsGetKycReq usGetKycReq, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder v1IdvUkKycGetPostRequestBuilder(@javax.annotation.Nullable UsGetKycReq usGetKycReq, Map<String, String> headers) throws ApiException {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 
@@ -2327,9 +2246,6 @@ public class DefaultApi {
 
     localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath));
 
-    if (authorization != null) {
-      localVarRequestBuilder.header("Authorization", authorization.toString());
-    }
     localVarRequestBuilder.header("Content-Type", "application/json;charset=utf-8");
     localVarRequestBuilder.header("Accept", "application/json;charset=utf-8");
 
@@ -2353,21 +2269,19 @@ public class DefaultApi {
   /**
    * 
    * [DEPRECATED] Use /v1/idv/start with country&#x3D;uk.
-   * @param authorization  (optional)
    * @param ukStartIdvReq  (optional)
    * @return StartIdvRes
    * @throws ApiException if fails to make API call
    * @deprecated
    */
   @Deprecated
-  public StartIdvRes v1IdvUkStartPost(@javax.annotation.Nullable String authorization, @javax.annotation.Nullable UkStartIdvReq ukStartIdvReq) throws ApiException {
-    return v1IdvUkStartPost(authorization, ukStartIdvReq, null);
+  public StartIdvRes v1IdvUkStartPost(@javax.annotation.Nullable UkStartIdvReq ukStartIdvReq) throws ApiException {
+    return v1IdvUkStartPost(ukStartIdvReq, null);
   }
 
   /**
    * 
    * [DEPRECATED] Use /v1/idv/start with country&#x3D;uk.
-   * @param authorization  (optional)
    * @param ukStartIdvReq  (optional)
    * @param headers Optional headers to include in the request
    * @return StartIdvRes
@@ -2375,29 +2289,27 @@ public class DefaultApi {
    * @deprecated
    */
   @Deprecated
-  public StartIdvRes v1IdvUkStartPost(@javax.annotation.Nullable String authorization, @javax.annotation.Nullable UkStartIdvReq ukStartIdvReq, Map<String, String> headers) throws ApiException {
-    ApiResponse<StartIdvRes> localVarResponse = v1IdvUkStartPostWithHttpInfo(authorization, ukStartIdvReq, headers);
+  public StartIdvRes v1IdvUkStartPost(@javax.annotation.Nullable UkStartIdvReq ukStartIdvReq, Map<String, String> headers) throws ApiException {
+    ApiResponse<StartIdvRes> localVarResponse = v1IdvUkStartPostWithHttpInfo(ukStartIdvReq, headers);
     return localVarResponse.getData();
   }
 
   /**
    * 
    * [DEPRECATED] Use /v1/idv/start with country&#x3D;uk.
-   * @param authorization  (optional)
    * @param ukStartIdvReq  (optional)
    * @return ApiResponse&lt;StartIdvRes&gt;
    * @throws ApiException if fails to make API call
    * @deprecated
    */
   @Deprecated
-  public ApiResponse<StartIdvRes> v1IdvUkStartPostWithHttpInfo(@javax.annotation.Nullable String authorization, @javax.annotation.Nullable UkStartIdvReq ukStartIdvReq) throws ApiException {
-    return v1IdvUkStartPostWithHttpInfo(authorization, ukStartIdvReq, null);
+  public ApiResponse<StartIdvRes> v1IdvUkStartPostWithHttpInfo(@javax.annotation.Nullable UkStartIdvReq ukStartIdvReq) throws ApiException {
+    return v1IdvUkStartPostWithHttpInfo(ukStartIdvReq, null);
   }
 
   /**
    * 
    * [DEPRECATED] Use /v1/idv/start with country&#x3D;uk.
-   * @param authorization  (optional)
    * @param ukStartIdvReq  (optional)
    * @param headers Optional headers to include in the request
    * @return ApiResponse&lt;StartIdvRes&gt;
@@ -2405,8 +2317,8 @@ public class DefaultApi {
    * @deprecated
    */
   @Deprecated
-  public ApiResponse<StartIdvRes> v1IdvUkStartPostWithHttpInfo(@javax.annotation.Nullable String authorization, @javax.annotation.Nullable UkStartIdvReq ukStartIdvReq, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = v1IdvUkStartPostRequestBuilder(authorization, ukStartIdvReq, headers);
+  public ApiResponse<StartIdvRes> v1IdvUkStartPostWithHttpInfo(@javax.annotation.Nullable UkStartIdvReq ukStartIdvReq, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = v1IdvUkStartPostRequestBuilder(ukStartIdvReq, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -2453,7 +2365,7 @@ public class DefaultApi {
     }
   }
 
-  private HttpRequest.Builder v1IdvUkStartPostRequestBuilder(@javax.annotation.Nullable String authorization, @javax.annotation.Nullable UkStartIdvReq ukStartIdvReq, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder v1IdvUkStartPostRequestBuilder(@javax.annotation.Nullable UkStartIdvReq ukStartIdvReq, Map<String, String> headers) throws ApiException {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 
@@ -2461,9 +2373,6 @@ public class DefaultApi {
 
     localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath));
 
-    if (authorization != null) {
-      localVarRequestBuilder.header("Authorization", authorization.toString());
-    }
     localVarRequestBuilder.header("Content-Type", "application/json;charset=utf-8");
     localVarRequestBuilder.header("Accept", "application/json;charset=utf-8");
 
@@ -2604,21 +2513,19 @@ public class DefaultApi {
   /**
    * 
    * [DEPRECATED] Use /v1/idv/result with country&#x3D;us.
-   * @param authorization  (optional)
    * @param usGetKycReq  (optional)
    * @return UsGetUnionResultRes
    * @throws ApiException if fails to make API call
    * @deprecated
    */
   @Deprecated
-  public UsGetUnionResultRes v1IdvUsKycGetPost(@javax.annotation.Nullable String authorization, @javax.annotation.Nullable UsGetKycReq usGetKycReq) throws ApiException {
-    return v1IdvUsKycGetPost(authorization, usGetKycReq, null);
+  public UsGetUnionResultRes v1IdvUsKycGetPost(@javax.annotation.Nullable UsGetKycReq usGetKycReq) throws ApiException {
+    return v1IdvUsKycGetPost(usGetKycReq, null);
   }
 
   /**
    * 
    * [DEPRECATED] Use /v1/idv/result with country&#x3D;us.
-   * @param authorization  (optional)
    * @param usGetKycReq  (optional)
    * @param headers Optional headers to include in the request
    * @return UsGetUnionResultRes
@@ -2626,29 +2533,27 @@ public class DefaultApi {
    * @deprecated
    */
   @Deprecated
-  public UsGetUnionResultRes v1IdvUsKycGetPost(@javax.annotation.Nullable String authorization, @javax.annotation.Nullable UsGetKycReq usGetKycReq, Map<String, String> headers) throws ApiException {
-    ApiResponse<UsGetUnionResultRes> localVarResponse = v1IdvUsKycGetPostWithHttpInfo(authorization, usGetKycReq, headers);
+  public UsGetUnionResultRes v1IdvUsKycGetPost(@javax.annotation.Nullable UsGetKycReq usGetKycReq, Map<String, String> headers) throws ApiException {
+    ApiResponse<UsGetUnionResultRes> localVarResponse = v1IdvUsKycGetPostWithHttpInfo(usGetKycReq, headers);
     return localVarResponse.getData();
   }
 
   /**
    * 
    * [DEPRECATED] Use /v1/idv/result with country&#x3D;us.
-   * @param authorization  (optional)
    * @param usGetKycReq  (optional)
    * @return ApiResponse&lt;UsGetUnionResultRes&gt;
    * @throws ApiException if fails to make API call
    * @deprecated
    */
   @Deprecated
-  public ApiResponse<UsGetUnionResultRes> v1IdvUsKycGetPostWithHttpInfo(@javax.annotation.Nullable String authorization, @javax.annotation.Nullable UsGetKycReq usGetKycReq) throws ApiException {
-    return v1IdvUsKycGetPostWithHttpInfo(authorization, usGetKycReq, null);
+  public ApiResponse<UsGetUnionResultRes> v1IdvUsKycGetPostWithHttpInfo(@javax.annotation.Nullable UsGetKycReq usGetKycReq) throws ApiException {
+    return v1IdvUsKycGetPostWithHttpInfo(usGetKycReq, null);
   }
 
   /**
    * 
    * [DEPRECATED] Use /v1/idv/result with country&#x3D;us.
-   * @param authorization  (optional)
    * @param usGetKycReq  (optional)
    * @param headers Optional headers to include in the request
    * @return ApiResponse&lt;UsGetUnionResultRes&gt;
@@ -2656,8 +2561,8 @@ public class DefaultApi {
    * @deprecated
    */
   @Deprecated
-  public ApiResponse<UsGetUnionResultRes> v1IdvUsKycGetPostWithHttpInfo(@javax.annotation.Nullable String authorization, @javax.annotation.Nullable UsGetKycReq usGetKycReq, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = v1IdvUsKycGetPostRequestBuilder(authorization, usGetKycReq, headers);
+  public ApiResponse<UsGetUnionResultRes> v1IdvUsKycGetPostWithHttpInfo(@javax.annotation.Nullable UsGetKycReq usGetKycReq, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = v1IdvUsKycGetPostRequestBuilder(usGetKycReq, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -2704,7 +2609,7 @@ public class DefaultApi {
     }
   }
 
-  private HttpRequest.Builder v1IdvUsKycGetPostRequestBuilder(@javax.annotation.Nullable String authorization, @javax.annotation.Nullable UsGetKycReq usGetKycReq, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder v1IdvUsKycGetPostRequestBuilder(@javax.annotation.Nullable UsGetKycReq usGetKycReq, Map<String, String> headers) throws ApiException {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 
@@ -2712,9 +2617,6 @@ public class DefaultApi {
 
     localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath));
 
-    if (authorization != null) {
-      localVarRequestBuilder.header("Authorization", authorization.toString());
-    }
     localVarRequestBuilder.header("Content-Type", "application/json;charset=utf-8");
     localVarRequestBuilder.header("Accept", "application/json;charset=utf-8");
 
@@ -2738,21 +2640,19 @@ public class DefaultApi {
   /**
    * 
    * [DEPRECATED] Use /v1/idv/start with country&#x3D;us.
-   * @param authorization  (optional)
    * @param usStartIdvReq  (optional)
    * @return StartIdvRes
    * @throws ApiException if fails to make API call
    * @deprecated
    */
   @Deprecated
-  public StartIdvRes v1IdvUsStartPost(@javax.annotation.Nullable String authorization, @javax.annotation.Nullable UsStartIdvReq usStartIdvReq) throws ApiException {
-    return v1IdvUsStartPost(authorization, usStartIdvReq, null);
+  public StartIdvRes v1IdvUsStartPost(@javax.annotation.Nullable UsStartIdvReq usStartIdvReq) throws ApiException {
+    return v1IdvUsStartPost(usStartIdvReq, null);
   }
 
   /**
    * 
    * [DEPRECATED] Use /v1/idv/start with country&#x3D;us.
-   * @param authorization  (optional)
    * @param usStartIdvReq  (optional)
    * @param headers Optional headers to include in the request
    * @return StartIdvRes
@@ -2760,29 +2660,27 @@ public class DefaultApi {
    * @deprecated
    */
   @Deprecated
-  public StartIdvRes v1IdvUsStartPost(@javax.annotation.Nullable String authorization, @javax.annotation.Nullable UsStartIdvReq usStartIdvReq, Map<String, String> headers) throws ApiException {
-    ApiResponse<StartIdvRes> localVarResponse = v1IdvUsStartPostWithHttpInfo(authorization, usStartIdvReq, headers);
+  public StartIdvRes v1IdvUsStartPost(@javax.annotation.Nullable UsStartIdvReq usStartIdvReq, Map<String, String> headers) throws ApiException {
+    ApiResponse<StartIdvRes> localVarResponse = v1IdvUsStartPostWithHttpInfo(usStartIdvReq, headers);
     return localVarResponse.getData();
   }
 
   /**
    * 
    * [DEPRECATED] Use /v1/idv/start with country&#x3D;us.
-   * @param authorization  (optional)
    * @param usStartIdvReq  (optional)
    * @return ApiResponse&lt;StartIdvRes&gt;
    * @throws ApiException if fails to make API call
    * @deprecated
    */
   @Deprecated
-  public ApiResponse<StartIdvRes> v1IdvUsStartPostWithHttpInfo(@javax.annotation.Nullable String authorization, @javax.annotation.Nullable UsStartIdvReq usStartIdvReq) throws ApiException {
-    return v1IdvUsStartPostWithHttpInfo(authorization, usStartIdvReq, null);
+  public ApiResponse<StartIdvRes> v1IdvUsStartPostWithHttpInfo(@javax.annotation.Nullable UsStartIdvReq usStartIdvReq) throws ApiException {
+    return v1IdvUsStartPostWithHttpInfo(usStartIdvReq, null);
   }
 
   /**
    * 
    * [DEPRECATED] Use /v1/idv/start with country&#x3D;us.
-   * @param authorization  (optional)
    * @param usStartIdvReq  (optional)
    * @param headers Optional headers to include in the request
    * @return ApiResponse&lt;StartIdvRes&gt;
@@ -2790,8 +2688,8 @@ public class DefaultApi {
    * @deprecated
    */
   @Deprecated
-  public ApiResponse<StartIdvRes> v1IdvUsStartPostWithHttpInfo(@javax.annotation.Nullable String authorization, @javax.annotation.Nullable UsStartIdvReq usStartIdvReq, Map<String, String> headers) throws ApiException {
-    HttpRequest.Builder localVarRequestBuilder = v1IdvUsStartPostRequestBuilder(authorization, usStartIdvReq, headers);
+  public ApiResponse<StartIdvRes> v1IdvUsStartPostWithHttpInfo(@javax.annotation.Nullable UsStartIdvReq usStartIdvReq, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = v1IdvUsStartPostRequestBuilder(usStartIdvReq, headers);
     try {
       HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
           localVarRequestBuilder.build(),
@@ -2838,7 +2736,7 @@ public class DefaultApi {
     }
   }
 
-  private HttpRequest.Builder v1IdvUsStartPostRequestBuilder(@javax.annotation.Nullable String authorization, @javax.annotation.Nullable UsStartIdvReq usStartIdvReq, Map<String, String> headers) throws ApiException {
+  private HttpRequest.Builder v1IdvUsStartPostRequestBuilder(@javax.annotation.Nullable UsStartIdvReq usStartIdvReq, Map<String, String> headers) throws ApiException {
 
     HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
 
@@ -2846,9 +2744,6 @@ public class DefaultApi {
 
     localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath));
 
-    if (authorization != null) {
-      localVarRequestBuilder.header("Authorization", authorization.toString());
-    }
     localVarRequestBuilder.header("Content-Type", "application/json;charset=utf-8");
     localVarRequestBuilder.header("Accept", "application/json;charset=utf-8");
 

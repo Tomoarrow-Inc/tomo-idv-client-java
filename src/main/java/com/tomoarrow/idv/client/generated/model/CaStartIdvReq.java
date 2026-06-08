@@ -35,31 +35,36 @@ import com.tomoarrow.idv.client.generated.ApiClient;
 @JsonPropertyOrder({
   CaStartIdvReq.JSON_PROPERTY_CALLBACK_URL,
   CaStartIdvReq.JSON_PROPERTY_EMAIL,
-  CaStartIdvReq.JSON_PROPERTY_KYC_POLICY_ID,
-  CaStartIdvReq.JSON_PROPERTY_USER_ID
+  CaStartIdvReq.JSON_PROPERTY_REDIRECT_URL,
+  CaStartIdvReq.JSON_PROPERTY_USER_ID,
+  CaStartIdvReq.JSON_PROPERTY_WEBHOOK_URL
 })
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
 public class CaStartIdvReq {
   public static final String JSON_PROPERTY_CALLBACK_URL = "callback_url";
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private String callbackUrl;
 
   public static final String JSON_PROPERTY_EMAIL = "email";
   @javax.annotation.Nullable
   private String email;
 
-  public static final String JSON_PROPERTY_KYC_POLICY_ID = "kyc_policy_id";
+  public static final String JSON_PROPERTY_REDIRECT_URL = "redirect_url";
   @javax.annotation.Nullable
-  private String kycPolicyId;
+  private String redirectUrl;
 
   public static final String JSON_PROPERTY_USER_ID = "user_id";
   @javax.annotation.Nonnull
   private String userId;
 
+  public static final String JSON_PROPERTY_WEBHOOK_URL = "webhook_url";
+  @javax.annotation.Nullable
+  private String webhookUrl;
+
   public CaStartIdvReq() { 
   }
 
-  public CaStartIdvReq callbackUrl(@javax.annotation.Nonnull String callbackUrl) {
+  public CaStartIdvReq callbackUrl(@javax.annotation.Nullable String callbackUrl) {
     this.callbackUrl = callbackUrl;
     return this;
   }
@@ -68,17 +73,17 @@ public class CaStartIdvReq {
    * Get callbackUrl
    * @return callbackUrl
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_CALLBACK_URL, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonProperty(value = JSON_PROPERTY_CALLBACK_URL, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public String getCallbackUrl() {
     return callbackUrl;
   }
 
 
-  @JsonProperty(value = JSON_PROPERTY_CALLBACK_URL, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setCallbackUrl(@javax.annotation.Nonnull String callbackUrl) {
+  @JsonProperty(value = JSON_PROPERTY_CALLBACK_URL, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setCallbackUrl(@javax.annotation.Nullable String callbackUrl) {
     this.callbackUrl = callbackUrl;
   }
 
@@ -107,27 +112,27 @@ public class CaStartIdvReq {
   }
 
 
-  public CaStartIdvReq kycPolicyId(@javax.annotation.Nullable String kycPolicyId) {
-    this.kycPolicyId = kycPolicyId;
+  public CaStartIdvReq redirectUrl(@javax.annotation.Nullable String redirectUrl) {
+    this.redirectUrl = redirectUrl;
     return this;
   }
 
   /**
-   * Get kycPolicyId
-   * @return kycPolicyId
+   * Get redirectUrl
+   * @return redirectUrl
    */
   @javax.annotation.Nullable
-  @JsonProperty(value = JSON_PROPERTY_KYC_POLICY_ID, required = false)
+  @JsonProperty(value = JSON_PROPERTY_REDIRECT_URL, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public String getKycPolicyId() {
-    return kycPolicyId;
+  public String getRedirectUrl() {
+    return redirectUrl;
   }
 
 
-  @JsonProperty(value = JSON_PROPERTY_KYC_POLICY_ID, required = false)
+  @JsonProperty(value = JSON_PROPERTY_REDIRECT_URL, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setKycPolicyId(@javax.annotation.Nullable String kycPolicyId) {
-    this.kycPolicyId = kycPolicyId;
+  public void setRedirectUrl(@javax.annotation.Nullable String redirectUrl) {
+    this.redirectUrl = redirectUrl;
   }
 
 
@@ -155,6 +160,30 @@ public class CaStartIdvReq {
   }
 
 
+  public CaStartIdvReq webhookUrl(@javax.annotation.Nullable String webhookUrl) {
+    this.webhookUrl = webhookUrl;
+    return this;
+  }
+
+  /**
+   * Get webhookUrl
+   * @return webhookUrl
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(value = JSON_PROPERTY_WEBHOOK_URL, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public String getWebhookUrl() {
+    return webhookUrl;
+  }
+
+
+  @JsonProperty(value = JSON_PROPERTY_WEBHOOK_URL, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setWebhookUrl(@javax.annotation.Nullable String webhookUrl) {
+    this.webhookUrl = webhookUrl;
+  }
+
+
   /**
    * Return true if this CaStartIdvReq object is equal to o.
    */
@@ -169,13 +198,14 @@ public class CaStartIdvReq {
     CaStartIdvReq caStartIdvReq = (CaStartIdvReq) o;
     return Objects.equals(this.callbackUrl, caStartIdvReq.callbackUrl) &&
         Objects.equals(this.email, caStartIdvReq.email) &&
-        Objects.equals(this.kycPolicyId, caStartIdvReq.kycPolicyId) &&
-        Objects.equals(this.userId, caStartIdvReq.userId);
+        Objects.equals(this.redirectUrl, caStartIdvReq.redirectUrl) &&
+        Objects.equals(this.userId, caStartIdvReq.userId) &&
+        Objects.equals(this.webhookUrl, caStartIdvReq.webhookUrl);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(callbackUrl, email, kycPolicyId, userId);
+    return Objects.hash(callbackUrl, email, redirectUrl, userId, webhookUrl);
   }
 
   @Override
@@ -184,8 +214,9 @@ public class CaStartIdvReq {
     sb.append("class CaStartIdvReq {\n");
     sb.append("    callbackUrl: ").append(toIndentedString(callbackUrl)).append("\n");
     sb.append("    email: ").append(toIndentedString(email)).append("\n");
-    sb.append("    kycPolicyId: ").append(toIndentedString(kycPolicyId)).append("\n");
+    sb.append("    redirectUrl: ").append(toIndentedString(redirectUrl)).append("\n");
     sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
+    sb.append("    webhookUrl: ").append(toIndentedString(webhookUrl)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -240,14 +271,19 @@ public class CaStartIdvReq {
       joiner.add(String.format(java.util.Locale.ROOT, "%semail%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getEmail()))));
     }
 
-    // add `kyc_policy_id` to the URL query string
-    if (getKycPolicyId() != null) {
-      joiner.add(String.format(java.util.Locale.ROOT, "%skyc_policy_id%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getKycPolicyId()))));
+    // add `redirect_url` to the URL query string
+    if (getRedirectUrl() != null) {
+      joiner.add(String.format(java.util.Locale.ROOT, "%sredirect_url%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getRedirectUrl()))));
     }
 
     // add `user_id` to the URL query string
     if (getUserId() != null) {
       joiner.add(String.format(java.util.Locale.ROOT, "%suser_id%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getUserId()))));
+    }
+
+    // add `webhook_url` to the URL query string
+    if (getWebhookUrl() != null) {
+      joiner.add(String.format(java.util.Locale.ROOT, "%swebhook_url%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getWebhookUrl()))));
     }
 
     return joiner.toString();

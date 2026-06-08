@@ -179,7 +179,7 @@ No authorization required
 
 ## v1IdvCaKycGetPost
 
-> UsGetUnionResultRes v1IdvCaKycGetPost(authorization, usGetKycReq)
+> UsGetUnionResultRes v1IdvCaKycGetPost(usGetKycReq)
 
 
 
@@ -192,6 +192,7 @@ No authorization required
 import com.tomoarrow.idv.client.generated.ApiClient;
 import com.tomoarrow.idv.client.generated.ApiException;
 import com.tomoarrow.idv.client.generated.Configuration;
+import com.tomoarrow.idv.client.generated.auth.*;
 import com.tomoarrow.idv.client.generated.models.*;
 import com.tomoarrow.idv.client.generated.api.DefaultApi;
 
@@ -199,12 +200,15 @@ public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
         defaultClient.setBasePath("http://localhost");
+        
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
 
         DefaultApi apiInstance = new DefaultApi(defaultClient);
-        String authorization = "authorization_example"; // String | 
         UsGetKycReq usGetKycReq = new UsGetKycReq(); // UsGetKycReq | 
         try {
-            UsGetUnionResultRes result = apiInstance.v1IdvCaKycGetPost(authorization, usGetKycReq);
+            UsGetUnionResultRes result = apiInstance.v1IdvCaKycGetPost(usGetKycReq);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling DefaultApi#v1IdvCaKycGetPost");
@@ -222,7 +226,6 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **authorization** | **String**|  | [optional] |
 | **usGetKycReq** | [**UsGetKycReq**](UsGetKycReq.md)|  | [optional] |
 
 ### Return type
@@ -232,7 +235,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -247,7 +250,7 @@ No authorization required
 
 ## v1IdvCaKycGetPostWithHttpInfo
 
-> ApiResponse<UsGetUnionResultRes> v1IdvCaKycGetPostWithHttpInfo(authorization, usGetKycReq)
+> ApiResponse<UsGetUnionResultRes> v1IdvCaKycGetPostWithHttpInfo(usGetKycReq)
 
 
 
@@ -261,6 +264,7 @@ import com.tomoarrow.idv.client.generated.ApiClient;
 import com.tomoarrow.idv.client.generated.ApiException;
 import com.tomoarrow.idv.client.generated.ApiResponse;
 import com.tomoarrow.idv.client.generated.Configuration;
+import com.tomoarrow.idv.client.generated.auth.*;
 import com.tomoarrow.idv.client.generated.models.*;
 import com.tomoarrow.idv.client.generated.api.DefaultApi;
 
@@ -268,12 +272,15 @@ public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
         defaultClient.setBasePath("http://localhost");
+        
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
 
         DefaultApi apiInstance = new DefaultApi(defaultClient);
-        String authorization = "authorization_example"; // String | 
         UsGetKycReq usGetKycReq = new UsGetKycReq(); // UsGetKycReq | 
         try {
-            ApiResponse<UsGetUnionResultRes> response = apiInstance.v1IdvCaKycGetPostWithHttpInfo(authorization, usGetKycReq);
+            ApiResponse<UsGetUnionResultRes> response = apiInstance.v1IdvCaKycGetPostWithHttpInfo(usGetKycReq);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
@@ -293,7 +300,6 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **authorization** | **String**|  | [optional] |
 | **usGetKycReq** | [**UsGetKycReq**](UsGetKycReq.md)|  | [optional] |
 
 ### Return type
@@ -303,7 +309,7 @@ ApiResponse<[**UsGetUnionResultRes**](UsGetUnionResultRes.md)>
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -319,7 +325,7 @@ No authorization required
 
 ## v1IdvCaStartPost
 
-> StartIdvRes v1IdvCaStartPost(authorization, caStartIdvReq)
+> StartIdvRes v1IdvCaStartPost(caStartIdvReq)
 
 
 
@@ -332,6 +338,7 @@ No authorization required
 import com.tomoarrow.idv.client.generated.ApiClient;
 import com.tomoarrow.idv.client.generated.ApiException;
 import com.tomoarrow.idv.client.generated.Configuration;
+import com.tomoarrow.idv.client.generated.auth.*;
 import com.tomoarrow.idv.client.generated.models.*;
 import com.tomoarrow.idv.client.generated.api.DefaultApi;
 
@@ -339,12 +346,15 @@ public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
         defaultClient.setBasePath("http://localhost");
+        
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
 
         DefaultApi apiInstance = new DefaultApi(defaultClient);
-        String authorization = "authorization_example"; // String | 
         CaStartIdvReq caStartIdvReq = new CaStartIdvReq(); // CaStartIdvReq | 
         try {
-            StartIdvRes result = apiInstance.v1IdvCaStartPost(authorization, caStartIdvReq);
+            StartIdvRes result = apiInstance.v1IdvCaStartPost(caStartIdvReq);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling DefaultApi#v1IdvCaStartPost");
@@ -362,7 +372,6 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **authorization** | **String**|  | [optional] |
 | **caStartIdvReq** | [**CaStartIdvReq**](CaStartIdvReq.md)|  | [optional] |
 
 ### Return type
@@ -372,7 +381,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -387,7 +396,7 @@ No authorization required
 
 ## v1IdvCaStartPostWithHttpInfo
 
-> ApiResponse<StartIdvRes> v1IdvCaStartPostWithHttpInfo(authorization, caStartIdvReq)
+> ApiResponse<StartIdvRes> v1IdvCaStartPostWithHttpInfo(caStartIdvReq)
 
 
 
@@ -401,6 +410,7 @@ import com.tomoarrow.idv.client.generated.ApiClient;
 import com.tomoarrow.idv.client.generated.ApiException;
 import com.tomoarrow.idv.client.generated.ApiResponse;
 import com.tomoarrow.idv.client.generated.Configuration;
+import com.tomoarrow.idv.client.generated.auth.*;
 import com.tomoarrow.idv.client.generated.models.*;
 import com.tomoarrow.idv.client.generated.api.DefaultApi;
 
@@ -408,12 +418,15 @@ public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
         defaultClient.setBasePath("http://localhost");
+        
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
 
         DefaultApi apiInstance = new DefaultApi(defaultClient);
-        String authorization = "authorization_example"; // String | 
         CaStartIdvReq caStartIdvReq = new CaStartIdvReq(); // CaStartIdvReq | 
         try {
-            ApiResponse<StartIdvRes> response = apiInstance.v1IdvCaStartPostWithHttpInfo(authorization, caStartIdvReq);
+            ApiResponse<StartIdvRes> response = apiInstance.v1IdvCaStartPostWithHttpInfo(caStartIdvReq);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
@@ -433,7 +446,6 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **authorization** | **String**|  | [optional] |
 | **caStartIdvReq** | [**CaStartIdvReq**](CaStartIdvReq.md)|  | [optional] |
 
 ### Return type
@@ -443,7 +455,7 @@ ApiResponse<[**StartIdvRes**](StartIdvRes.md)>
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -585,7 +597,7 @@ No authorization required
 
 ## v1IdvCnKycGetPost
 
-> CnGetUnionResultRes v1IdvCnKycGetPost(authorization, cnGetKycReq)
+> CnGetUnionResultRes v1IdvCnKycGetPost(cnGetKycReq)
 
 
 
@@ -598,6 +610,7 @@ No authorization required
 import com.tomoarrow.idv.client.generated.ApiClient;
 import com.tomoarrow.idv.client.generated.ApiException;
 import com.tomoarrow.idv.client.generated.Configuration;
+import com.tomoarrow.idv.client.generated.auth.*;
 import com.tomoarrow.idv.client.generated.models.*;
 import com.tomoarrow.idv.client.generated.api.DefaultApi;
 
@@ -605,12 +618,15 @@ public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
         defaultClient.setBasePath("http://localhost");
+        
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
 
         DefaultApi apiInstance = new DefaultApi(defaultClient);
-        String authorization = "authorization_example"; // String | 
         CnGetKycReq cnGetKycReq = new CnGetKycReq(); // CnGetKycReq | 
         try {
-            CnGetUnionResultRes result = apiInstance.v1IdvCnKycGetPost(authorization, cnGetKycReq);
+            CnGetUnionResultRes result = apiInstance.v1IdvCnKycGetPost(cnGetKycReq);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling DefaultApi#v1IdvCnKycGetPost");
@@ -628,7 +644,6 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **authorization** | **String**|  | [optional] |
 | **cnGetKycReq** | [**CnGetKycReq**](CnGetKycReq.md)|  | [optional] |
 
 ### Return type
@@ -638,7 +653,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -653,7 +668,7 @@ No authorization required
 
 ## v1IdvCnKycGetPostWithHttpInfo
 
-> ApiResponse<CnGetUnionResultRes> v1IdvCnKycGetPostWithHttpInfo(authorization, cnGetKycReq)
+> ApiResponse<CnGetUnionResultRes> v1IdvCnKycGetPostWithHttpInfo(cnGetKycReq)
 
 
 
@@ -667,6 +682,7 @@ import com.tomoarrow.idv.client.generated.ApiClient;
 import com.tomoarrow.idv.client.generated.ApiException;
 import com.tomoarrow.idv.client.generated.ApiResponse;
 import com.tomoarrow.idv.client.generated.Configuration;
+import com.tomoarrow.idv.client.generated.auth.*;
 import com.tomoarrow.idv.client.generated.models.*;
 import com.tomoarrow.idv.client.generated.api.DefaultApi;
 
@@ -674,12 +690,15 @@ public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
         defaultClient.setBasePath("http://localhost");
+        
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
 
         DefaultApi apiInstance = new DefaultApi(defaultClient);
-        String authorization = "authorization_example"; // String | 
         CnGetKycReq cnGetKycReq = new CnGetKycReq(); // CnGetKycReq | 
         try {
-            ApiResponse<CnGetUnionResultRes> response = apiInstance.v1IdvCnKycGetPostWithHttpInfo(authorization, cnGetKycReq);
+            ApiResponse<CnGetUnionResultRes> response = apiInstance.v1IdvCnKycGetPostWithHttpInfo(cnGetKycReq);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
@@ -699,7 +718,6 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **authorization** | **String**|  | [optional] |
 | **cnGetKycReq** | [**CnGetKycReq**](CnGetKycReq.md)|  | [optional] |
 
 ### Return type
@@ -709,7 +727,7 @@ ApiResponse<[**CnGetUnionResultRes**](CnGetUnionResultRes.md)>
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -725,7 +743,7 @@ No authorization required
 
 ## v1IdvCnStartPost
 
-> StartIdvRes v1IdvCnStartPost(authorization, cnStartIdvReq)
+> StartIdvRes v1IdvCnStartPost(cnStartIdvReq)
 
 
 
@@ -738,6 +756,7 @@ No authorization required
 import com.tomoarrow.idv.client.generated.ApiClient;
 import com.tomoarrow.idv.client.generated.ApiException;
 import com.tomoarrow.idv.client.generated.Configuration;
+import com.tomoarrow.idv.client.generated.auth.*;
 import com.tomoarrow.idv.client.generated.models.*;
 import com.tomoarrow.idv.client.generated.api.DefaultApi;
 
@@ -745,12 +764,15 @@ public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
         defaultClient.setBasePath("http://localhost");
+        
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
 
         DefaultApi apiInstance = new DefaultApi(defaultClient);
-        String authorization = "authorization_example"; // String | 
         CnStartIdvReq cnStartIdvReq = new CnStartIdvReq(); // CnStartIdvReq | 
         try {
-            StartIdvRes result = apiInstance.v1IdvCnStartPost(authorization, cnStartIdvReq);
+            StartIdvRes result = apiInstance.v1IdvCnStartPost(cnStartIdvReq);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling DefaultApi#v1IdvCnStartPost");
@@ -768,7 +790,6 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **authorization** | **String**|  | [optional] |
 | **cnStartIdvReq** | [**CnStartIdvReq**](CnStartIdvReq.md)|  | [optional] |
 
 ### Return type
@@ -778,7 +799,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -793,7 +814,7 @@ No authorization required
 
 ## v1IdvCnStartPostWithHttpInfo
 
-> ApiResponse<StartIdvRes> v1IdvCnStartPostWithHttpInfo(authorization, cnStartIdvReq)
+> ApiResponse<StartIdvRes> v1IdvCnStartPostWithHttpInfo(cnStartIdvReq)
 
 
 
@@ -807,6 +828,7 @@ import com.tomoarrow.idv.client.generated.ApiClient;
 import com.tomoarrow.idv.client.generated.ApiException;
 import com.tomoarrow.idv.client.generated.ApiResponse;
 import com.tomoarrow.idv.client.generated.Configuration;
+import com.tomoarrow.idv.client.generated.auth.*;
 import com.tomoarrow.idv.client.generated.models.*;
 import com.tomoarrow.idv.client.generated.api.DefaultApi;
 
@@ -814,12 +836,15 @@ public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
         defaultClient.setBasePath("http://localhost");
+        
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
 
         DefaultApi apiInstance = new DefaultApi(defaultClient);
-        String authorization = "authorization_example"; // String | 
         CnStartIdvReq cnStartIdvReq = new CnStartIdvReq(); // CnStartIdvReq | 
         try {
-            ApiResponse<StartIdvRes> response = apiInstance.v1IdvCnStartPostWithHttpInfo(authorization, cnStartIdvReq);
+            ApiResponse<StartIdvRes> response = apiInstance.v1IdvCnStartPostWithHttpInfo(cnStartIdvReq);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
@@ -839,7 +864,6 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **authorization** | **String**|  | [optional] |
 | **cnStartIdvReq** | [**CnStartIdvReq**](CnStartIdvReq.md)|  | [optional] |
 
 ### Return type
@@ -849,7 +873,7 @@ ApiResponse<[**StartIdvRes**](StartIdvRes.md)>
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -865,7 +889,7 @@ No authorization required
 
 ## v1IdvCnTokenPost
 
-> TomoIdvIssueTokenRes v1IdvCnTokenPost(authorization, tomoIdvIssueTokenReq)
+> TomoIdvIssueTokenRes v1IdvCnTokenPost(tomoIdvIssueTokenReq)
 
 
 
@@ -878,6 +902,7 @@ No authorization required
 import com.tomoarrow.idv.client.generated.ApiClient;
 import com.tomoarrow.idv.client.generated.ApiException;
 import com.tomoarrow.idv.client.generated.Configuration;
+import com.tomoarrow.idv.client.generated.auth.*;
 import com.tomoarrow.idv.client.generated.models.*;
 import com.tomoarrow.idv.client.generated.api.DefaultApi;
 
@@ -885,12 +910,15 @@ public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
         defaultClient.setBasePath("http://localhost");
+        
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
 
         DefaultApi apiInstance = new DefaultApi(defaultClient);
-        String authorization = "authorization_example"; // String | 
         TomoIdvIssueTokenReq tomoIdvIssueTokenReq = new TomoIdvIssueTokenReq(); // TomoIdvIssueTokenReq | 
         try {
-            TomoIdvIssueTokenRes result = apiInstance.v1IdvCnTokenPost(authorization, tomoIdvIssueTokenReq);
+            TomoIdvIssueTokenRes result = apiInstance.v1IdvCnTokenPost(tomoIdvIssueTokenReq);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling DefaultApi#v1IdvCnTokenPost");
@@ -908,7 +936,6 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **authorization** | **String**|  | [optional] |
 | **tomoIdvIssueTokenReq** | [**TomoIdvIssueTokenReq**](TomoIdvIssueTokenReq.md)|  | [optional] |
 
 ### Return type
@@ -918,7 +945,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -933,7 +960,7 @@ No authorization required
 
 ## v1IdvCnTokenPostWithHttpInfo
 
-> ApiResponse<TomoIdvIssueTokenRes> v1IdvCnTokenPostWithHttpInfo(authorization, tomoIdvIssueTokenReq)
+> ApiResponse<TomoIdvIssueTokenRes> v1IdvCnTokenPostWithHttpInfo(tomoIdvIssueTokenReq)
 
 
 
@@ -947,6 +974,7 @@ import com.tomoarrow.idv.client.generated.ApiClient;
 import com.tomoarrow.idv.client.generated.ApiException;
 import com.tomoarrow.idv.client.generated.ApiResponse;
 import com.tomoarrow.idv.client.generated.Configuration;
+import com.tomoarrow.idv.client.generated.auth.*;
 import com.tomoarrow.idv.client.generated.models.*;
 import com.tomoarrow.idv.client.generated.api.DefaultApi;
 
@@ -954,12 +982,15 @@ public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
         defaultClient.setBasePath("http://localhost");
+        
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
 
         DefaultApi apiInstance = new DefaultApi(defaultClient);
-        String authorization = "authorization_example"; // String | 
         TomoIdvIssueTokenReq tomoIdvIssueTokenReq = new TomoIdvIssueTokenReq(); // TomoIdvIssueTokenReq | 
         try {
-            ApiResponse<TomoIdvIssueTokenRes> response = apiInstance.v1IdvCnTokenPostWithHttpInfo(authorization, tomoIdvIssueTokenReq);
+            ApiResponse<TomoIdvIssueTokenRes> response = apiInstance.v1IdvCnTokenPostWithHttpInfo(tomoIdvIssueTokenReq);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
@@ -979,7 +1010,6 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **authorization** | **String**|  | [optional] |
 | **tomoIdvIssueTokenReq** | [**TomoIdvIssueTokenReq**](TomoIdvIssueTokenReq.md)|  | [optional] |
 
 ### Return type
@@ -989,7 +1019,7 @@ ApiResponse<[**TomoIdvIssueTokenRes**](TomoIdvIssueTokenRes.md)>
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -1253,7 +1283,7 @@ No authorization required
 
 ## v1IdvJpKycGetPost
 
-> JpGetUnionResultRes v1IdvJpKycGetPost(authorization, jpGetKycReq)
+> JpGetUnionResultRes v1IdvJpKycGetPost(jpGetKycReq)
 
 
 
@@ -1266,6 +1296,7 @@ No authorization required
 import com.tomoarrow.idv.client.generated.ApiClient;
 import com.tomoarrow.idv.client.generated.ApiException;
 import com.tomoarrow.idv.client.generated.Configuration;
+import com.tomoarrow.idv.client.generated.auth.*;
 import com.tomoarrow.idv.client.generated.models.*;
 import com.tomoarrow.idv.client.generated.api.DefaultApi;
 
@@ -1273,12 +1304,15 @@ public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
         defaultClient.setBasePath("http://localhost");
+        
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
 
         DefaultApi apiInstance = new DefaultApi(defaultClient);
-        String authorization = "authorization_example"; // String | 
         JpGetKycReq jpGetKycReq = new JpGetKycReq(); // JpGetKycReq | 
         try {
-            JpGetUnionResultRes result = apiInstance.v1IdvJpKycGetPost(authorization, jpGetKycReq);
+            JpGetUnionResultRes result = apiInstance.v1IdvJpKycGetPost(jpGetKycReq);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling DefaultApi#v1IdvJpKycGetPost");
@@ -1296,7 +1330,6 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **authorization** | **String**|  | [optional] |
 | **jpGetKycReq** | [**JpGetKycReq**](JpGetKycReq.md)|  | [optional] |
 
 ### Return type
@@ -1306,7 +1339,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -1321,7 +1354,7 @@ No authorization required
 
 ## v1IdvJpKycGetPostWithHttpInfo
 
-> ApiResponse<JpGetUnionResultRes> v1IdvJpKycGetPostWithHttpInfo(authorization, jpGetKycReq)
+> ApiResponse<JpGetUnionResultRes> v1IdvJpKycGetPostWithHttpInfo(jpGetKycReq)
 
 
 
@@ -1335,6 +1368,7 @@ import com.tomoarrow.idv.client.generated.ApiClient;
 import com.tomoarrow.idv.client.generated.ApiException;
 import com.tomoarrow.idv.client.generated.ApiResponse;
 import com.tomoarrow.idv.client.generated.Configuration;
+import com.tomoarrow.idv.client.generated.auth.*;
 import com.tomoarrow.idv.client.generated.models.*;
 import com.tomoarrow.idv.client.generated.api.DefaultApi;
 
@@ -1342,12 +1376,15 @@ public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
         defaultClient.setBasePath("http://localhost");
+        
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
 
         DefaultApi apiInstance = new DefaultApi(defaultClient);
-        String authorization = "authorization_example"; // String | 
         JpGetKycReq jpGetKycReq = new JpGetKycReq(); // JpGetKycReq | 
         try {
-            ApiResponse<JpGetUnionResultRes> response = apiInstance.v1IdvJpKycGetPostWithHttpInfo(authorization, jpGetKycReq);
+            ApiResponse<JpGetUnionResultRes> response = apiInstance.v1IdvJpKycGetPostWithHttpInfo(jpGetKycReq);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
@@ -1367,7 +1404,6 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **authorization** | **String**|  | [optional] |
 | **jpGetKycReq** | [**JpGetKycReq**](JpGetKycReq.md)|  | [optional] |
 
 ### Return type
@@ -1377,7 +1413,7 @@ ApiResponse<[**JpGetUnionResultRes**](JpGetUnionResultRes.md)>
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -1393,7 +1429,7 @@ No authorization required
 
 ## v1IdvJpStartPost
 
-> StartIdvRes v1IdvJpStartPost(authorization, jpStartIdvReq)
+> StartIdvRes v1IdvJpStartPost(jpStartIdvReq)
 
 
 
@@ -1406,6 +1442,7 @@ No authorization required
 import com.tomoarrow.idv.client.generated.ApiClient;
 import com.tomoarrow.idv.client.generated.ApiException;
 import com.tomoarrow.idv.client.generated.Configuration;
+import com.tomoarrow.idv.client.generated.auth.*;
 import com.tomoarrow.idv.client.generated.models.*;
 import com.tomoarrow.idv.client.generated.api.DefaultApi;
 
@@ -1413,12 +1450,15 @@ public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
         defaultClient.setBasePath("http://localhost");
+        
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
 
         DefaultApi apiInstance = new DefaultApi(defaultClient);
-        String authorization = "authorization_example"; // String | 
         JpStartIdvReq jpStartIdvReq = new JpStartIdvReq(); // JpStartIdvReq | 
         try {
-            StartIdvRes result = apiInstance.v1IdvJpStartPost(authorization, jpStartIdvReq);
+            StartIdvRes result = apiInstance.v1IdvJpStartPost(jpStartIdvReq);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling DefaultApi#v1IdvJpStartPost");
@@ -1436,7 +1476,6 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **authorization** | **String**|  | [optional] |
 | **jpStartIdvReq** | [**JpStartIdvReq**](JpStartIdvReq.md)|  | [optional] |
 
 ### Return type
@@ -1446,7 +1485,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -1461,7 +1500,7 @@ No authorization required
 
 ## v1IdvJpStartPostWithHttpInfo
 
-> ApiResponse<StartIdvRes> v1IdvJpStartPostWithHttpInfo(authorization, jpStartIdvReq)
+> ApiResponse<StartIdvRes> v1IdvJpStartPostWithHttpInfo(jpStartIdvReq)
 
 
 
@@ -1475,6 +1514,7 @@ import com.tomoarrow.idv.client.generated.ApiClient;
 import com.tomoarrow.idv.client.generated.ApiException;
 import com.tomoarrow.idv.client.generated.ApiResponse;
 import com.tomoarrow.idv.client.generated.Configuration;
+import com.tomoarrow.idv.client.generated.auth.*;
 import com.tomoarrow.idv.client.generated.models.*;
 import com.tomoarrow.idv.client.generated.api.DefaultApi;
 
@@ -1482,12 +1522,15 @@ public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
         defaultClient.setBasePath("http://localhost");
+        
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
 
         DefaultApi apiInstance = new DefaultApi(defaultClient);
-        String authorization = "authorization_example"; // String | 
         JpStartIdvReq jpStartIdvReq = new JpStartIdvReq(); // JpStartIdvReq | 
         try {
-            ApiResponse<StartIdvRes> response = apiInstance.v1IdvJpStartPostWithHttpInfo(authorization, jpStartIdvReq);
+            ApiResponse<StartIdvRes> response = apiInstance.v1IdvJpStartPostWithHttpInfo(jpStartIdvReq);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
@@ -1507,7 +1550,6 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **authorization** | **String**|  | [optional] |
 | **jpStartIdvReq** | [**JpStartIdvReq**](JpStartIdvReq.md)|  | [optional] |
 
 ### Return type
@@ -1517,7 +1559,7 @@ ApiResponse<[**StartIdvRes**](StartIdvRes.md)>
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -1533,7 +1575,7 @@ No authorization required
 
 ## v1IdvKycGetPost
 
-> GetKycRes v1IdvKycGetPost(authorization, getKycReq)
+> GetKycRes v1IdvKycGetPost(getKycReq)
 
 
 
@@ -1544,6 +1586,7 @@ No authorization required
 import com.tomoarrow.idv.client.generated.ApiClient;
 import com.tomoarrow.idv.client.generated.ApiException;
 import com.tomoarrow.idv.client.generated.Configuration;
+import com.tomoarrow.idv.client.generated.auth.*;
 import com.tomoarrow.idv.client.generated.models.*;
 import com.tomoarrow.idv.client.generated.api.DefaultApi;
 
@@ -1551,12 +1594,15 @@ public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
         defaultClient.setBasePath("http://localhost");
+        
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
 
         DefaultApi apiInstance = new DefaultApi(defaultClient);
-        String authorization = "authorization_example"; // String | 
         GetKycReq getKycReq = new GetKycReq(); // GetKycReq | 
         try {
-            GetKycRes result = apiInstance.v1IdvKycGetPost(authorization, getKycReq);
+            GetKycRes result = apiInstance.v1IdvKycGetPost(getKycReq);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling DefaultApi#v1IdvKycGetPost");
@@ -1574,7 +1620,6 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **authorization** | **String**|  | [optional] |
 | **getKycReq** | [**GetKycReq**](GetKycReq.md)|  | [optional] |
 
 ### Return type
@@ -1584,7 +1629,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -1599,7 +1644,7 @@ No authorization required
 
 ## v1IdvKycGetPostWithHttpInfo
 
-> ApiResponse<GetKycRes> v1IdvKycGetPostWithHttpInfo(authorization, getKycReq)
+> ApiResponse<GetKycRes> v1IdvKycGetPostWithHttpInfo(getKycReq)
 
 
 
@@ -1611,6 +1656,7 @@ import com.tomoarrow.idv.client.generated.ApiClient;
 import com.tomoarrow.idv.client.generated.ApiException;
 import com.tomoarrow.idv.client.generated.ApiResponse;
 import com.tomoarrow.idv.client.generated.Configuration;
+import com.tomoarrow.idv.client.generated.auth.*;
 import com.tomoarrow.idv.client.generated.models.*;
 import com.tomoarrow.idv.client.generated.api.DefaultApi;
 
@@ -1618,12 +1664,15 @@ public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
         defaultClient.setBasePath("http://localhost");
+        
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
 
         DefaultApi apiInstance = new DefaultApi(defaultClient);
-        String authorization = "authorization_example"; // String | 
         GetKycReq getKycReq = new GetKycReq(); // GetKycReq | 
         try {
-            ApiResponse<GetKycRes> response = apiInstance.v1IdvKycGetPostWithHttpInfo(authorization, getKycReq);
+            ApiResponse<GetKycRes> response = apiInstance.v1IdvKycGetPostWithHttpInfo(getKycReq);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
@@ -1643,7 +1692,6 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **authorization** | **String**|  | [optional] |
 | **getKycReq** | [**GetKycReq**](GetKycReq.md)|  | [optional] |
 
 ### Return type
@@ -1653,7 +1701,7 @@ ApiResponse<[**GetKycRes**](GetKycRes.md)>
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -1669,7 +1717,7 @@ No authorization required
 
 ## v1IdvResultPost
 
-> ResultRes v1IdvResultPost(authorization, resultReq)
+> ResultRes v1IdvResultPost(resultReq)
 
 
 
@@ -1680,6 +1728,7 @@ No authorization required
 import com.tomoarrow.idv.client.generated.ApiClient;
 import com.tomoarrow.idv.client.generated.ApiException;
 import com.tomoarrow.idv.client.generated.Configuration;
+import com.tomoarrow.idv.client.generated.auth.*;
 import com.tomoarrow.idv.client.generated.models.*;
 import com.tomoarrow.idv.client.generated.api.DefaultApi;
 
@@ -1687,12 +1736,15 @@ public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
         defaultClient.setBasePath("http://localhost");
+        
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
 
         DefaultApi apiInstance = new DefaultApi(defaultClient);
-        String authorization = "authorization_example"; // String | 
         ResultReq resultReq = new ResultReq(); // ResultReq | 
         try {
-            ResultRes result = apiInstance.v1IdvResultPost(authorization, resultReq);
+            ResultRes result = apiInstance.v1IdvResultPost(resultReq);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling DefaultApi#v1IdvResultPost");
@@ -1710,7 +1762,6 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **authorization** | **String**|  | [optional] |
 | **resultReq** | [**ResultReq**](ResultReq.md)|  | [optional] |
 
 ### Return type
@@ -1720,7 +1771,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -1735,7 +1786,7 @@ No authorization required
 
 ## v1IdvResultPostWithHttpInfo
 
-> ApiResponse<ResultRes> v1IdvResultPostWithHttpInfo(authorization, resultReq)
+> ApiResponse<ResultRes> v1IdvResultPostWithHttpInfo(resultReq)
 
 
 
@@ -1747,6 +1798,7 @@ import com.tomoarrow.idv.client.generated.ApiClient;
 import com.tomoarrow.idv.client.generated.ApiException;
 import com.tomoarrow.idv.client.generated.ApiResponse;
 import com.tomoarrow.idv.client.generated.Configuration;
+import com.tomoarrow.idv.client.generated.auth.*;
 import com.tomoarrow.idv.client.generated.models.*;
 import com.tomoarrow.idv.client.generated.api.DefaultApi;
 
@@ -1754,12 +1806,15 @@ public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
         defaultClient.setBasePath("http://localhost");
+        
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
 
         DefaultApi apiInstance = new DefaultApi(defaultClient);
-        String authorization = "authorization_example"; // String | 
         ResultReq resultReq = new ResultReq(); // ResultReq | 
         try {
-            ApiResponse<ResultRes> response = apiInstance.v1IdvResultPostWithHttpInfo(authorization, resultReq);
+            ApiResponse<ResultRes> response = apiInstance.v1IdvResultPostWithHttpInfo(resultReq);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
@@ -1779,7 +1834,6 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **authorization** | **String**|  | [optional] |
 | **resultReq** | [**ResultReq**](ResultReq.md)|  | [optional] |
 
 ### Return type
@@ -1789,7 +1843,7 @@ ApiResponse<[**ResultRes**](ResultRes.md)>
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -1805,7 +1859,7 @@ No authorization required
 
 ## v1IdvSessionsStartPost
 
-> SessionStartRes v1IdvSessionsStartPost(authorization, sessionStartReq)
+> SessionStartRes v1IdvSessionsStartPost(sessionStartReq)
 
 
 
@@ -1818,6 +1872,7 @@ No authorization required
 import com.tomoarrow.idv.client.generated.ApiClient;
 import com.tomoarrow.idv.client.generated.ApiException;
 import com.tomoarrow.idv.client.generated.Configuration;
+import com.tomoarrow.idv.client.generated.auth.*;
 import com.tomoarrow.idv.client.generated.models.*;
 import com.tomoarrow.idv.client.generated.api.DefaultApi;
 
@@ -1825,12 +1880,15 @@ public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
         defaultClient.setBasePath("http://localhost");
+        
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
 
         DefaultApi apiInstance = new DefaultApi(defaultClient);
-        String authorization = "authorization_example"; // String | 
         SessionStartReq sessionStartReq = new SessionStartReq(); // SessionStartReq | 
         try {
-            SessionStartRes result = apiInstance.v1IdvSessionsStartPost(authorization, sessionStartReq);
+            SessionStartRes result = apiInstance.v1IdvSessionsStartPost(sessionStartReq);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling DefaultApi#v1IdvSessionsStartPost");
@@ -1848,7 +1906,6 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **authorization** | **String**|  | [optional] |
 | **sessionStartReq** | [**SessionStartReq**](SessionStartReq.md)|  | [optional] |
 
 ### Return type
@@ -1858,7 +1915,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -1873,7 +1930,7 @@ No authorization required
 
 ## v1IdvSessionsStartPostWithHttpInfo
 
-> ApiResponse<SessionStartRes> v1IdvSessionsStartPostWithHttpInfo(authorization, sessionStartReq)
+> ApiResponse<SessionStartRes> v1IdvSessionsStartPostWithHttpInfo(sessionStartReq)
 
 
 
@@ -1887,6 +1944,7 @@ import com.tomoarrow.idv.client.generated.ApiClient;
 import com.tomoarrow.idv.client.generated.ApiException;
 import com.tomoarrow.idv.client.generated.ApiResponse;
 import com.tomoarrow.idv.client.generated.Configuration;
+import com.tomoarrow.idv.client.generated.auth.*;
 import com.tomoarrow.idv.client.generated.models.*;
 import com.tomoarrow.idv.client.generated.api.DefaultApi;
 
@@ -1894,12 +1952,15 @@ public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
         defaultClient.setBasePath("http://localhost");
+        
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
 
         DefaultApi apiInstance = new DefaultApi(defaultClient);
-        String authorization = "authorization_example"; // String | 
         SessionStartReq sessionStartReq = new SessionStartReq(); // SessionStartReq | 
         try {
-            ApiResponse<SessionStartRes> response = apiInstance.v1IdvSessionsStartPostWithHttpInfo(authorization, sessionStartReq);
+            ApiResponse<SessionStartRes> response = apiInstance.v1IdvSessionsStartPostWithHttpInfo(sessionStartReq);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
@@ -1919,7 +1980,6 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **authorization** | **String**|  | [optional] |
 | **sessionStartReq** | [**SessionStartReq**](SessionStartReq.md)|  | [optional] |
 
 ### Return type
@@ -1929,7 +1989,7 @@ ApiResponse<[**SessionStartRes**](SessionStartRes.md)>
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -1945,7 +2005,7 @@ No authorization required
 
 ## v1IdvStartPost
 
-> StartIdvRes v1IdvStartPost(authorization, startIdvReq)
+> StartIdvRes v1IdvStartPost(startIdvReq)
 
 
 
@@ -1956,6 +2016,7 @@ No authorization required
 import com.tomoarrow.idv.client.generated.ApiClient;
 import com.tomoarrow.idv.client.generated.ApiException;
 import com.tomoarrow.idv.client.generated.Configuration;
+import com.tomoarrow.idv.client.generated.auth.*;
 import com.tomoarrow.idv.client.generated.models.*;
 import com.tomoarrow.idv.client.generated.api.DefaultApi;
 
@@ -1963,12 +2024,15 @@ public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
         defaultClient.setBasePath("http://localhost");
+        
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
 
         DefaultApi apiInstance = new DefaultApi(defaultClient);
-        String authorization = "authorization_example"; // String | 
         StartIdvReq startIdvReq = new StartIdvReq(); // StartIdvReq | 
         try {
-            StartIdvRes result = apiInstance.v1IdvStartPost(authorization, startIdvReq);
+            StartIdvRes result = apiInstance.v1IdvStartPost(startIdvReq);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling DefaultApi#v1IdvStartPost");
@@ -1986,7 +2050,6 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **authorization** | **String**|  | [optional] |
 | **startIdvReq** | [**StartIdvReq**](StartIdvReq.md)|  | [optional] |
 
 ### Return type
@@ -1996,7 +2059,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -2011,7 +2074,7 @@ No authorization required
 
 ## v1IdvStartPostWithHttpInfo
 
-> ApiResponse<StartIdvRes> v1IdvStartPostWithHttpInfo(authorization, startIdvReq)
+> ApiResponse<StartIdvRes> v1IdvStartPostWithHttpInfo(startIdvReq)
 
 
 
@@ -2023,6 +2086,7 @@ import com.tomoarrow.idv.client.generated.ApiClient;
 import com.tomoarrow.idv.client.generated.ApiException;
 import com.tomoarrow.idv.client.generated.ApiResponse;
 import com.tomoarrow.idv.client.generated.Configuration;
+import com.tomoarrow.idv.client.generated.auth.*;
 import com.tomoarrow.idv.client.generated.models.*;
 import com.tomoarrow.idv.client.generated.api.DefaultApi;
 
@@ -2030,12 +2094,15 @@ public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
         defaultClient.setBasePath("http://localhost");
+        
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
 
         DefaultApi apiInstance = new DefaultApi(defaultClient);
-        String authorization = "authorization_example"; // String | 
         StartIdvReq startIdvReq = new StartIdvReq(); // StartIdvReq | 
         try {
-            ApiResponse<StartIdvRes> response = apiInstance.v1IdvStartPostWithHttpInfo(authorization, startIdvReq);
+            ApiResponse<StartIdvRes> response = apiInstance.v1IdvStartPostWithHttpInfo(startIdvReq);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
@@ -2055,7 +2122,6 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **authorization** | **String**|  | [optional] |
 | **startIdvReq** | [**StartIdvReq**](StartIdvReq.md)|  | [optional] |
 
 ### Return type
@@ -2065,7 +2131,7 @@ ApiResponse<[**StartIdvRes**](StartIdvRes.md)>
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -2207,7 +2273,7 @@ No authorization required
 
 ## v1IdvUkKycGetPost
 
-> UsGetUnionResultRes v1IdvUkKycGetPost(authorization, usGetKycReq)
+> UsGetUnionResultRes v1IdvUkKycGetPost(usGetKycReq)
 
 
 
@@ -2220,6 +2286,7 @@ No authorization required
 import com.tomoarrow.idv.client.generated.ApiClient;
 import com.tomoarrow.idv.client.generated.ApiException;
 import com.tomoarrow.idv.client.generated.Configuration;
+import com.tomoarrow.idv.client.generated.auth.*;
 import com.tomoarrow.idv.client.generated.models.*;
 import com.tomoarrow.idv.client.generated.api.DefaultApi;
 
@@ -2227,12 +2294,15 @@ public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
         defaultClient.setBasePath("http://localhost");
+        
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
 
         DefaultApi apiInstance = new DefaultApi(defaultClient);
-        String authorization = "authorization_example"; // String | 
         UsGetKycReq usGetKycReq = new UsGetKycReq(); // UsGetKycReq | 
         try {
-            UsGetUnionResultRes result = apiInstance.v1IdvUkKycGetPost(authorization, usGetKycReq);
+            UsGetUnionResultRes result = apiInstance.v1IdvUkKycGetPost(usGetKycReq);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling DefaultApi#v1IdvUkKycGetPost");
@@ -2250,7 +2320,6 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **authorization** | **String**|  | [optional] |
 | **usGetKycReq** | [**UsGetKycReq**](UsGetKycReq.md)|  | [optional] |
 
 ### Return type
@@ -2260,7 +2329,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -2275,7 +2344,7 @@ No authorization required
 
 ## v1IdvUkKycGetPostWithHttpInfo
 
-> ApiResponse<UsGetUnionResultRes> v1IdvUkKycGetPostWithHttpInfo(authorization, usGetKycReq)
+> ApiResponse<UsGetUnionResultRes> v1IdvUkKycGetPostWithHttpInfo(usGetKycReq)
 
 
 
@@ -2289,6 +2358,7 @@ import com.tomoarrow.idv.client.generated.ApiClient;
 import com.tomoarrow.idv.client.generated.ApiException;
 import com.tomoarrow.idv.client.generated.ApiResponse;
 import com.tomoarrow.idv.client.generated.Configuration;
+import com.tomoarrow.idv.client.generated.auth.*;
 import com.tomoarrow.idv.client.generated.models.*;
 import com.tomoarrow.idv.client.generated.api.DefaultApi;
 
@@ -2296,12 +2366,15 @@ public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
         defaultClient.setBasePath("http://localhost");
+        
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
 
         DefaultApi apiInstance = new DefaultApi(defaultClient);
-        String authorization = "authorization_example"; // String | 
         UsGetKycReq usGetKycReq = new UsGetKycReq(); // UsGetKycReq | 
         try {
-            ApiResponse<UsGetUnionResultRes> response = apiInstance.v1IdvUkKycGetPostWithHttpInfo(authorization, usGetKycReq);
+            ApiResponse<UsGetUnionResultRes> response = apiInstance.v1IdvUkKycGetPostWithHttpInfo(usGetKycReq);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
@@ -2321,7 +2394,6 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **authorization** | **String**|  | [optional] |
 | **usGetKycReq** | [**UsGetKycReq**](UsGetKycReq.md)|  | [optional] |
 
 ### Return type
@@ -2331,7 +2403,7 @@ ApiResponse<[**UsGetUnionResultRes**](UsGetUnionResultRes.md)>
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -2347,7 +2419,7 @@ No authorization required
 
 ## v1IdvUkStartPost
 
-> StartIdvRes v1IdvUkStartPost(authorization, ukStartIdvReq)
+> StartIdvRes v1IdvUkStartPost(ukStartIdvReq)
 
 
 
@@ -2360,6 +2432,7 @@ No authorization required
 import com.tomoarrow.idv.client.generated.ApiClient;
 import com.tomoarrow.idv.client.generated.ApiException;
 import com.tomoarrow.idv.client.generated.Configuration;
+import com.tomoarrow.idv.client.generated.auth.*;
 import com.tomoarrow.idv.client.generated.models.*;
 import com.tomoarrow.idv.client.generated.api.DefaultApi;
 
@@ -2367,12 +2440,15 @@ public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
         defaultClient.setBasePath("http://localhost");
+        
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
 
         DefaultApi apiInstance = new DefaultApi(defaultClient);
-        String authorization = "authorization_example"; // String | 
         UkStartIdvReq ukStartIdvReq = new UkStartIdvReq(); // UkStartIdvReq | 
         try {
-            StartIdvRes result = apiInstance.v1IdvUkStartPost(authorization, ukStartIdvReq);
+            StartIdvRes result = apiInstance.v1IdvUkStartPost(ukStartIdvReq);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling DefaultApi#v1IdvUkStartPost");
@@ -2390,7 +2466,6 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **authorization** | **String**|  | [optional] |
 | **ukStartIdvReq** | [**UkStartIdvReq**](UkStartIdvReq.md)|  | [optional] |
 
 ### Return type
@@ -2400,7 +2475,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -2415,7 +2490,7 @@ No authorization required
 
 ## v1IdvUkStartPostWithHttpInfo
 
-> ApiResponse<StartIdvRes> v1IdvUkStartPostWithHttpInfo(authorization, ukStartIdvReq)
+> ApiResponse<StartIdvRes> v1IdvUkStartPostWithHttpInfo(ukStartIdvReq)
 
 
 
@@ -2429,6 +2504,7 @@ import com.tomoarrow.idv.client.generated.ApiClient;
 import com.tomoarrow.idv.client.generated.ApiException;
 import com.tomoarrow.idv.client.generated.ApiResponse;
 import com.tomoarrow.idv.client.generated.Configuration;
+import com.tomoarrow.idv.client.generated.auth.*;
 import com.tomoarrow.idv.client.generated.models.*;
 import com.tomoarrow.idv.client.generated.api.DefaultApi;
 
@@ -2436,12 +2512,15 @@ public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
         defaultClient.setBasePath("http://localhost");
+        
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
 
         DefaultApi apiInstance = new DefaultApi(defaultClient);
-        String authorization = "authorization_example"; // String | 
         UkStartIdvReq ukStartIdvReq = new UkStartIdvReq(); // UkStartIdvReq | 
         try {
-            ApiResponse<StartIdvRes> response = apiInstance.v1IdvUkStartPostWithHttpInfo(authorization, ukStartIdvReq);
+            ApiResponse<StartIdvRes> response = apiInstance.v1IdvUkStartPostWithHttpInfo(ukStartIdvReq);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
@@ -2461,7 +2540,6 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **authorization** | **String**|  | [optional] |
 | **ukStartIdvReq** | [**UkStartIdvReq**](UkStartIdvReq.md)|  | [optional] |
 
 ### Return type
@@ -2471,7 +2549,7 @@ ApiResponse<[**StartIdvRes**](StartIdvRes.md)>
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -2613,7 +2691,7 @@ No authorization required
 
 ## v1IdvUsKycGetPost
 
-> UsGetUnionResultRes v1IdvUsKycGetPost(authorization, usGetKycReq)
+> UsGetUnionResultRes v1IdvUsKycGetPost(usGetKycReq)
 
 
 
@@ -2626,6 +2704,7 @@ No authorization required
 import com.tomoarrow.idv.client.generated.ApiClient;
 import com.tomoarrow.idv.client.generated.ApiException;
 import com.tomoarrow.idv.client.generated.Configuration;
+import com.tomoarrow.idv.client.generated.auth.*;
 import com.tomoarrow.idv.client.generated.models.*;
 import com.tomoarrow.idv.client.generated.api.DefaultApi;
 
@@ -2633,12 +2712,15 @@ public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
         defaultClient.setBasePath("http://localhost");
+        
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
 
         DefaultApi apiInstance = new DefaultApi(defaultClient);
-        String authorization = "authorization_example"; // String | 
         UsGetKycReq usGetKycReq = new UsGetKycReq(); // UsGetKycReq | 
         try {
-            UsGetUnionResultRes result = apiInstance.v1IdvUsKycGetPost(authorization, usGetKycReq);
+            UsGetUnionResultRes result = apiInstance.v1IdvUsKycGetPost(usGetKycReq);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling DefaultApi#v1IdvUsKycGetPost");
@@ -2656,7 +2738,6 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **authorization** | **String**|  | [optional] |
 | **usGetKycReq** | [**UsGetKycReq**](UsGetKycReq.md)|  | [optional] |
 
 ### Return type
@@ -2666,7 +2747,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -2681,7 +2762,7 @@ No authorization required
 
 ## v1IdvUsKycGetPostWithHttpInfo
 
-> ApiResponse<UsGetUnionResultRes> v1IdvUsKycGetPostWithHttpInfo(authorization, usGetKycReq)
+> ApiResponse<UsGetUnionResultRes> v1IdvUsKycGetPostWithHttpInfo(usGetKycReq)
 
 
 
@@ -2695,6 +2776,7 @@ import com.tomoarrow.idv.client.generated.ApiClient;
 import com.tomoarrow.idv.client.generated.ApiException;
 import com.tomoarrow.idv.client.generated.ApiResponse;
 import com.tomoarrow.idv.client.generated.Configuration;
+import com.tomoarrow.idv.client.generated.auth.*;
 import com.tomoarrow.idv.client.generated.models.*;
 import com.tomoarrow.idv.client.generated.api.DefaultApi;
 
@@ -2702,12 +2784,15 @@ public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
         defaultClient.setBasePath("http://localhost");
+        
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
 
         DefaultApi apiInstance = new DefaultApi(defaultClient);
-        String authorization = "authorization_example"; // String | 
         UsGetKycReq usGetKycReq = new UsGetKycReq(); // UsGetKycReq | 
         try {
-            ApiResponse<UsGetUnionResultRes> response = apiInstance.v1IdvUsKycGetPostWithHttpInfo(authorization, usGetKycReq);
+            ApiResponse<UsGetUnionResultRes> response = apiInstance.v1IdvUsKycGetPostWithHttpInfo(usGetKycReq);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
@@ -2727,7 +2812,6 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **authorization** | **String**|  | [optional] |
 | **usGetKycReq** | [**UsGetKycReq**](UsGetKycReq.md)|  | [optional] |
 
 ### Return type
@@ -2737,7 +2821,7 @@ ApiResponse<[**UsGetUnionResultRes**](UsGetUnionResultRes.md)>
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -2753,7 +2837,7 @@ No authorization required
 
 ## v1IdvUsStartPost
 
-> StartIdvRes v1IdvUsStartPost(authorization, usStartIdvReq)
+> StartIdvRes v1IdvUsStartPost(usStartIdvReq)
 
 
 
@@ -2766,6 +2850,7 @@ No authorization required
 import com.tomoarrow.idv.client.generated.ApiClient;
 import com.tomoarrow.idv.client.generated.ApiException;
 import com.tomoarrow.idv.client.generated.Configuration;
+import com.tomoarrow.idv.client.generated.auth.*;
 import com.tomoarrow.idv.client.generated.models.*;
 import com.tomoarrow.idv.client.generated.api.DefaultApi;
 
@@ -2773,12 +2858,15 @@ public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
         defaultClient.setBasePath("http://localhost");
+        
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
 
         DefaultApi apiInstance = new DefaultApi(defaultClient);
-        String authorization = "authorization_example"; // String | 
         UsStartIdvReq usStartIdvReq = new UsStartIdvReq(); // UsStartIdvReq | 
         try {
-            StartIdvRes result = apiInstance.v1IdvUsStartPost(authorization, usStartIdvReq);
+            StartIdvRes result = apiInstance.v1IdvUsStartPost(usStartIdvReq);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling DefaultApi#v1IdvUsStartPost");
@@ -2796,7 +2884,6 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **authorization** | **String**|  | [optional] |
 | **usStartIdvReq** | [**UsStartIdvReq**](UsStartIdvReq.md)|  | [optional] |
 
 ### Return type
@@ -2806,7 +2893,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -2821,7 +2908,7 @@ No authorization required
 
 ## v1IdvUsStartPostWithHttpInfo
 
-> ApiResponse<StartIdvRes> v1IdvUsStartPostWithHttpInfo(authorization, usStartIdvReq)
+> ApiResponse<StartIdvRes> v1IdvUsStartPostWithHttpInfo(usStartIdvReq)
 
 
 
@@ -2835,6 +2922,7 @@ import com.tomoarrow.idv.client.generated.ApiClient;
 import com.tomoarrow.idv.client.generated.ApiException;
 import com.tomoarrow.idv.client.generated.ApiResponse;
 import com.tomoarrow.idv.client.generated.Configuration;
+import com.tomoarrow.idv.client.generated.auth.*;
 import com.tomoarrow.idv.client.generated.models.*;
 import com.tomoarrow.idv.client.generated.api.DefaultApi;
 
@@ -2842,12 +2930,15 @@ public class Example {
     public static void main(String[] args) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
         defaultClient.setBasePath("http://localhost");
+        
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
 
         DefaultApi apiInstance = new DefaultApi(defaultClient);
-        String authorization = "authorization_example"; // String | 
         UsStartIdvReq usStartIdvReq = new UsStartIdvReq(); // UsStartIdvReq | 
         try {
-            ApiResponse<StartIdvRes> response = apiInstance.v1IdvUsStartPostWithHttpInfo(authorization, usStartIdvReq);
+            ApiResponse<StartIdvRes> response = apiInstance.v1IdvUsStartPostWithHttpInfo(usStartIdvReq);
             System.out.println("Status code: " + response.getStatusCode());
             System.out.println("Response headers: " + response.getHeaders());
             System.out.println("Response body: " + response.getData());
@@ -2867,7 +2958,6 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **authorization** | **String**|  | [optional] |
 | **usStartIdvReq** | [**UsStartIdvReq**](UsStartIdvReq.md)|  | [optional] |
 
 ### Return type
@@ -2877,7 +2967,7 @@ ApiResponse<[**StartIdvRes**](StartIdvRes.md)>
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 

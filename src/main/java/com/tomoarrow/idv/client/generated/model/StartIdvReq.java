@@ -39,12 +39,14 @@ import com.tomoarrow.idv.client.generated.ApiClient;
   StartIdvReq.JSON_PROPERTY_COUNTRY,
   StartIdvReq.JSON_PROPERTY_EMAIL,
   StartIdvReq.JSON_PROPERTY_KYC_POLICY,
-  StartIdvReq.JSON_PROPERTY_USER_ID
+  StartIdvReq.JSON_PROPERTY_REDIRECT_URL,
+  StartIdvReq.JSON_PROPERTY_USER_ID,
+  StartIdvReq.JSON_PROPERTY_WEBHOOK_URL
 })
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", comments = "Generator version: 7.21.0")
 public class StartIdvReq {
   public static final String JSON_PROPERTY_CALLBACK_URL = "callback_url";
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private String callbackUrl;
 
   public static final String JSON_PROPERTY_COUNTRY = "country";
@@ -59,14 +61,22 @@ public class StartIdvReq {
   @javax.annotation.Nullable
   private KycPolicy kycPolicy;
 
+  public static final String JSON_PROPERTY_REDIRECT_URL = "redirect_url";
+  @javax.annotation.Nullable
+  private String redirectUrl;
+
   public static final String JSON_PROPERTY_USER_ID = "user_id";
   @javax.annotation.Nullable
   private String userId;
 
+  public static final String JSON_PROPERTY_WEBHOOK_URL = "webhook_url";
+  @javax.annotation.Nullable
+  private String webhookUrl;
+
   public StartIdvReq() { 
   }
 
-  public StartIdvReq callbackUrl(@javax.annotation.Nonnull String callbackUrl) {
+  public StartIdvReq callbackUrl(@javax.annotation.Nullable String callbackUrl) {
     this.callbackUrl = callbackUrl;
     return this;
   }
@@ -75,17 +85,17 @@ public class StartIdvReq {
    * Get callbackUrl
    * @return callbackUrl
    */
-  @javax.annotation.Nonnull
-  @JsonProperty(value = JSON_PROPERTY_CALLBACK_URL, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @javax.annotation.Nullable
+  @JsonProperty(value = JSON_PROPERTY_CALLBACK_URL, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public String getCallbackUrl() {
     return callbackUrl;
   }
 
 
-  @JsonProperty(value = JSON_PROPERTY_CALLBACK_URL, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
-  public void setCallbackUrl(@javax.annotation.Nonnull String callbackUrl) {
+  @JsonProperty(value = JSON_PROPERTY_CALLBACK_URL, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setCallbackUrl(@javax.annotation.Nullable String callbackUrl) {
     this.callbackUrl = callbackUrl;
   }
 
@@ -162,6 +172,30 @@ public class StartIdvReq {
   }
 
 
+  public StartIdvReq redirectUrl(@javax.annotation.Nullable String redirectUrl) {
+    this.redirectUrl = redirectUrl;
+    return this;
+  }
+
+  /**
+   * Get redirectUrl
+   * @return redirectUrl
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(value = JSON_PROPERTY_REDIRECT_URL, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public String getRedirectUrl() {
+    return redirectUrl;
+  }
+
+
+  @JsonProperty(value = JSON_PROPERTY_REDIRECT_URL, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setRedirectUrl(@javax.annotation.Nullable String redirectUrl) {
+    this.redirectUrl = redirectUrl;
+  }
+
+
   public StartIdvReq userId(@javax.annotation.Nullable String userId) {
     this.userId = userId;
     return this;
@@ -186,6 +220,30 @@ public class StartIdvReq {
   }
 
 
+  public StartIdvReq webhookUrl(@javax.annotation.Nullable String webhookUrl) {
+    this.webhookUrl = webhookUrl;
+    return this;
+  }
+
+  /**
+   * Get webhookUrl
+   * @return webhookUrl
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(value = JSON_PROPERTY_WEBHOOK_URL, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public String getWebhookUrl() {
+    return webhookUrl;
+  }
+
+
+  @JsonProperty(value = JSON_PROPERTY_WEBHOOK_URL, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setWebhookUrl(@javax.annotation.Nullable String webhookUrl) {
+    this.webhookUrl = webhookUrl;
+  }
+
+
   /**
    * Return true if this StartIdvReq object is equal to o.
    */
@@ -202,12 +260,14 @@ public class StartIdvReq {
         Objects.equals(this.country, startIdvReq.country) &&
         Objects.equals(this.email, startIdvReq.email) &&
         Objects.equals(this.kycPolicy, startIdvReq.kycPolicy) &&
-        Objects.equals(this.userId, startIdvReq.userId);
+        Objects.equals(this.redirectUrl, startIdvReq.redirectUrl) &&
+        Objects.equals(this.userId, startIdvReq.userId) &&
+        Objects.equals(this.webhookUrl, startIdvReq.webhookUrl);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(callbackUrl, country, email, kycPolicy, userId);
+    return Objects.hash(callbackUrl, country, email, kycPolicy, redirectUrl, userId, webhookUrl);
   }
 
   @Override
@@ -218,7 +278,9 @@ public class StartIdvReq {
     sb.append("    country: ").append(toIndentedString(country)).append("\n");
     sb.append("    email: ").append(toIndentedString(email)).append("\n");
     sb.append("    kycPolicy: ").append(toIndentedString(kycPolicy)).append("\n");
+    sb.append("    redirectUrl: ").append(toIndentedString(redirectUrl)).append("\n");
     sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
+    sb.append("    webhookUrl: ").append(toIndentedString(webhookUrl)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -283,9 +345,19 @@ public class StartIdvReq {
       joiner.add(getKycPolicy().toUrlQueryString(prefix + "kyc_policy" + suffix));
     }
 
+    // add `redirect_url` to the URL query string
+    if (getRedirectUrl() != null) {
+      joiner.add(String.format(java.util.Locale.ROOT, "%sredirect_url%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getRedirectUrl()))));
+    }
+
     // add `user_id` to the URL query string
     if (getUserId() != null) {
       joiner.add(String.format(java.util.Locale.ROOT, "%suser_id%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getUserId()))));
+    }
+
+    // add `webhook_url` to the URL query string
+    if (getWebhookUrl() != null) {
+      joiner.add(String.format(java.util.Locale.ROOT, "%swebhook_url%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getWebhookUrl()))));
     }
 
     return joiner.toString();
