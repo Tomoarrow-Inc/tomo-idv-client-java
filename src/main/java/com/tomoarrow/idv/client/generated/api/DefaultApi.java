@@ -27,6 +27,10 @@ import com.tomoarrow.idv.client.generated.model.GetKycRes;
 import com.tomoarrow.idv.client.generated.model.JpGetKycReq;
 import com.tomoarrow.idv.client.generated.model.JpGetUnionResultRes;
 import com.tomoarrow.idv.client.generated.model.JpStartIdvReq;
+import com.tomoarrow.idv.client.generated.model.ResultBulkDeleteReq;
+import com.tomoarrow.idv.client.generated.model.ResultBulkDeleteRes;
+import com.tomoarrow.idv.client.generated.model.ResultDeleteReq;
+import com.tomoarrow.idv.client.generated.model.ResultDeleteRes;
 import com.tomoarrow.idv.client.generated.model.ResultReq;
 import com.tomoarrow.idv.client.generated.model.ResultRes;
 import com.tomoarrow.idv.client.generated.model.SessionStartReq;
@@ -1642,6 +1646,244 @@ public class DefaultApi {
 
     try {
       byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(getKycReq);
+      localVarRequestBuilder.method("POST", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
+    } catch (IOException e) {
+      throw new ApiException(e);
+    }
+    if (memberVarReadTimeout != null) {
+      localVarRequestBuilder.timeout(memberVarReadTimeout);
+    }
+    // Add custom headers if provided
+    localVarRequestBuilder = HttpRequestBuilderExtensions.withAdditionalHeaders(localVarRequestBuilder, headers);
+    if (memberVarInterceptor != null) {
+      memberVarInterceptor.accept(localVarRequestBuilder);
+    }
+    return localVarRequestBuilder;
+  }
+
+  /**
+   * 
+   * 
+   * @param resultBulkDeleteReq  (optional)
+   * @return ResultBulkDeleteRes
+   * @throws ApiException if fails to make API call
+   */
+  public ResultBulkDeleteRes v1IdvResultBulkDeletePost(@javax.annotation.Nullable ResultBulkDeleteReq resultBulkDeleteReq) throws ApiException {
+    return v1IdvResultBulkDeletePost(resultBulkDeleteReq, null);
+  }
+
+  /**
+   * 
+   * 
+   * @param resultBulkDeleteReq  (optional)
+   * @param headers Optional headers to include in the request
+   * @return ResultBulkDeleteRes
+   * @throws ApiException if fails to make API call
+   */
+  public ResultBulkDeleteRes v1IdvResultBulkDeletePost(@javax.annotation.Nullable ResultBulkDeleteReq resultBulkDeleteReq, Map<String, String> headers) throws ApiException {
+    ApiResponse<ResultBulkDeleteRes> localVarResponse = v1IdvResultBulkDeletePostWithHttpInfo(resultBulkDeleteReq, headers);
+    return localVarResponse.getData();
+  }
+
+  /**
+   * 
+   * 
+   * @param resultBulkDeleteReq  (optional)
+   * @return ApiResponse&lt;ResultBulkDeleteRes&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public ApiResponse<ResultBulkDeleteRes> v1IdvResultBulkDeletePostWithHttpInfo(@javax.annotation.Nullable ResultBulkDeleteReq resultBulkDeleteReq) throws ApiException {
+    return v1IdvResultBulkDeletePostWithHttpInfo(resultBulkDeleteReq, null);
+  }
+
+  /**
+   * 
+   * 
+   * @param resultBulkDeleteReq  (optional)
+   * @param headers Optional headers to include in the request
+   * @return ApiResponse&lt;ResultBulkDeleteRes&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public ApiResponse<ResultBulkDeleteRes> v1IdvResultBulkDeletePostWithHttpInfo(@javax.annotation.Nullable ResultBulkDeleteReq resultBulkDeleteReq, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = v1IdvResultBulkDeletePostRequestBuilder(resultBulkDeleteReq, headers);
+    try {
+      HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
+          localVarRequestBuilder.build(),
+          HttpResponse.BodyHandlers.ofInputStream());
+      if (memberVarResponseInterceptor != null) {
+        memberVarResponseInterceptor.accept(localVarResponse);
+      }
+      InputStream localVarResponseBody = null;
+      try {
+        if (localVarResponse.statusCode()/ 100 != 2) {
+          throw getApiException("v1IdvResultBulkDeletePost", localVarResponse);
+        }
+        localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
+        if (localVarResponseBody == null) {
+          return new ApiResponse<ResultBulkDeleteRes>(
+              localVarResponse.statusCode(),
+              localVarResponse.headers().map(),
+              null
+          );
+        }
+
+        
+        
+        String responseBody = new String(localVarResponseBody.readAllBytes());
+        ResultBulkDeleteRes responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<ResultBulkDeleteRes>() {});
+        
+
+        return new ApiResponse<ResultBulkDeleteRes>(
+            localVarResponse.statusCode(),
+            localVarResponse.headers().map(),
+            responseValue
+        );
+      } finally {
+        if (localVarResponseBody != null) {
+          localVarResponseBody.close();
+        }
+      }
+    } catch (IOException e) {
+      throw new ApiException(e);
+    }
+    catch (InterruptedException e) {
+      Thread.currentThread().interrupt();
+      throw new ApiException(e);
+    }
+  }
+
+  private HttpRequest.Builder v1IdvResultBulkDeletePostRequestBuilder(@javax.annotation.Nullable ResultBulkDeleteReq resultBulkDeleteReq, Map<String, String> headers) throws ApiException {
+
+    HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
+
+    String localVarPath = "/v1/idv/result/bulk-delete";
+
+    localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath));
+
+    localVarRequestBuilder.header("Content-Type", "application/json;charset=utf-8");
+    localVarRequestBuilder.header("Accept", "application/json;charset=utf-8");
+
+    try {
+      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(resultBulkDeleteReq);
+      localVarRequestBuilder.method("POST", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
+    } catch (IOException e) {
+      throw new ApiException(e);
+    }
+    if (memberVarReadTimeout != null) {
+      localVarRequestBuilder.timeout(memberVarReadTimeout);
+    }
+    // Add custom headers if provided
+    localVarRequestBuilder = HttpRequestBuilderExtensions.withAdditionalHeaders(localVarRequestBuilder, headers);
+    if (memberVarInterceptor != null) {
+      memberVarInterceptor.accept(localVarRequestBuilder);
+    }
+    return localVarRequestBuilder;
+  }
+
+  /**
+   * 
+   * 
+   * @param resultDeleteReq  (optional)
+   * @return ResultDeleteRes
+   * @throws ApiException if fails to make API call
+   */
+  public ResultDeleteRes v1IdvResultDeletePost(@javax.annotation.Nullable ResultDeleteReq resultDeleteReq) throws ApiException {
+    return v1IdvResultDeletePost(resultDeleteReq, null);
+  }
+
+  /**
+   * 
+   * 
+   * @param resultDeleteReq  (optional)
+   * @param headers Optional headers to include in the request
+   * @return ResultDeleteRes
+   * @throws ApiException if fails to make API call
+   */
+  public ResultDeleteRes v1IdvResultDeletePost(@javax.annotation.Nullable ResultDeleteReq resultDeleteReq, Map<String, String> headers) throws ApiException {
+    ApiResponse<ResultDeleteRes> localVarResponse = v1IdvResultDeletePostWithHttpInfo(resultDeleteReq, headers);
+    return localVarResponse.getData();
+  }
+
+  /**
+   * 
+   * 
+   * @param resultDeleteReq  (optional)
+   * @return ApiResponse&lt;ResultDeleteRes&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public ApiResponse<ResultDeleteRes> v1IdvResultDeletePostWithHttpInfo(@javax.annotation.Nullable ResultDeleteReq resultDeleteReq) throws ApiException {
+    return v1IdvResultDeletePostWithHttpInfo(resultDeleteReq, null);
+  }
+
+  /**
+   * 
+   * 
+   * @param resultDeleteReq  (optional)
+   * @param headers Optional headers to include in the request
+   * @return ApiResponse&lt;ResultDeleteRes&gt;
+   * @throws ApiException if fails to make API call
+   */
+  public ApiResponse<ResultDeleteRes> v1IdvResultDeletePostWithHttpInfo(@javax.annotation.Nullable ResultDeleteReq resultDeleteReq, Map<String, String> headers) throws ApiException {
+    HttpRequest.Builder localVarRequestBuilder = v1IdvResultDeletePostRequestBuilder(resultDeleteReq, headers);
+    try {
+      HttpResponse<InputStream> localVarResponse = memberVarHttpClient.send(
+          localVarRequestBuilder.build(),
+          HttpResponse.BodyHandlers.ofInputStream());
+      if (memberVarResponseInterceptor != null) {
+        memberVarResponseInterceptor.accept(localVarResponse);
+      }
+      InputStream localVarResponseBody = null;
+      try {
+        if (localVarResponse.statusCode()/ 100 != 2) {
+          throw getApiException("v1IdvResultDeletePost", localVarResponse);
+        }
+        localVarResponseBody = ApiClient.getResponseBody(localVarResponse);
+        if (localVarResponseBody == null) {
+          return new ApiResponse<ResultDeleteRes>(
+              localVarResponse.statusCode(),
+              localVarResponse.headers().map(),
+              null
+          );
+        }
+
+        
+        
+        String responseBody = new String(localVarResponseBody.readAllBytes());
+        ResultDeleteRes responseValue = responseBody.isBlank()? null: memberVarObjectMapper.readValue(responseBody, new TypeReference<ResultDeleteRes>() {});
+        
+
+        return new ApiResponse<ResultDeleteRes>(
+            localVarResponse.statusCode(),
+            localVarResponse.headers().map(),
+            responseValue
+        );
+      } finally {
+        if (localVarResponseBody != null) {
+          localVarResponseBody.close();
+        }
+      }
+    } catch (IOException e) {
+      throw new ApiException(e);
+    }
+    catch (InterruptedException e) {
+      Thread.currentThread().interrupt();
+      throw new ApiException(e);
+    }
+  }
+
+  private HttpRequest.Builder v1IdvResultDeletePostRequestBuilder(@javax.annotation.Nullable ResultDeleteReq resultDeleteReq, Map<String, String> headers) throws ApiException {
+
+    HttpRequest.Builder localVarRequestBuilder = HttpRequest.newBuilder();
+
+    String localVarPath = "/v1/idv/result/delete";
+
+    localVarRequestBuilder.uri(URI.create(memberVarBaseUri + localVarPath));
+
+    localVarRequestBuilder.header("Content-Type", "application/json;charset=utf-8");
+    localVarRequestBuilder.header("Accept", "application/json;charset=utf-8");
+
+    try {
+      byte[] localVarPostBody = memberVarObjectMapper.writeValueAsBytes(resultDeleteReq);
       localVarRequestBuilder.method("POST", HttpRequest.BodyPublishers.ofByteArray(localVarPostBody));
     } catch (IOException e) {
       throw new ApiException(e);

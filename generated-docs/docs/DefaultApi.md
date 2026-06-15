@@ -28,6 +28,10 @@ All URIs are relative to *http://localhost*
 | [**v1IdvJpStartPostWithHttpInfo**](DefaultApi.md#v1IdvJpStartPostWithHttpInfo) | **POST** /v1/idv/jp/start |  |
 | [**v1IdvKycGetPost**](DefaultApi.md#v1IdvKycGetPost) | **POST** /v1/idv/kyc/get |  |
 | [**v1IdvKycGetPostWithHttpInfo**](DefaultApi.md#v1IdvKycGetPostWithHttpInfo) | **POST** /v1/idv/kyc/get |  |
+| [**v1IdvResultBulkDeletePost**](DefaultApi.md#v1IdvResultBulkDeletePost) | **POST** /v1/idv/result/bulk-delete |  |
+| [**v1IdvResultBulkDeletePostWithHttpInfo**](DefaultApi.md#v1IdvResultBulkDeletePostWithHttpInfo) | **POST** /v1/idv/result/bulk-delete |  |
+| [**v1IdvResultDeletePost**](DefaultApi.md#v1IdvResultDeletePost) | **POST** /v1/idv/result/delete |  |
+| [**v1IdvResultDeletePostWithHttpInfo**](DefaultApi.md#v1IdvResultDeletePostWithHttpInfo) | **POST** /v1/idv/result/delete |  |
 | [**v1IdvResultPost**](DefaultApi.md#v1IdvResultPost) | **POST** /v1/idv/result |  |
 | [**v1IdvResultPostWithHttpInfo**](DefaultApi.md#v1IdvResultPostWithHttpInfo) | **POST** /v1/idv/result |  |
 | [**v1IdvSessionsStartPost**](DefaultApi.md#v1IdvSessionsStartPost) | **POST** /v1/idv/sessions/start |  |
@@ -1697,6 +1701,290 @@ public class Example {
 ### Return type
 
 ApiResponse<[**GetKycRes**](GetKycRes.md)>
+
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json;charset=utf-8
+- **Accept**: application/json;charset=utf-8
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** |  |  -  |
+| **400** | Invalid &#x60;body&#x60; or &#x60;Authorization&#x60; |  -  |
+
+
+## v1IdvResultBulkDeletePost
+
+> ResultBulkDeleteRes v1IdvResultBulkDeletePost(resultBulkDeleteReq)
+
+
+
+### Example
+
+```java
+// Import classes:
+import com.tomoarrow.idv.client.generated.ApiClient;
+import com.tomoarrow.idv.client.generated.ApiException;
+import com.tomoarrow.idv.client.generated.Configuration;
+import com.tomoarrow.idv.client.generated.auth.*;
+import com.tomoarrow.idv.client.generated.models.*;
+import com.tomoarrow.idv.client.generated.api.DefaultApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("http://localhost");
+        
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        DefaultApi apiInstance = new DefaultApi(defaultClient);
+        ResultBulkDeleteReq resultBulkDeleteReq = new ResultBulkDeleteReq(); // ResultBulkDeleteReq | 
+        try {
+            ResultBulkDeleteRes result = apiInstance.v1IdvResultBulkDeletePost(resultBulkDeleteReq);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling DefaultApi#v1IdvResultBulkDeletePost");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **resultBulkDeleteReq** | [**ResultBulkDeleteReq**](ResultBulkDeleteReq.md)|  | [optional] |
+
+### Return type
+
+[**ResultBulkDeleteRes**](ResultBulkDeleteRes.md)
+
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json;charset=utf-8
+- **Accept**: application/json;charset=utf-8
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** |  |  -  |
+| **400** | Invalid &#x60;body&#x60; or &#x60;Authorization&#x60; |  -  |
+
+## v1IdvResultBulkDeletePostWithHttpInfo
+
+> ApiResponse<ResultBulkDeleteRes> v1IdvResultBulkDeletePostWithHttpInfo(resultBulkDeleteReq)
+
+
+
+### Example
+
+```java
+// Import classes:
+import com.tomoarrow.idv.client.generated.ApiClient;
+import com.tomoarrow.idv.client.generated.ApiException;
+import com.tomoarrow.idv.client.generated.ApiResponse;
+import com.tomoarrow.idv.client.generated.Configuration;
+import com.tomoarrow.idv.client.generated.auth.*;
+import com.tomoarrow.idv.client.generated.models.*;
+import com.tomoarrow.idv.client.generated.api.DefaultApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("http://localhost");
+        
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        DefaultApi apiInstance = new DefaultApi(defaultClient);
+        ResultBulkDeleteReq resultBulkDeleteReq = new ResultBulkDeleteReq(); // ResultBulkDeleteReq | 
+        try {
+            ApiResponse<ResultBulkDeleteRes> response = apiInstance.v1IdvResultBulkDeletePostWithHttpInfo(resultBulkDeleteReq);
+            System.out.println("Status code: " + response.getStatusCode());
+            System.out.println("Response headers: " + response.getHeaders());
+            System.out.println("Response body: " + response.getData());
+        } catch (ApiException e) {
+            System.err.println("Exception when calling DefaultApi#v1IdvResultBulkDeletePost");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            System.err.println("Reason: " + e.getResponseBody());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **resultBulkDeleteReq** | [**ResultBulkDeleteReq**](ResultBulkDeleteReq.md)|  | [optional] |
+
+### Return type
+
+ApiResponse<[**ResultBulkDeleteRes**](ResultBulkDeleteRes.md)>
+
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json;charset=utf-8
+- **Accept**: application/json;charset=utf-8
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** |  |  -  |
+| **400** | Invalid &#x60;body&#x60; or &#x60;Authorization&#x60; |  -  |
+
+
+## v1IdvResultDeletePost
+
+> ResultDeleteRes v1IdvResultDeletePost(resultDeleteReq)
+
+
+
+### Example
+
+```java
+// Import classes:
+import com.tomoarrow.idv.client.generated.ApiClient;
+import com.tomoarrow.idv.client.generated.ApiException;
+import com.tomoarrow.idv.client.generated.Configuration;
+import com.tomoarrow.idv.client.generated.auth.*;
+import com.tomoarrow.idv.client.generated.models.*;
+import com.tomoarrow.idv.client.generated.api.DefaultApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("http://localhost");
+        
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        DefaultApi apiInstance = new DefaultApi(defaultClient);
+        ResultDeleteReq resultDeleteReq = new ResultDeleteReq(); // ResultDeleteReq | 
+        try {
+            ResultDeleteRes result = apiInstance.v1IdvResultDeletePost(resultDeleteReq);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling DefaultApi#v1IdvResultDeletePost");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Reason: " + e.getResponseBody());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **resultDeleteReq** | [**ResultDeleteReq**](ResultDeleteReq.md)|  | [optional] |
+
+### Return type
+
+[**ResultDeleteRes**](ResultDeleteRes.md)
+
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json;charset=utf-8
+- **Accept**: application/json;charset=utf-8
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** |  |  -  |
+| **400** | Invalid &#x60;body&#x60; or &#x60;Authorization&#x60; |  -  |
+
+## v1IdvResultDeletePostWithHttpInfo
+
+> ApiResponse<ResultDeleteRes> v1IdvResultDeletePostWithHttpInfo(resultDeleteReq)
+
+
+
+### Example
+
+```java
+// Import classes:
+import com.tomoarrow.idv.client.generated.ApiClient;
+import com.tomoarrow.idv.client.generated.ApiException;
+import com.tomoarrow.idv.client.generated.ApiResponse;
+import com.tomoarrow.idv.client.generated.Configuration;
+import com.tomoarrow.idv.client.generated.auth.*;
+import com.tomoarrow.idv.client.generated.models.*;
+import com.tomoarrow.idv.client.generated.api.DefaultApi;
+
+public class Example {
+    public static void main(String[] args) {
+        ApiClient defaultClient = Configuration.getDefaultApiClient();
+        defaultClient.setBasePath("http://localhost");
+        
+        // Configure HTTP bearer authorization: bearerAuth
+        HttpBearerAuth bearerAuth = (HttpBearerAuth) defaultClient.getAuthentication("bearerAuth");
+        bearerAuth.setBearerToken("BEARER TOKEN");
+
+        DefaultApi apiInstance = new DefaultApi(defaultClient);
+        ResultDeleteReq resultDeleteReq = new ResultDeleteReq(); // ResultDeleteReq | 
+        try {
+            ApiResponse<ResultDeleteRes> response = apiInstance.v1IdvResultDeletePostWithHttpInfo(resultDeleteReq);
+            System.out.println("Status code: " + response.getStatusCode());
+            System.out.println("Response headers: " + response.getHeaders());
+            System.out.println("Response body: " + response.getData());
+        } catch (ApiException e) {
+            System.err.println("Exception when calling DefaultApi#v1IdvResultDeletePost");
+            System.err.println("Status code: " + e.getCode());
+            System.err.println("Response headers: " + e.getResponseHeaders());
+            System.err.println("Reason: " + e.getResponseBody());
+            e.printStackTrace();
+        }
+    }
+}
+```
+
+### Parameters
+
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **resultDeleteReq** | [**ResultDeleteReq**](ResultDeleteReq.md)|  | [optional] |
+
+### Return type
+
+ApiResponse<[**ResultDeleteRes**](ResultDeleteRes.md)>
 
 
 ### Authorization

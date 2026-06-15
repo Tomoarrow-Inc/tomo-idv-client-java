@@ -258,6 +258,48 @@ paths:
       x-content-type: application/json;charset=utf-8
       x-accepts:
       - application/json;charset=utf-8
+  /v1/idv/result/bulk-delete:
+    post:
+      requestBody:
+        content:
+          application/json;charset=utf-8:
+            schema:
+              $ref: "#/components/schemas/ResultBulkDeleteReq"
+      responses:
+        "200":
+          content:
+            application/json;charset=utf-8:
+              schema:
+                $ref: "#/components/schemas/ResultBulkDeleteRes"
+          description: ""
+        "400":
+          description: Invalid `body` or `Authorization`
+      security:
+      - bearerAuth: []
+      x-content-type: application/json;charset=utf-8
+      x-accepts:
+      - application/json;charset=utf-8
+  /v1/idv/result/delete:
+    post:
+      requestBody:
+        content:
+          application/json;charset=utf-8:
+            schema:
+              $ref: "#/components/schemas/ResultDeleteReq"
+      responses:
+        "200":
+          content:
+            application/json;charset=utf-8:
+              schema:
+                $ref: "#/components/schemas/ResultDeleteRes"
+          description: ""
+        "400":
+          description: Invalid `body` or `Authorization`
+      security:
+      - bearerAuth: []
+      x-content-type: application/json;charset=utf-8
+      x-accepts:
+      - application/json;charset=utf-8
   /v1/idv/sessions/start:
     post:
       deprecated: true
@@ -813,6 +855,55 @@ components:
       required:
       - type
       type: object
+    ResultBulkDeleteReq:
+      example:
+        user_ids:
+        - user_ids
+        - user_ids
+      properties:
+        user_ids:
+          items:
+            type: string
+          type: array
+      required:
+      - user_ids
+      type: object
+    ResultBulkDeleteRes:
+      example:
+        results:
+        - status: deleted
+        - status: deleted
+      properties:
+        results:
+          items:
+            $ref: "#/components/schemas/ResultDeleteRes"
+          type: array
+      required:
+      - results
+      type: object
+    ResultDeleteReq:
+      example:
+        user_id: user_id
+      properties:
+        user_id:
+          type: string
+      required:
+      - user_id
+      type: object
+    ResultDeleteRes:
+      example:
+        status: deleted
+      properties:
+        status:
+          $ref: "#/components/schemas/ResultDeleteStatus"
+      required:
+      - status
+      type: object
+    ResultDeleteStatus:
+      enum:
+      - deleted
+      - not_deletable
+      type: string
     ResultRecord:
       example:
         result:
