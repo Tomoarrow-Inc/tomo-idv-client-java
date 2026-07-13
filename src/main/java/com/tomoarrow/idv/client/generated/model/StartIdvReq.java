@@ -39,7 +39,8 @@ import com.tomoarrow.idv.client.generated.ApiClient;
   StartIdvReq.JSON_PROPERTY_COUNTRY,
   StartIdvReq.JSON_PROPERTY_EMAIL,
   StartIdvReq.JSON_PROPERTY_KYC_POLICY,
-  StartIdvReq.JSON_PROPERTY_REDIRECT_URL,
+  StartIdvReq.JSON_PROPERTY_REDIRECT_URL_FAIL,
+  StartIdvReq.JSON_PROPERTY_REDIRECT_URL_SUCCESS,
   StartIdvReq.JSON_PROPERTY_USER_ID,
   StartIdvReq.JSON_PROPERTY_WEBHOOK_URL
 })
@@ -61,9 +62,13 @@ public class StartIdvReq {
   @javax.annotation.Nullable
   private KycPolicy kycPolicy;
 
-  public static final String JSON_PROPERTY_REDIRECT_URL = "redirect_url";
+  public static final String JSON_PROPERTY_REDIRECT_URL_FAIL = "redirect_url_fail";
   @javax.annotation.Nullable
-  private String redirectUrl;
+  private String redirectUrlFail;
+
+  public static final String JSON_PROPERTY_REDIRECT_URL_SUCCESS = "redirect_url_success";
+  @javax.annotation.Nullable
+  private String redirectUrlSuccess;
 
   public static final String JSON_PROPERTY_USER_ID = "user_id";
   @javax.annotation.Nullable
@@ -172,27 +177,51 @@ public class StartIdvReq {
   }
 
 
-  public StartIdvReq redirectUrl(@javax.annotation.Nullable String redirectUrl) {
-    this.redirectUrl = redirectUrl;
+  public StartIdvReq redirectUrlFail(@javax.annotation.Nullable String redirectUrlFail) {
+    this.redirectUrlFail = redirectUrlFail;
     return this;
   }
 
   /**
-   * Get redirectUrl
-   * @return redirectUrl
+   * Get redirectUrlFail
+   * @return redirectUrlFail
    */
   @javax.annotation.Nullable
-  @JsonProperty(value = JSON_PROPERTY_REDIRECT_URL, required = false)
+  @JsonProperty(value = JSON_PROPERTY_REDIRECT_URL_FAIL, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public String getRedirectUrl() {
-    return redirectUrl;
+  public String getRedirectUrlFail() {
+    return redirectUrlFail;
   }
 
 
-  @JsonProperty(value = JSON_PROPERTY_REDIRECT_URL, required = false)
+  @JsonProperty(value = JSON_PROPERTY_REDIRECT_URL_FAIL, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
-  public void setRedirectUrl(@javax.annotation.Nullable String redirectUrl) {
-    this.redirectUrl = redirectUrl;
+  public void setRedirectUrlFail(@javax.annotation.Nullable String redirectUrlFail) {
+    this.redirectUrlFail = redirectUrlFail;
+  }
+
+
+  public StartIdvReq redirectUrlSuccess(@javax.annotation.Nullable String redirectUrlSuccess) {
+    this.redirectUrlSuccess = redirectUrlSuccess;
+    return this;
+  }
+
+  /**
+   * Get redirectUrlSuccess
+   * @return redirectUrlSuccess
+   */
+  @javax.annotation.Nullable
+  @JsonProperty(value = JSON_PROPERTY_REDIRECT_URL_SUCCESS, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public String getRedirectUrlSuccess() {
+    return redirectUrlSuccess;
+  }
+
+
+  @JsonProperty(value = JSON_PROPERTY_REDIRECT_URL_SUCCESS, required = false)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  public void setRedirectUrlSuccess(@javax.annotation.Nullable String redirectUrlSuccess) {
+    this.redirectUrlSuccess = redirectUrlSuccess;
   }
 
 
@@ -260,14 +289,15 @@ public class StartIdvReq {
         Objects.equals(this.country, startIdvReq.country) &&
         Objects.equals(this.email, startIdvReq.email) &&
         Objects.equals(this.kycPolicy, startIdvReq.kycPolicy) &&
-        Objects.equals(this.redirectUrl, startIdvReq.redirectUrl) &&
+        Objects.equals(this.redirectUrlFail, startIdvReq.redirectUrlFail) &&
+        Objects.equals(this.redirectUrlSuccess, startIdvReq.redirectUrlSuccess) &&
         Objects.equals(this.userId, startIdvReq.userId) &&
         Objects.equals(this.webhookUrl, startIdvReq.webhookUrl);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(callbackUrl, country, email, kycPolicy, redirectUrl, userId, webhookUrl);
+    return Objects.hash(callbackUrl, country, email, kycPolicy, redirectUrlFail, redirectUrlSuccess, userId, webhookUrl);
   }
 
   @Override
@@ -278,7 +308,8 @@ public class StartIdvReq {
     sb.append("    country: ").append(toIndentedString(country)).append("\n");
     sb.append("    email: ").append(toIndentedString(email)).append("\n");
     sb.append("    kycPolicy: ").append(toIndentedString(kycPolicy)).append("\n");
-    sb.append("    redirectUrl: ").append(toIndentedString(redirectUrl)).append("\n");
+    sb.append("    redirectUrlFail: ").append(toIndentedString(redirectUrlFail)).append("\n");
+    sb.append("    redirectUrlSuccess: ").append(toIndentedString(redirectUrlSuccess)).append("\n");
     sb.append("    userId: ").append(toIndentedString(userId)).append("\n");
     sb.append("    webhookUrl: ").append(toIndentedString(webhookUrl)).append("\n");
     sb.append("}");
@@ -345,9 +376,14 @@ public class StartIdvReq {
       joiner.add(getKycPolicy().toUrlQueryString(prefix + "kyc_policy" + suffix));
     }
 
-    // add `redirect_url` to the URL query string
-    if (getRedirectUrl() != null) {
-      joiner.add(String.format(java.util.Locale.ROOT, "%sredirect_url%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getRedirectUrl()))));
+    // add `redirect_url_fail` to the URL query string
+    if (getRedirectUrlFail() != null) {
+      joiner.add(String.format(java.util.Locale.ROOT, "%sredirect_url_fail%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getRedirectUrlFail()))));
+    }
+
+    // add `redirect_url_success` to the URL query string
+    if (getRedirectUrlSuccess() != null) {
+      joiner.add(String.format(java.util.Locale.ROOT, "%sredirect_url_success%s=%s", prefix, suffix, ApiClient.urlEncode(ApiClient.valueToString(getRedirectUrlSuccess()))));
     }
 
     // add `user_id` to the URL query string

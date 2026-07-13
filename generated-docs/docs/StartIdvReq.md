@@ -11,7 +11,8 @@
 |**country** | **Country** |  |  [optional] |
 |**email** | **String** |  |  [optional] |
 |**kycPolicy** | [**KycPolicy**](KycPolicy.md) |  |  [optional] |
-|**redirectUrl** | **String** |  |  [optional] |
+|**redirectUrlFail** | **String** |  |  [optional] |
+|**redirectUrlSuccess** | **String** |  |  [optional] |
 |**userId** | **String** |  |  [optional] |
 |**webhookUrl** | **String** |  |  [optional] |
 

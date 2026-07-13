@@ -604,46 +604,104 @@ components:
       type: object
     Country:
       enum:
-      - ar
-      - au
+      - al
+      - ad
+      - am
       - at
+      - by
       - be
-      - br
-      - ca
-      - cl
-      - cn
-      - co
+      - ba
+      - bg
+      - hr
+      - cy
       - cz
       - dk
+      - ee
+      - fo
       - fi
       - fr
+      - ge
       - de
       - gi
-      - hk
-      - in
+      - gr
+      - gl
+      - gg
+      - hu
+      - is
       - ie
+      - im
       - it
-      - jp
-      - ke
+      - je
+      - xk
+      - lv
+      - li
+      - lt
       - lu
-      - my
-      - mx
+      - mt
+      - md
+      - mc
+      - me
       - nl
-      - nz
-      - ng
+      - mk
       - "no"
-      - ph
       - pl
       - pt
-      - sg
+      - ro
+      - sm
+      - rs
       - sk
-      - za
+      - si
       - es
       - se
       - ch
       - tr
+      - ua
       - gb
+      - va
+      - ca
+      - mx
       - us
+      - ai
+      - ag
+      - aw
+      - bs
+      - bb
+      - bz
+      - bm
+      - vg
+      - ky
+      - cr
+      - cw
+      - dm
+      - do
+      - sv
+      - gd
+      - gt
+      - ht
+      - hn
+      - jm
+      - ms
+      - ni
+      - pa
+      - kn
+      - lc
+      - mf
+      - vc
+      - tt
+      - tc
+      - bq
+      - ar
+      - bo
+      - br
+      - cl
+      - co
+      - ec
+      - gy
+      - py
+      - pe
+      - sr
+      - uy
+      - ve
       - af
       - az
       - bh
@@ -651,9 +709,13 @@ components:
       - bt
       - bn
       - kh
+      - cn
+      - hk
+      - in
       - id
       - iq
       - il
+      - jp
       - jo
       - kz
       - kw
@@ -661,6 +723,7 @@ components:
       - la
       - lb
       - mo
+      - my
       - mv
       - mn
       - mm
@@ -668,9 +731,11 @@ components:
       - om
       - pk
       - ps
+      - ph
       - qa
       - ru
       - sa
+      - sg
       - kr
       - lk
       - tw
@@ -681,12 +746,79 @@ components:
       - uz
       - vn
       - ye
+      - au
+      - ck
+      - fj
+      - pf
+      - ki
+      - nr
+      - nz
+      - nu
+      - pg
+      - ws
+      - sb
+      - tl
+      - to
+      - tv
+      - vu
+      - dz
+      - ao
+      - bj
+      - bw
+      - bf
+      - bi
+      - cm
+      - cv
+      - cf
+      - td
+      - km
+      - cg
+      - ci
+      - dj
+      - eg
+      - er
+      - sz
+      - et
+      - ga
+      - gm
+      - gh
+      - gn
+      - gw
+      - ke
+      - ls
+      - lr
+      - mg
+      - mw
+      - ml
+      - mr
+      - mu
+      - ma
+      - mz
+      - na
+      - ne
+      - ng
+      - rw
+      - sn
+      - sc
+      - sl
+      - so
+      - za
+      - ss
+      - sd
+      - st
+      - tz
+      - tg
+      - tn
+      - ug
+      - eh
+      - zm
+      - zw
       - uk
       - unknown
       type: string
     GetKycReq:
       example:
-        country: ar
+        country: al
         user_id: user_id
       properties:
         country:
@@ -940,7 +1072,7 @@ components:
       type: object
     ResultReq:
       example:
-        country: ar
+        country: al
         user_id: user_id
         policy:
           method: method
@@ -1028,7 +1160,7 @@ components:
           owner_assurance: "{}"
           subject: "{}"
           preset: preset
-        country: ar
+        country: al
         webhook_url: webhook_url
         user_id: user_id
         email: email
@@ -1078,11 +1210,12 @@ components:
           owner_assurance: "{}"
           subject: "{}"
           preset: preset
-        country: ar
+        redirect_url_fail: redirect_url_fail
+        country: al
         webhook_url: webhook_url
         user_id: user_id
+        redirect_url_success: redirect_url_success
         email: email
-        redirect_url: redirect_url
       properties:
         callback_url:
           type: string
@@ -1092,7 +1225,9 @@ components:
           type: string
         kyc_policy:
           $ref: "#/components/schemas/KycPolicy"
-        redirect_url:
+        redirect_url_fail:
+          type: string
+        redirect_url_success:
           type: string
         user_id:
           type: string

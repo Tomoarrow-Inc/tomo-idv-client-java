@@ -30,73 +30,99 @@ import com.fasterxml.jackson.annotation.JsonValue;
  */
 public enum Country {
   
-  AR("ar"),
+  AL("al"),
   
-  AU("au"),
+  AD("ad"),
+  
+  AM("am"),
   
   AT("at"),
   
+  BY("by"),
+  
   BE("be"),
   
-  BR("br"),
+  BA("ba"),
   
-  CA("ca"),
+  BG("bg"),
   
-  CL("cl"),
+  HR("hr"),
   
-  CN("cn"),
-  
-  CO("co"),
+  CY("cy"),
   
   CZ("cz"),
   
   DK("dk"),
   
+  EE("ee"),
+  
+  FO("fo"),
+  
   FI("fi"),
   
   FR("fr"),
+  
+  GE("ge"),
   
   DE("de"),
   
   GI("gi"),
   
-  HK("hk"),
+  GR("gr"),
   
-  IN("in"),
+  GL("gl"),
+  
+  GG("gg"),
+  
+  HU("hu"),
+  
+  IS("is"),
   
   IE("ie"),
   
+  IM("im"),
+  
   IT("it"),
   
-  JP("jp"),
+  JE("je"),
   
-  KE("ke"),
+  XK("xk"),
+  
+  LV("lv"),
+  
+  LI("li"),
+  
+  LT("lt"),
   
   LU("lu"),
   
-  MY("my"),
+  MT("mt"),
   
-  MX("mx"),
+  MD("md"),
+  
+  MC("mc"),
+  
+  ME("me"),
   
   NL("nl"),
   
-  NZ("nz"),
-  
-  NG("ng"),
+  MK("mk"),
   
   NO("no"),
-  
-  PH("ph"),
   
   PL("pl"),
   
   PT("pt"),
   
-  SG("sg"),
+  RO("ro"),
+  
+  SM("sm"),
+  
+  RS("rs"),
   
   SK("sk"),
   
-  ZA("za"),
+  SI("si"),
   
   ES("es"),
   
@@ -106,9 +132,99 @@ public enum Country {
   
   TR("tr"),
   
+  UA("ua"),
+  
   GB("gb"),
   
+  VA("va"),
+  
+  CA("ca"),
+  
+  MX("mx"),
+  
   US("us"),
+  
+  AI("ai"),
+  
+  AG("ag"),
+  
+  AW("aw"),
+  
+  BS("bs"),
+  
+  BB("bb"),
+  
+  BZ("bz"),
+  
+  BM("bm"),
+  
+  VG("vg"),
+  
+  KY("ky"),
+  
+  CR("cr"),
+  
+  CW("cw"),
+  
+  DM("dm"),
+  
+  DO("do"),
+  
+  SV("sv"),
+  
+  GD("gd"),
+  
+  GT("gt"),
+  
+  HT("ht"),
+  
+  HN("hn"),
+  
+  JM("jm"),
+  
+  MS("ms"),
+  
+  NI("ni"),
+  
+  PA("pa"),
+  
+  KN("kn"),
+  
+  LC("lc"),
+  
+  MF("mf"),
+  
+  VC("vc"),
+  
+  TT("tt"),
+  
+  TC("tc"),
+  
+  BQ("bq"),
+  
+  AR("ar"),
+  
+  BO("bo"),
+  
+  BR("br"),
+  
+  CL("cl"),
+  
+  CO("co"),
+  
+  EC("ec"),
+  
+  GY("gy"),
+  
+  PY("py"),
+  
+  PE("pe"),
+  
+  SR("sr"),
+  
+  UY("uy"),
+  
+  VE("ve"),
   
   AF("af"),
   
@@ -124,11 +240,19 @@ public enum Country {
   
   KH("kh"),
   
+  CN("cn"),
+  
+  HK("hk"),
+  
+  IN("in"),
+  
   ID("id"),
   
   IQ("iq"),
   
   IL("il"),
+  
+  JP("jp"),
   
   JO("jo"),
   
@@ -144,6 +268,8 @@ public enum Country {
   
   MO("mo"),
   
+  MY("my"),
+  
   MV("mv"),
   
   MN("mn"),
@@ -158,11 +284,15 @@ public enum Country {
   
   PS("ps"),
   
+  PH("ph"),
+  
   QA("qa"),
   
   RU("ru"),
   
   SA("sa"),
+  
+  SG("sg"),
   
   KR("kr"),
   
@@ -183,6 +313,140 @@ public enum Country {
   VN("vn"),
   
   YE("ye"),
+  
+  AU("au"),
+  
+  CK("ck"),
+  
+  FJ("fj"),
+  
+  PF("pf"),
+  
+  KI("ki"),
+  
+  NR("nr"),
+  
+  NZ("nz"),
+  
+  NU("nu"),
+  
+  PG("pg"),
+  
+  WS("ws"),
+  
+  SB("sb"),
+  
+  TL("tl"),
+  
+  TO("to"),
+  
+  TV("tv"),
+  
+  VU("vu"),
+  
+  DZ("dz"),
+  
+  AO("ao"),
+  
+  BJ("bj"),
+  
+  BW("bw"),
+  
+  BF("bf"),
+  
+  BI("bi"),
+  
+  CM("cm"),
+  
+  CV("cv"),
+  
+  CF("cf"),
+  
+  TD("td"),
+  
+  KM("km"),
+  
+  CG("cg"),
+  
+  CI("ci"),
+  
+  DJ("dj"),
+  
+  EG("eg"),
+  
+  ER("er"),
+  
+  SZ("sz"),
+  
+  ET("et"),
+  
+  GA("ga"),
+  
+  GM("gm"),
+  
+  GH("gh"),
+  
+  GN("gn"),
+  
+  GW("gw"),
+  
+  KE("ke"),
+  
+  LS("ls"),
+  
+  LR("lr"),
+  
+  MG("mg"),
+  
+  MW("mw"),
+  
+  ML("ml"),
+  
+  MR("mr"),
+  
+  MU("mu"),
+  
+  MA("ma"),
+  
+  MZ("mz"),
+  
+  NA("na"),
+  
+  NE("ne"),
+  
+  NG("ng"),
+  
+  RW("rw"),
+  
+  SN("sn"),
+  
+  SC("sc"),
+  
+  SL("sl"),
+  
+  SO("so"),
+  
+  ZA("za"),
+  
+  SS("ss"),
+  
+  SD("sd"),
+  
+  ST("st"),
+  
+  TZ("tz"),
+  
+  TG("tg"),
+  
+  TN("tn"),
+  
+  UG("ug"),
+  
+  EH("eh"),
+  
+  ZM("zm"),
+  
+  ZW("zw"),
   
   UK("uk"),
   
